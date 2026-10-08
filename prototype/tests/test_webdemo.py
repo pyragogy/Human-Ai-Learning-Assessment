@@ -9,6 +9,7 @@ from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "webdemo"))
 from assessment import ITEMS
+from adaptive import POLICY_SHA256, respond_to_claim
 from server import Handler, SESSIONS, LOCK, MAX_SESSIONS, SESSION_TTL_SECONDS, create_session, snapshot, submit, delete_session, purge_expired
 
 
@@ -75,6 +76,25 @@ class StateMachineTests(unittest.TestCase):
             create_session("B")
         with self.assertRaisesRegex(ValueError, "session limit"):
             create_session("A")
+
+
+    def test_adaptive_C_second_turn_changes_with_claim(self):
+        results = []
+        for statement in ("This causes better outcomes", "I am not sure", "Observations exist"):
+            state = SESSIONS[create_session("C")]
+            submit(state, "T0", "synthetic baseline")
+            response = submit(state, "T1", statement)
+            self.assertEqual(response["stage"], "T1")
+            self.assertEqual(response["mock_policy_sha256"], POLICY_SHA256)
+            results.append((response["branch"], response["lesson"]))
+        self.assertEqual({mode for mode, _ in results},
+                         {"causal-claim", "uncertainty", "other-claim"})
+        self.assertEqual(len({message for _, message in results}), 3)
+
+    def test_adaptive_C_not_real_provider(self):
+        result = respond_to_claim("because of the intervention")
+        self.assertEqual(result["provider"], "deterministic_scripted_mock")
+        self.assertTrue(result["synthetic_only"])
 
     def test_t4_notice_is_not_real_retention(self):
         state = SESSIONS[create_session("A")]
