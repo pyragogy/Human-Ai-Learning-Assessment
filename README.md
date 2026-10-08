@@ -186,7 +186,7 @@ A **standalone Unix-socket assessment process** now demonstrates stage-specific,
 
 [Worker and limitations](prototype/separated_assessment/README.md) · [Boundary contract tests](prototype/tests/test_boundaries.py) · [v0.3 security design](research/architecture/RFC_003_ADDENDUM_A.md)
 
-**Important:** The browser UI still uses its older in-process assessment path. The new worker is not yet wired into that UI, and distinct OS-user permissions, authenticated orchestrator access and signed receipts are still missing. These are blocking prerequisites for claiming secure assessment isolation or undertaking human trials.
+**New local integration:** the [two-process browser gateway](prototype/separated_assessment/INTEGRATION.md) is now connected to the worker and exercises the full A/B/C journey at `http://127.0.0.1:8766`. The old single-process UI remains available at port 8765 for backwards-compatible development. Separate OS-user permissions, independently authenticated orchestrator access, signed receipts and field-grade data safeguards **are still missing**. Never call this secure assessment isolation or use it with real learners.
 
 ## Reproducibility and public-release readiness
 
