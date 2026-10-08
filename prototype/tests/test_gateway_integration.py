@@ -18,7 +18,8 @@ class GatewayIntegrationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.temp = tempfile.TemporaryDirectory()
         cls.sockpath = str(Path(cls.temp.name) / "assessor.sock")
-        cls.assessor = Service(cls.sockpath)
+        os.environ["HALA_ASSESSOR_SECRET"] = "synthetic-integration-secret-not-a-real-credential"
+        cls.assessor = Service(cls.sockpath, secret=os.environ["HALA_ASSESSOR_SECRET"])
         cls.assessor_thread = threading.Thread(target=cls.assessor.serve_forever, daemon=True)
         cls.assessor_thread.start()
         gateway.ASSESSOR_SOCKET = cls.sockpath
@@ -36,6 +37,7 @@ class GatewayIntegrationTests(unittest.TestCase):
         cls.assessor.server_close()
         cls.assessor_thread.join(timeout=3)
         cls.temp.cleanup()
+        os.environ.pop("HALA_ASSESSOR_SECRET", None)
 
     def setUp(self):
         with gateway.LOCK:
