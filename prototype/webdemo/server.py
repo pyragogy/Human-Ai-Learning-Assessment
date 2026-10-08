@@ -77,6 +77,8 @@ def snapshot(state):
             result["lesson"] = "Scripted adaptive collaborator: " + reply["message"]
             result["branch"] = reply["mode"]
             result["mock_policy_sha256"] = reply["policy_sha256"]
+            result["provider"] = reply["provider"]
+            result["synthetic_only"] = reply["synthetic_only"]
         else:
             result["lesson"] = lesson["turns"][state["teaching_turn"]]
         result["step"] = state["teaching_turn"] + 1
