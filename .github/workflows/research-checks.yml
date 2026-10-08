@@ -21,5 +21,8 @@ jobs:
         run: |
           python prototype/journey.py > synthetic_journey.json
           python -m json.tool synthetic_journey.json > /dev/null
+      - name: Smoke-test HALA web demonstrator
+        run: |
+          python -c "from pathlib import Path; p=Path('prototype/webdemo/index.html'); assert p.exists() and b'HALA' in p.read_bytes()"
       - name: Validate research entrypoints compile
         run: python -m compileall -q prototype
