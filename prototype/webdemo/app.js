@@ -75,14 +75,23 @@
     } catch (e) { error(e.message); }
     finally { $("continue").disabled = false; }
   });
-  const reset = () => {
+  const reset = async () => {
+    const previousToken = token;
     token = null; stage = null;
+    if (previousToken) {
+      try {
+        await post("/api/end", {token: previousToken});
+      } catch (e) {
+        // Best-effort disposal; server TTL provides bounded fallback.
+        error("Unable to delete the former session. It will expire server-side.");
+      }
+    }
     $("status").textContent = "NOT STARTED";
     show("intro", true);
     show("exercise", false);
     show("complete", false);
     [...$("stages").children].forEach(e => e.classList.remove("active", "done"));
-    error("");
+    if (!previousToken) error("");
     $("intro").scrollIntoView({behavior: "smooth", block: "center"});
   };
   $("restart").addEventListener("click", reset);
