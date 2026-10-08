@@ -157,6 +157,16 @@ HALA currently has **no recruited learners, school access or validated human-lea
 
 The technical demonstrator can test system integrity. **It cannot demonstrate that any human has learned.**
 
+## Proposed collaboration model
+
+<img src="assets/collaboration-model.svg" alt="Proposed model: Pyragogy develops the methodology, assessment design and demonstrator; a prospective education partner provides participants, ethics oversight and psychometric expertise; together they can produce a joint scientific study. No partnership exists yet." width="100%" />
+
+**Pyragogy's contribution is intentionally bounded.** We can design and test technical and methodological building blocks without a classroom. A real learning-effect study requires an educational partner, independent review, appropriate ethics authorisations and actual participant data. This diagram is a **proposal**, not an existing agreement.
+
+- [Bounded partner offer](proposal/BOUNDED_OFFER.md)
+- [Classroom-independent development strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
+- [Synthetic three-arm journey and tests](prototype/JOURNEY_DEMO.md)
+
 ## OECD / PISA relevance
 
 An OECD call concerning AI-mediated assessment motivates this work, but **HALA is independent of OECD and PISA**. No institutional partnership, procurement award, endorsement or acceptance is implied. Applicability to international assessment of 15-year-olds would require substantial additional work on curricula, translations, fairness, participant protections and cross-national measurement invariance. Our current feasibility design envisages consenting adults only, contingent on ethical authorisation.
