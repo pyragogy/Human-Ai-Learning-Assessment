@@ -24,3 +24,9 @@ Eligibility in final solicitation; demonstrable novelty relative to PISA RDI and
 
 ## One-sentence positioning
 **We propose a reproducible, process-aware assessment methodology for distinguishing AI-assisted performance from independently demonstrated learning—not a claim that our system has already improved student outcomes.**
+
+## Proposed partnership diagram
+
+![Proposed partnership model: Pyragogy + potential educational partner -> joint scientific study](../assets/collaboration-model.svg)
+
+The arrangement is illustrative, conditional on partner agreement, ethics, resources and eligibility. The partner is **not yet secured**.
