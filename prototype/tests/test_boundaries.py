@@ -87,6 +87,38 @@ class AssessmentStoreTests(unittest.TestCase):
 
 
 class SocketTests(unittest.TestCase):
+    def test_socket_rejects_unauthenticated_and_wrong_secret(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = os.path.join(directory, "assessor.sock")
+            secret = "synthetic-authentication-secret-for-tests"
+            server = Service(path, secret=secret)
+            thread = threading.Thread(target=server.serve_forever, daemon=True)
+            thread.start()
+            try:
+                for command in ({"op": "start"}, {"op": "start", "auth": "wrong"}):
+                    with self.subTest(command=command):
+                        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
+                            sock.connect(path)
+                            sock.sendall(json.dumps(command).encode() + b"\\n")
+                            response = b""
+                            while not response.endswith(b"\\n"):
+                                response += sock.recv(1024)
+                        obj = json.loads(response)
+                        self.assertFalse(obj["ok"])
+                        self.assertIn("Unauthorized", obj["error"])
+                self.assertEqual(len(server.store.sessions), 0)
+            finally:
+                server.shutdown()
+                server.server_close()
+                thread.join(timeout=3)
+
+    def test_worker_requires_nonempty_secret(self):
+        with tempfile.TemporaryDirectory() as directory:
+            for secret in (None, "", "weak"):
+                with self.subTest(secret=secret):
+                    with self.assertRaises(ValueError):
+                        Service(os.path.join(directory, "assessor.sock"), secret=secret)
+
     def test_unix_socket_round_trip_and_permissions(self):
         with tempfile.TemporaryDirectory() as directory:
             path = os.path.join(directory, "assessor.sock")
