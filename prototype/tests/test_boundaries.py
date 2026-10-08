@@ -90,7 +90,7 @@ class SocketTests(unittest.TestCase):
     def test_unix_socket_round_trip_and_permissions(self):
         with tempfile.TemporaryDirectory() as directory:
             path = os.path.join(directory, "assessor.sock")
-            server = Service(path)
+            server = Service(path, secret="unit-test-access-secret-for-synthetic-fixture")
             os.chmod(path, 0o600)
             thread = threading.Thread(target=server.serve_forever, daemon=True)
             thread.start()
@@ -98,7 +98,7 @@ class SocketTests(unittest.TestCase):
                 self.assertEqual(stat.S_IMODE(os.stat(path).st_mode), 0o600)
                 with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
                     sock.connect(path)
-                    sock.sendall(b'{"op":"start"}\n')
+                    sock.sendall(json.dumps({"op":"start", "auth":"unit-test-access-secret-for-synthetic-fixture"}).encode() + b"\n")
                     answer = b""
                     while not answer.endswith(b"\n"):
                         answer += sock.recv(1024)
