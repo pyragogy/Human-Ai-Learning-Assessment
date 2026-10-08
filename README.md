@@ -6,8 +6,8 @@
 
 [![Research status](https://img.shields.io/badge/research-protocol%20%2B%20prototype-1e3a5f?style=for-the-badge)](research/PROTOCOL.md)
 [![Scientific integrity](https://img.shields.io/badge/claims-evidence--first-167d88?style=for-the-badge)](research/ADVERSARIAL_AUDIT.md)
-[![Research checks](https://github.com/pyragogy/human-ai-learning-assessment/actions/workflows/research-checks.yml/badge.svg?branch=main)](https://github.com/pyragogy/human-ai-learning-assessment/actions/workflows/research-checks.yml)
 [![Stage](https://img.shields.io/badge/validation-not%20yet%20established-986b31?style=for-the-badge)](assessment/MEASUREMENT.md)
+[![Research checks](https://github.com/pyragogy/human-ai-learning-assessment/actions/workflows/research-checks.yml/badge.svg?branch=main)](https://github.com/pyragogy/human-ai-learning-assessment/actions/workflows/research-checks.yml)
 
 **An open-science-oriented research initiative by [Pyragogy](https://pyragogy.org)**
 
