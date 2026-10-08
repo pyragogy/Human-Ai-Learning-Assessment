@@ -1,0 +1,77 @@
+{
+  "fixture": "pi-adversarial-coffee",
+  "synthetic_only": true,
+  "description": "AI systematically scaffolds all six process behaviors; learner proficiency unknown.",
+  "transcript": [
+    {
+      "speaker": "ai",
+      "text": "What do you think: does coffee improve exam results?",
+      "turn_number": 1
+    },
+    {
+      "speaker": "learner",
+      "text": "I'm not sure, maybe.",
+      "turn_number": 2
+    },
+    {
+      "speaker": "ai",
+      "text": "What evidence would help us decide?",
+      "turn_number": 3
+    },
+    {
+      "speaker": "learner",
+      "text": "Can you give me some evidence?",
+      "turn_number": 4
+    },
+    {
+      "speaker": "ai",
+      "text": "Studies show correlation but not causation. What else could explain better exam performance?",
+      "turn_number": 5
+    },
+    {
+      "speaker": "learner",
+      "text": "Maybe people who drink coffee also study more.",
+      "turn_number": 6
+    },
+    {
+      "speaker": "ai",
+      "text": "Good. How would we test whether studying is the real cause?",
+      "turn_number": 7
+    },
+    {
+      "speaker": "learner",
+      "text": "Compare coffee groups but control for study hours.",
+      "turn_number": 8
+    },
+    {
+      "speaker": "ai",
+      "text": "Is a self-report survey reliable evidence for coffee consumption?",
+      "turn_number": 9
+    },
+    {
+      "speaker": "learner",
+      "text": "No, people might not remember accurately; the source is not reliable.",
+      "turn_number": 10
+    },
+    {
+      "speaker": "ai",
+      "text": "Here is a counterexample. Would you revise your conclusion?",
+      "turn_number": 11
+    },
+    {
+      "speaker": "learner",
+      "text": "Yes, I'd revise my view; now I think it depends.",
+      "turn_number": 12
+    },
+    {
+      "speaker": "ai",
+      "text": "What is still uncertain in your conclusion?",
+      "turn_number": 13
+    },
+    {
+      "speaker": "learner",
+      "text": "I'm uncertain about whether it applies to all subjects.",
+      "turn_number": 14
+    }
+  ]
+}
