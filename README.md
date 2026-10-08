@@ -167,6 +167,12 @@ The technical demonstrator can test system integrity. **It cannot demonstrate th
 - [Classroom-independent development strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
 - [Synthetic three-arm journey and tests](prototype/JOURNEY_DEMO.md)
 
+## Reproducibility and public-release readiness
+
+HALA includes adversarial fixtures that deliberately challenge the data pipeline, including re-signed yet invalid experimental sequences. See the [synthetic journey](prototype/JOURNEY_DEMO.md), [structural validator](prototype/validate.py) and [negative regression tests](prototype/tests/test_validate.py).
+
+**The repository remains private.** A public release requires explicit owner approval after [security, evidence, licensing and privacy review](governance/PUBLIC_RELEASE_GATE.md). Passing unit tests is not equivalent to ethical clearance, psychometric validation or readiness for human subjects.
+
 ## OECD / PISA relevance
 
 An OECD call concerning AI-mediated assessment motivates this work, but **HALA is independent of OECD and PISA**. No institutional partnership, procurement award, endorsement or acceptance is implied. Applicability to international assessment of 15-year-olds would require substantial additional work on curricula, translations, fairness, participant protections and cross-national measurement invariance. Our current feasibility design envisages consenting adults only, contingent on ethical authorisation.
