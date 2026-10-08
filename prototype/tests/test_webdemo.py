@@ -86,6 +86,7 @@ class StateMachineTests(unittest.TestCase):
             response = submit(state, "T1", statement)
             self.assertEqual(response["stage"], "T1")
             self.assertEqual(response["mock_policy_sha256"], POLICY_SHA256)
+            self.assertEqual(response["provider"], "deterministic_scripted_mock")
             results.append((response["branch"], response["lesson"]))
         self.assertEqual({mode for mode, _ in results},
                          {"causal-claim", "uncertainty", "other-claim"})
