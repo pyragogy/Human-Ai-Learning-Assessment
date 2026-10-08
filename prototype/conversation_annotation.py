@@ -6,14 +6,14 @@ psychometric inference, automatic grades, or claims about learner cognition.
 import re
 
 PATTERNS = {
-    "EVIDENCE_REQUEST": r"\\b(evidence|sources?|data|proof)\\b",
-    "COMPETING_CAUSE": r"\\b(maybe|alternatively|another|other explanation|also study)\\b",
-    "DISCRIMINATING_TEST": r"\\b(compare|control for|randomi[sz]e|experiment|test)\\b",
-    "SOURCE_APPRAISAL": r"\\b(reliable|remember|bias|self.report|trustworthy|credib)\\b",
-    "JUSTIFIED_REVISION": r"\\b(revise|change my mind|instead|because of|now think)\\b",
-    "CALIBRATED_UNCERTAINTY": r"\\b(uncertain|don't know|not sure|might|depends|confidence)\\b",
+    "EVIDENCE_REQUEST": r"\b(evidence|sources?|data|proof)\b",
+    "COMPETING_CAUSE": r"\b(maybe|alternatively|another|other explanation|also study)\b",
+    "DISCRIMINATING_TEST": r"\b(compare|control for|randomi[sz]e|experiment|test)\b",
+    "SOURCE_APPRAISAL": r"\b(reliable|remember|bias|self.report|trustworthy|credib)\b",
+    "JUSTIFIED_REVISION": r"\b(revise|change my mind|instead|because of|now think)\b",
+    "CALIBRATED_UNCERTAINTY": r"\b(uncertain|don't know|not sure|might|depends|confidence)\b",
 }
-SCAFFOLD = r"\\b(what evidence|what else|alternative explanation|how would|is .* reliable|would you revise|what.*uncertain|how confident)\\b"
+SCAFFOLD = r"\b(what evidence|what else|alternative explanation|how would|is .* reliable|would you revise|what.*uncertain|how confident)\b"
 TOKEN = re.compile(r"[a-z]{4,}")
 
 
