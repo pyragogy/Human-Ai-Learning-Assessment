@@ -167,6 +167,19 @@ The technical demonstrator can test system integrity. **It cannot demonstrate th
 - [Classroom-independent development strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
 - [Synthetic three-arm journey and tests](prototype/JOURNEY_DEMO.md)
 
+## Interactive research demonstrator · v0.2
+
+**A working local browser experience**, not a real AI-learning trial. Choose one of three scripted learning conditions, then walk through T0 baseline, T1 learning, T2 independent post-test, T3 transfer and a *same-session illustration* of T4 retention.
+
+```bash
+python prototype/webdemo/server.py
+# Open http://127.0.0.1:8765
+```
+
+No API key, external services or dependencies. The tool does **not** grade answers, store real learner outcomes, or provide genuine delayed retention. It is **not approved for participant research**.
+
+[Launch instructions & scientific limitations](prototype/webdemo/README.md) · [Browser interface](prototype/webdemo/index.html) · [State-machine tests](prototype/tests/test_webdemo.py)
+
 ## Reproducibility and public-release readiness
 
 HALA includes adversarial fixtures that deliberately challenge the data pipeline, including re-signed yet invalid experimental sequences. See the [synthetic journey](prototype/JOURNEY_DEMO.md), [structural validator](prototype/validate.py) and [negative regression tests](prototype/tests/test_validate.py).
