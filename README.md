@@ -180,6 +180,14 @@ No API key, external services or dependencies. The tool does **not** grade answe
 
 [Launch instructions & scientific limitations](prototype/webdemo/README.md) · [Browser interface](prototype/webdemo/index.html) · [State-machine tests](prototype/tests/test_webdemo.py)
 
+## Separate assessment worker · experimental
+
+A **standalone Unix-socket assessment process** now demonstrates stage-specific, expiring capabilities; technical negative tests cover replay, missing/extra packet fields and assessment order.
+
+[Worker and limitations](prototype/separated_assessment/README.md) · [Boundary contract tests](prototype/tests/test_boundaries.py) · [v0.3 security design](research/architecture/RFC_003_ADDENDUM_A.md)
+
+**Important:** The browser UI still uses its older in-process assessment path. The new worker is not yet wired into that UI, and distinct OS-user permissions, authenticated orchestrator access and signed receipts are still missing. These are blocking prerequisites for claiming secure assessment isolation or undertaking human trials.
+
 ## Reproducibility and public-release readiness
 
 HALA includes adversarial fixtures that deliberately challenge the data pipeline, including re-signed yet invalid experimental sequences. See the [synthetic journey](prototype/JOURNEY_DEMO.md), [structural validator](prototype/validate.py) and [negative regression tests](prototype/tests/test_validate.py).
