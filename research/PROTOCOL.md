@@ -1,23 +1,17 @@
-# Research protocol — draft v0.1
+# HALA Research Protocol — current entry point
 
-## Aim and population
-Assess whether and how structured human–AI collaboration relates to independently demonstrated student learning. Initial feasibility pilot: consenting adults; extension to 15-year-olds requires a separate age-appropriate protocol, ethics approvals and safeguarding.
+> **Current master protocol:** [HALA-P01 v1.0](PROTOCOL_V1.md) (8 October 2026).
 
-## Study arms
-A: independent learning with standardized resources, B: explanatory AI tutor, C: dialogic critical AI collaborator. Match topic, allocated time, practice opportunities and assessment conditions. Document exact model/provider/version, prompts and stochastic settings. AI conditions must be reproducible as far as technically feasible.
+This file is intentionally preserved as a stable entry point for existing README links. HALA-P01 v1.0 supersedes the original outline and introduces a strict separation between the **feasibility pilot (P01-F)** and a **future preregistered efficacy study (P01-E)**.
 
-## Procedure
-T0 baseline without AI; random assignment with pre-specified allocation; T1 learning session; T2 independent post-test; T3 transfer on novel tasks; T4 retention after 7–14 days. Avoid reusing identical test items without counterbalancing/equating.
+The independent T2 score remains the intended primary outcome; no T0–T2 longitudinal comparability is assumed before calibration. The candidate P01-E primary comparison is critical collaborative AI (C) versus explanatory tutor AI (B). No scientific efficacy result exists yet.
 
-## Outcomes
-Primary: baseline-adjusted T2 independent comprehension/problem-solving score for C vs B, with C vs A and B vs A as secondary contrasts (choice to be finalized before data collection).
-Secondary: independent transfer T3, retention T4, calibration, metacognitive reflection, and process codes such as evidence checking, error detection and reasoned revision.
+## Research controls
+- [Protocol v1.0](PROTOCOL_V1.md)
+- [Standards and source crosswalk](METHOD_STANDARDS.md)
+- [Statistical analysis plan (draft)](ESTIMANDS_AND_ANALYSIS.md)
+- [Structured independent-review pack](REVIEW_GATE.md)
+- [Decision ledger](DECISION_LOG.md)
+- [Adversarial self-audit](ADVERSARIAL_AUDIT.md)
 
-## Analysis
-Pre-register estimand, exclusions, missing-data handling and main models before confirmatory data collection. Pilot reports recruitment, completion, usability, inter-rater agreement, variance estimates and implementation fidelity; do not claim causal efficacy from an underpowered pilot. For an adequately powered randomized follow-up, use a baseline-adjusted regression/mixed model where repeated measures require it; report uncertainty intervals, effects and sensitivity analyses. Recruit participants rather than inventing target sample sizes.
-
-## Risks to validity
-Selection effects, unequal time-on-task, prior AI experience, task leakage, tutoring style confounds, model drift, scorer bias, practice effects, intervention fidelity, accessibility and attrition. Blinded human scoring and standardized rubrics are recommended. AI-only scoring is never the sole source of ground truth.
-
-## Evidence-status vocabulary
-Proposed / implemented / pilot-tested / reliability-evaluated / validity-evaluated / independently replicated. Never silently promote one status to another.
+**Not preregistered; no participants enrolled; no ethics approval; no independent peer-review sign-off.**
