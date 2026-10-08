@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="285" viewBox="0 0 1200 285" role="img" aria-labelledby="t d">
+<title id="t">Five-stage learning assessment</title><desc id="d">Independent baseline, AI-supported learning, independent post-test, transfer and delayed retention.</desc>
+<rect width="1200" height="285" rx="22" fill="#0d1b30"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="42" y="44" font-size="19" font-weight="700" fill="#e8f5ff">THE MEASUREMENT JOURNEY</text>
+<g font-size="15" font-weight="700" text-anchor="middle">
+<rect x="38" y="76" width="207" height="126" rx="13" fill="#1b344b" stroke="#68c9ce"/><text x="141" y="112" fill="#82efe6">T0</text><text x="141" y="141" fill="white">BASELINE</text><text x="141" y="163" font-size="13" font-weight="400" fill="#c0d3e5">Independent</text>
+<rect x="267" y="76" width="207" height="126" rx="13" fill="#2e315a" stroke="#adadfa"/><text x="371" y="112" fill="#d2c3ff">T1</text><text x="371" y="141" fill="white">AI COLLABORATION</text><text x="371" y="163" font-size="13" font-weight="400" fill="#c0d3e5">Assisted ≠ learned</text>
+<rect x="496" y="76" width="207" height="126" rx="13" fill="#1b344b" stroke="#68c9ce"/><text x="599" y="112" fill="#82efe6">T2</text><text x="599" y="141" fill="white">POST-TEST</text><text x="599" y="163" font-size="13" font-weight="400" fill="#c0d3e5">Independent</text>
+<rect x="725" y="76" width="207" height="126" rx="13" fill="#1b344b" stroke="#68c9ce"/><text x="829" y="112" fill="#82efe6">T3</text><text x="829" y="141" fill="white">TRANSFER</text><text x="829" y="163" font-size="13" font-weight="400" fill="#c0d3e5">New problems</text>
+<rect x="954" y="76" width="207" height="126" rx="13" fill="#1b344b" stroke="#68c9ce"/><text x="1058" y="112" fill="#82efe6">T4</text><text x="1058" y="141" fill="white">RETENTION</text><text x="1058" y="163" font-size="13" font-weight="400" fill="#c0d3e5">7–14 days later</text>
+</g>
+<g fill="#b2d3e3"><path d="M251 139l10 -6v12zM480 139l10 -6v12zM709 139l10 -6v12zM938 139l10 -6v12z"/></g>
+<text x="42" y="244" font-size="16" fill="#becfe3">Primary signal: independently demonstrated learning gain, adjusted for baseline.</text>
+</g></svg>
