@@ -11,7 +11,7 @@
 <g fill="none" stroke="#86d8dc" stroke-width="2" opacity=".55"><path d="M815 214L905 135L1005 210L1090 137M815 214L915 294L1005 210L1102 286M905 135L1005 210L915 294"/></g>
 <g fill="#102e42" stroke="url(#edge)" stroke-width="3"><circle cx="815" cy="214" r="24"/><circle cx="905" cy="135" r="32"/><circle cx="1005" cy="210" r="41"/><circle cx="1090" cy="137" r="24"/><circle cx="915" cy="294" r="32"/><circle cx="1102" cy="286" r="24"/></g>
 <g fill="#baf8f1"><circle cx="905" cy="135" r="8"/><circle cx="1005" cy="210" r="11"/><circle cx="915" cy="294" r="8"/></g>
-<rect x="54" y="45" width="196" height="34" rx="17" fill="#143d51" stroke="#377c8f"/><text x="75" y="67" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#9ee9e2">PYRAGOGY / RESEARCH</text>
+<rect x="54" y="42" width="238" height="40" rx="20" fill="#173c50" stroke="#4aa8b1" stroke-width="1.6"/><text x="173" y="67" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.8" fill="#b9f7f0">PYRAGOGY · RESEARCH</text>
 <text x="54" y="173" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="85" letter-spacing="-3" fill="#f7fcff">HALA</text>
 <text x="58" y="222" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="600" fill="#b7d9e6">Human–AI Learning Assessment</text>
 <rect x="57" y="246" width="486" height="3" rx="1" fill="url(#edge)"/>
