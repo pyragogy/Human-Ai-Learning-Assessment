@@ -7,6 +7,7 @@ import json
 import os
 import secrets
 import hmac
+import grp
 import socketserver
 import time
 from pathlib import Path
@@ -142,7 +143,12 @@ def serve(path):
     try:
         secret = os.environ.get("HALA_ASSESSOR_SECRET")
         server = Service(path, secret=secret)
-        os.chmod(path, 0o600)
+        group = os.environ.get("HALA_ASSESSOR_SOCKET_GROUP")
+        if group:
+            os.chown(path, -1, grp.getgrnam(group).gr_gid)
+            os.chmod(path, 0o660)
+        else:
+            os.chmod(path, 0o600)
     finally:
         os.umask(old_umask)
     try:
