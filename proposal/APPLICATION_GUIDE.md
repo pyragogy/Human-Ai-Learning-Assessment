@@ -9,11 +9,20 @@ Official contact: **EDU.PisaInnovation@oecd.org**.
 OECD public corporate procurement announcement: https://fr.linkedin.com/posts/oecd-corporate-procurement-achats-de-l%E2%80%99ocde-27b87b19a_oecd-ocde-activity-7513598727778017281-7IxB
 The OECD says this **is not a procurement**, and **selected partners will not be remunerated**.
 
-## Unverified / must not be invented
-The linked full-call attachment (via the OECD current opportunities listing / https://oe.cd/6L1) was not accessible to the research session. Therefore exact application requirements, mandatory attachments, length/format limits, eligibility, IP conditions and acceptance of private GitHub repo links are **not yet verified**. A contact email is not necessarily a sufficient application package. OECD's procurement portal is advertised for procurement generally; do not assume it is mandatory for this non-procurement call.
+## Full call now reviewed — supplied PDF, 8 October 2026
+
+The four-page *Call for Proposals — AI-Mediated Assessment Solutions for PISA* is now available for internal analysis. **Its page 4 lists 26 October 2024**, while the OECD live listing confirms **26 October 2026**. Treat this as a discrepancy requiring written confirmation, not a new closed date.
+
+**Format:** approximately **two pages**. Sections required: proposed PISA AI assessment solution (including particular AI models and task/scoring scope); collaboration plan and OECD inputs; IP and third-party rights; privacy and AI security, including preventing submitted data being used for AI training.
+
+**Evaluation:** 70% technical quality/PISA relevance/security; 30% scalability, provider reliance and cost. **No OECD remuneration** under the expected cooperation; applicants may explain funding dependency.
+
+**Unverified:** individual researcher eligibility, final legal terms, selection of specific model/provider, whether supporting links/attachments beyond the proposal are permissible, and whether the deadline-year discrepancy has been formally corrected.
+
+Full crosswalk: [Official call audit](OFFICIAL_CALL_REQUIREMENTS_AUDIT_2026.md). Do not republish the uploaded PDF: marked Restricted Use.
 
 ## Recommended first contact
-Write to EDU.PisaInnovation@oecd.org with a *targeted request for the official call document*, clarification whether full proposals are accepted directly by email, mandatory annexes, eligibility of small independent research groups, IP/data obligations and any registration process. Do not assert intent to provide unsupported psychometric validation or prospective adolescent access.
+Write to EDU.PisaInnovation@oecd.org asking whether an independent researcher may submit, confirming the 2026 deadline despite the supplied PDF showing 2024, whether email and a two-page PDF suffice, and required IP/data rights. The official call is now available; do not request it as if missing. Do not assert intent to provide unsupported psychometric validation or prospective adolescent access.
 
 ## Application package (provisional, not asserted mandatory)
 1. Cover message with proposer identity and institutional status accurately stated.
@@ -24,7 +33,7 @@ Write to EDU.PisaInnovation@oecd.org with a *targeted request for the official c
 6. Data, security and intellectual-property statement, conditional on official requirements.
 
 ## Submission checklist
-- [ ] Receive and archive full official call text with provenance.
+- [x] Review supplied four-page full call and preserve its provenance, without republishing Restricted Use material.
 - [ ] Map every mandatory requirement to evidence and owners.
 - [ ] Verify eligibility and no-remuneration / IP terms.
 - [ ] Decide precisely what can be delivered without unfunded commitments.
@@ -33,4 +42,4 @@ Write to EDU.PisaInnovation@oecd.org with a *targeted request for the official c
 - [ ] Send by the official route before 26 Oct 2026 at 23:59 Paris.
 - [ ] Retain confirmation / timestamp and submitted files.
 
-**No application email has been sent. No attachment list is claimed to be definitive.**
+**An earlier informal introductory inquiry was reported by the founder, but this is not a submitted two-page proposal. The full application has not been sent.**
