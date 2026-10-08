@@ -76,6 +76,26 @@ class AssessmentStoreTests(unittest.TestCase):
             self.store.handle({"op": "item", "capability": old["capability"]})
         self.assertEqual(self.store.handle({"op": "item", "capability": new["capability"]})["stage"], "T0")
 
+    def test_worker_session_expiry_and_capacity(self):
+        from prototype.separated_assessment.service import SESSION_TTL, MAX_SESSIONS
+        for _ in range(MAX_SESSIONS - 1):
+            self.store.handle({"op": "start"})
+        with self.assertRaisesRegex(ValueError, "capacity"):
+            self.store.handle({"op": "start"})
+        self.now[0] += SESSION_TTL + 1
+        self.assertEqual(len(self.store.sessions), MAX_SESSIONS)
+        created = self.store.handle({"op": "start"})
+        self.assertEqual(created["stage"], "T0")
+        self.assertEqual(len(self.store.sessions), 1)
+
+    def test_worker_end_revokes_capabilities(self):
+        issued = self.issue()
+        self.assertTrue(self.store.handle({"op": "end", "session": self.session})["deleted"])
+        with self.assertRaises(ValueError):
+            self.store.handle({"op": "item", "capability": issued["capability"]})
+        with self.assertRaises(ValueError):
+            self.issue()
+
     def test_rejects_invalid_commands(self):
         for command in ({}, {"op": "issue", "session": "forged"},
                         {"op": "item", "capability": "forged"},
