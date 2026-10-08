@@ -1,0 +1,19 @@
+name: Research integrity checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  synthetic-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test data validation and score independence
+        run: python -m unittest discover -s prototype/tests -v
+      - name: Demonstrate synthetic pipeline
+        run: python prototype/analyse.py prototype/fixtures/synthetic_scores.csv
