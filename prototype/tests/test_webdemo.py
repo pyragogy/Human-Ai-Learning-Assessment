@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "webdemo"))
 from assessment import ITEMS
-from server import Handler, SESSIONS, LOCK, create_session, snapshot, submit
+from server import Handler, SESSIONS, LOCK, MAX_SESSIONS, SESSION_TTL_SECONDS, create_session, snapshot, submit, delete_session, purge_expired
 
 
 class StateMachineTests(unittest.TestCase):
@@ -53,6 +53,28 @@ class StateMachineTests(unittest.TestCase):
         for phase in ("T2", "T3", "T4"):
             self.assertNotIn(ITEMS[phase]["scenario"], payload)
             self.assertNotIn(ITEMS[phase]["question"], payload)
+
+
+    def test_expired_sessions_evicted_at_creation(self):
+        token = create_session("A")
+        with LOCK:
+            SESSIONS[token]["last_seen"] -= SESSION_TTL_SECONDS + 1
+        other = create_session("C")
+        self.assertNotIn(token, SESSIONS)
+        self.assertIn(other, SESSIONS)
+
+    def test_explicit_disposal_removes_answers(self):
+        token = create_session("C")
+        submit(SESSIONS[token], "T0", "synthetic answer to delete")
+        self.assertTrue(delete_session(token))
+        self.assertNotIn(token, SESSIONS)
+        self.assertFalse(delete_session(token))
+
+    def test_live_session_capacity_is_bounded(self):
+        for _ in range(MAX_SESSIONS):
+            create_session("B")
+        with self.assertRaisesRegex(ValueError, "session limit"):
+            create_session("A")
 
     def test_t4_notice_is_not_real_retention(self):
         state = SESSIONS[create_session("A")]
@@ -104,6 +126,20 @@ class HTTPTests(unittest.TestCase):
         for _ in range(2):
             next_step, _ = self.request("/api/submit", {"token": token, "stage": "T1", "answer": ""})
         self.assertEqual(next_step["stage"], "T2")
+
+
+    def test_end_endpoint_disposes_session(self):
+        started, _ = self.request("/api/start", {"arm": "C"})
+        token = started["token"]
+        ended, _ = self.request("/api/end", {"token": token})
+        self.assertTrue(ended["deleted"])
+        with self.assertRaises(HTTPError) as cm:
+            self.request("/api/submit", {"token": token, "stage": "T0", "answer": "x"})
+        self.assertEqual(cm.exception.code, 400)
+
+    def test_end_missing_session_id_is_rejected(self):
+        with self.assertRaises(HTTPError):
+            self.request("/api/end", {})
 
     def test_invalid_arm_http_400(self):
         with self.assertRaises(HTTPError) as cm:
