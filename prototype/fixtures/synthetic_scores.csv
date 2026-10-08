@@ -1,0 +1,16 @@
+participant_id,arm,stage,score,independent
+S-A01,A,T0,35,true
+S-A01,A,T1,48,false
+S-A01,A,T2,50,true
+S-A01,A,T3,44,true
+S-A01,A,T4,43,true
+S-B01,B,T0,36,true
+S-B01,B,T1,83,false
+S-B01,B,T2,58,true
+S-B01,B,T3,52,true
+S-B01,B,T4,48,true
+S-C01,C,T0,34,true
+S-C01,C,T1,90,false
+S-C01,C,T2,64,true
+S-C01,C,T3,60,true
+S-C01,C,T4,57,true
