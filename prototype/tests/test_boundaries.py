@@ -119,9 +119,9 @@ class SocketTests(unittest.TestCase):
                     with self.subTest(command=command):
                         with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
                             sock.connect(path)
-                            sock.sendall(json.dumps(command).encode() + b"\\n")
+                            sock.sendall(json.dumps(command).encode() + b"\n")
                             response = b""
-                            while not response.endswith(b"\\n"):
+                            while not response.endswith(b"\n"):
                                 response += sock.recv(1024)
                         obj = json.loads(response)
                         self.assertFalse(obj["ok"])
