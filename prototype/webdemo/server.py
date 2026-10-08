@@ -15,9 +15,11 @@ from urllib.parse import urlsplit
 try:
     from .assessment import ITEMS, STAGES
     from .teaching import LESSONS
+    from .adaptive import respond_to_claim
 except ImportError:
     from assessment import ITEMS, STAGES
     from teaching import LESSONS
+    from adaptive import respond_to_claim
 
 HOST = "127.0.0.1"
 PORT = 8765
@@ -70,7 +72,13 @@ def snapshot(state):
     if stage == "T1":
         lesson = LESSONS[state["arm"]]
         result["title"] = lesson["title"]
-        result["lesson"] = lesson["turns"][state["teaching_turn"]]
+        if state["arm"] == "C" and state["teaching_turn"] > 0:
+            reply = respond_to_claim(state.get("last_claim", ""))
+            result["lesson"] = "Scripted adaptive collaborator: " + reply["message"]
+            result["branch"] = reply["mode"]
+            result["mock_policy_sha256"] = reply["policy_sha256"]
+        else:
+            result["lesson"] = lesson["turns"][state["teaching_turn"]]
         result["step"] = state["teaching_turn"] + 1
         result["steps"] = len(lesson["turns"])
     elif stage in ITEMS:
@@ -91,6 +99,9 @@ def submit(state, stage, answer):
     if not isinstance(answer, str) or len(answer) > MAX_RESPONSE:
         raise ValueError("Response must be text under 4001 characters")
     if stage == "T1":
+        if state["arm"] == "C" and state["teaching_turn"] == 0:
+            # Synthetic-only fixture: the second critical response now depends on input.
+            state["last_claim"] = answer
         state["teaching_turn"] += 1
         if state["teaching_turn"] >= len(LESSONS[state["arm"]]["turns"]):
             state["index"] += 1
