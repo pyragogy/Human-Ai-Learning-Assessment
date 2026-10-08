@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">HALA — Human–AI Learning Assessment</title><desc id="desc">Research identity banner with human and AI nodes linked by a learning process and independent assessment.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081326"/><stop offset=".54" stop-color="#101e3a"/><stop offset="1" stop-color="#102c39"/></linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#70e4db"/><stop offset="1" stop-color="#a7afff"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#36d6c2" stop-opacity=".26"/><stop offset="1" stop-color="#36d6c2" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#a1c7df" opacity=".07"/></pattern>
+</defs>
+<rect width="1200" height="420" rx="26" fill="url(#bg)"/><rect width="1200" height="420" fill="url(#grid)"/>
+<circle cx="984" cy="203" r="230" fill="url(#halo)"/>
+<g fill="none" stroke="#86d8dc" stroke-width="2" opacity=".55"><path d="M815 214L905 135L1005 210L1090 137M815 214L915 294L1005 210L1102 286M905 135L1005 210L915 294"/></g>
+<g fill="#102e42" stroke="url(#edge)" stroke-width="3"><circle cx="815" cy="214" r="24"/><circle cx="905" cy="135" r="32"/><circle cx="1005" cy="210" r="41"/><circle cx="1090" cy="137" r="24"/><circle cx="915" cy="294" r="32"/><circle cx="1102" cy="286" r="24"/></g>
+<g fill="#baf8f1"><circle cx="905" cy="135" r="8"/><circle cx="1005" cy="210" r="11"/><circle cx="915" cy="294" r="8"/></g>
+<rect x="54" y="45" width="196" height="34" rx="17" fill="#143d51" stroke="#377c8f"/><text x="75" y="67" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#9ee9e2">PYRAGOGY / RESEARCH</text>
+<text x="54" y="173" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="85" letter-spacing="-3" fill="#f7fcff">HALA</text>
+<text x="58" y="222" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="600" fill="#b7d9e6">Human–AI Learning Assessment</text>
+<rect x="57" y="246" width="486" height="3" rx="1" fill="url(#edge)"/>
+<text x="58" y="283" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#f0f6fb">Measure learning. Not just assisted performance.</text>
+<text x="58" y="357" font-family="Arial,Helvetica,sans-serif" font-size="16" letter-spacing=".7" fill="#9fb5ce">UNDERSTANDING  /  TRANSFER  /  RETENTION  /  AUTONOMY</text>
+</svg>
