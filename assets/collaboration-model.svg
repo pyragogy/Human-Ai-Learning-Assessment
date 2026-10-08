@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650" role="img" aria-labelledby="t d">
+<title id="t">Proposed HALA research collaboration model</title><desc id="d">Pyragogy contributes research methodology and a demonstrator. A potential educational or university partner contributes recruitment, ethics and psychometric expertise. Together, subject to agreement, they may conduct a joint scientific study.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a162b"/><stop offset="1" stop-color="#142943"/></linearGradient>
+<linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#69d8cd"/><stop offset="1" stop-color="#a4b6ff"/></linearGradient>
+</defs>
+<rect width="1100" height="650" rx="24" fill="url(#bg)"/>
+<text x="550" y="52" text-anchor="middle" fill="#e3f4ff" font-family="Arial,sans-serif" font-size="24" font-weight="700">PROPOSED RESEARCH COLLABORATION</text>
+<text x="550" y="82" text-anchor="middle" fill="#a9bfd4" font-family="Arial,sans-serif" font-size="16">Complementary expertise, shared evidence, explicit responsibilities</text>
+<rect x="65" y="125" width="445" height="190" rx="18" fill="#133d4a" stroke="#53c5c3" stroke-width="2"/>
+<circle cx="117" cy="171" r="18" fill="none" stroke="#8cf6e5" stroke-width="3"/><circle cx="111" cy="167" r="4" fill="#8cf6e5"/><circle cx="124" cy="178" r="4" fill="#8cf6e5"/><path d="M111 167L124 178" stroke="#8cf6e5" stroke-width="2"/>
+<text x="151" y="178" fill="#f2ffff" font-family="Arial,sans-serif" font-size="25" font-weight="700">PYRAGOGY</text>
+<text x="102" y="219" fill="#d0eaf0" font-family="Arial,sans-serif" font-size="19">Research methodology · assessment design</text>
+<text x="102" y="249" fill="#d0eaf0" font-family="Arial,sans-serif" font-size="19">Technical demonstrator · reproducibility</text>
+<text x="102" y="287" fill="#8cf6e5" font-family="Arial,sans-serif" font-size="14" font-weight="700">CURRENT CAPABILITY / IN DEVELOPMENT</text>
+<rect x="590" y="125" width="445" height="190" rx="18" fill="#262b4e" stroke="#a7aeed" stroke-width="2" stroke-dasharray="8 5"/>
+<path d="M627 156h42v25h-42z M633 181v10m29-10v10m-35 0h42" stroke="#c8ccff" stroke-width="3" fill="none"/>
+<text x="692" y="178" fill="#f5f6ff" font-family="Arial,sans-serif" font-size="22" font-weight="700">EDUCATIONAL PARTNER</text>
+<text x="627" y="219" fill="#dcdffb" font-family="Arial,sans-serif" font-size="19">Participants · educational setting</text>
+<text x="627" y="249" fill="#dcdffb" font-family="Arial,sans-serif" font-size="19">Ethics · psychometrics · study delivery</text>
+<text x="627" y="287" fill="#c4bcff" font-family="Arial,sans-serif" font-size="14" font-weight="700">POTENTIAL PARTNER — NOT YET SECURED</text>
+<path d="M288 328V393H550V429M813 328V393H550" fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+<path d="M538 418l12 16 12-16" fill="none" stroke="#a2f4ed" stroke-width="4" stroke-linejoin="round"/>
+<rect x="205" y="447" width="690" height="137" rx="19" fill="#163b48" stroke="#8ce8df" stroke-width="2"/>
+<text x="550" y="490" fill="#ffffff" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="700">JOINT SCIENTIFIC STUDY</text>
+<text x="550" y="525" fill="#d7eeef" text-anchor="middle" font-family="Arial,sans-serif" font-size="18">Real-world data · reproducible analysis · transparent findings</text>
+<text x="550" y="555" fill="#d7eeef" text-anchor="middle" font-family="Arial,sans-serif" font-size="17">Including negative or inconclusive results</text>
+<text x="550" y="620" fill="#94acc5" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">Illustrative partnership structure · no agreement, recruitment or approvals are currently in place.</text>
+</svg>
