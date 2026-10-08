@@ -147,6 +147,16 @@ HALA draws research questions from the wider Pyragogy ecosystem. These works pro
 
 These sources require separate claim-level review; HALA does not inherit validity from their publication or archival DOI. See the [prior-work provenance register](research/PRIOR_WORK.md).
 
+## Research without a classroom
+
+HALA currently has **no recruited learners, school access or validated human-learning results**. Our near-term deliverable is a rigorous, classroom-independent **assessment method and synthetic technical demonstrator**. The required human studies will need educational and psychometric collaborators, ethical authorisations and recruitment capacity.
+
+- [Classroom-independent research strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
+- [What we can genuinely contribute to a partner](proposal/BOUNDED_OFFER.md)
+- [Evidence-backed claim register](research/CLAIM_REGISTER.md)
+
+The technical demonstrator can test system integrity. **It cannot demonstrate that any human has learned.**
+
 ## OECD / PISA relevance
 
 An OECD call concerning AI-mediated assessment motivates this work, but **HALA is independent of OECD and PISA**. No institutional partnership, procurement award, endorsement or acceptance is implied. Applicability to international assessment of 15-year-olds would require substantial additional work on curricula, translations, fairness, participant protections and cross-national measurement invariance. Our current feasibility design envisages consenting adults only, contingent on ethical authorisation.
