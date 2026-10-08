@@ -40,12 +40,20 @@
     $("tasklabel").textContent = stage === "T1" ? "LEARNING SESSION · " + response.step + "/" + response.steps : "INDEPENDENT ASSESSMENT";
     $("tasktitle").textContent = response.title;
     $("scenario").textContent = stage === "T1" ? response.lesson : response.scenario;
-    $("question").textContent = stage === "T1" ? "Read this scripted teaching material, then continue." : response.question;
-    $("answerlabel").textContent = stage === "T1" ? "Reflection (optional, not analysed)" : "Your illustrative answer (not scored)";
+    $("question").textContent = stage === "T1"
+      ? (response.arm === "C" && response.step === 1
+          ? "Write a hypothetical claim. The next mock response will challenge it."
+          : "Read this scripted teaching material, then continue.")
+      : response.question;
+    $("answerlabel").textContent = stage === "T1"
+      ? (response.arm === "C" && response.step === 1
+          ? "Your hypothetical claim (used only for deterministic branching)"
+          : "Optional reflection (not scored)")
+      : "Your illustrative answer (not scored)";
     $("answer").value = "";
     $("answer").placeholder = stage === "T1" ? "Optional reflection…" : "Explain your reasoning…";
     $("tasknotice").textContent = response.notice || (stage === "T1"
-      ? "This is a scripted mock, not a connected AI agent."
+      ? "Deterministic scripted mock, not a real AI agent; no learning assessment is performed."
       : "Independent response. This is a demo; no scores are calculated.");
     $("continue").textContent = response.stage === "T4" ? "Complete journey →" : "Continue →";
   };
