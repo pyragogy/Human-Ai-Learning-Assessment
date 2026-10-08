@@ -7,6 +7,7 @@ Start: python prototype/webdemo/server.py
 import json
 import secrets
 import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -26,6 +27,23 @@ SESSIONS = {}
 LOCK = threading.Lock()
 MAX_SESSIONS = 100
 MAX_RESPONSE = 4000
+SESSION_TTL_SECONDS = 30 * 60
+
+
+def purge_expired(now=None):
+    """Call under LOCK; lazy monotonic expiration, no background worker."""
+    if now is None:
+        now = time.monotonic()
+    for token, state in list(SESSIONS.items()):
+        if now - state.get("last_seen", now) >= SESSION_TTL_SECONDS:
+            del SESSIONS[token]
+
+
+def delete_session(token):
+    """Remove an active demo session and its unsaved responses."""
+    with LOCK:
+        purge_expired()
+        return SESSIONS.pop(token, None) is not None
 
 
 def create_session(arm):
@@ -33,9 +51,11 @@ def create_session(arm):
         raise ValueError("Unknown study arm")
     token = secrets.token_urlsafe(24)
     with LOCK:
+        purge_expired()
         if len(SESSIONS) >= MAX_SESSIONS:
-            raise ValueError("Demo session limit reached. Restart the server.")
-        SESSIONS[token] = {"arm": arm, "index": 0, "responses": {}, "teaching_turn": 0}
+            raise ValueError("Demo session limit reached; end old sessions or retry after expiry.")
+        SESSIONS[token] = {"arm": arm, "index": 0, "responses": {}, "teaching_turn": 0,
+                           "last_seen": time.monotonic()}
     return token
 
 
@@ -60,7 +80,7 @@ def snapshot(state):
         if stage == "T4":
             result["notice"] = "Same-session demonstration: this is NOT a real 7–14 day retention measure."
     else:
-        result["notice"] = "Finished — demo responses remain only in server RAM. Restart the server to clear them."
+        result["notice"] = "Finished — demo responses remain only in server RAM until session deletion, expiry or server restart."
         result["submitted_stages"] = sorted(state["responses"])
     return result
 
@@ -125,7 +145,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         route = urlsplit(self.path).path
-        if route not in ("/api/start", "/api/submit"):
+        if route not in ("/api/start", "/api/submit", "/api/end"):
             self.send_json({"error": "Not found"}, 404)
             return
         if self.headers.get("Content-Type", "").split(";")[0].strip().lower() != "application/json":
@@ -146,12 +166,18 @@ class Handler(BaseHTTPRequestHandler):
                 response["token"] = token
             else:
                 token = obj.get("token")
-                if not isinstance(token, str):
+                if not isinstance(token, str) or not token:
                     raise ValueError("Missing token")
-                with LOCK:
-                    if token not in SESSIONS:
-                        raise ValueError("Unknown session")
-                    response = submit(SESSIONS[token], obj.get("stage"), obj.get("answer", ""))
+                if route == "/api/end":
+                    response = {"deleted": delete_session(token)}
+                else:
+                    with LOCK:
+                        purge_expired()
+                        if token not in SESSIONS:
+                            raise ValueError("Unknown or expired session")
+                        state = SESSIONS[token]
+                        response = submit(state, obj.get("stage"), obj.get("answer", ""))
+                        state["last_seen"] = time.monotonic()
             self.send_json(response)
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
             self.send_json({"error": str(exc)}, 400)
