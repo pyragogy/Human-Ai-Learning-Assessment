@@ -186,6 +186,14 @@ HALA includes adversarial fixtures that deliberately challenge the data pipeline
 
 **The repository remains private.** A public release requires explicit owner approval after [security, evidence, licensing and privacy review](governance/PUBLIC_RELEASE_GATE.md). Passing unit tests is not equivalent to ethical clearance, psychometric validation or readiness for human subjects.
 
+## How this research is built: critical human–AI collaboration
+
+The project also documents its own **build → challenge → human adjudication → independent verification** workflow. A separate AI reviewer, **PI**, has been assigned to audit the VPS-hosted demo through [issue #5](https://github.com/pyragogy/human-ai-learning-assessment/issues/5); the owner reports that work has begun. Findings are not assumed before they are submitted and reproduced.
+
+Our rule: **No agent approves its own work.** This workflow is an auditable development practice, **not** evidence of human learning or a substitute for independent human peer review.
+
+[Human–AI Research Collaboration Protocol](governance/HUMAN_AI_RESEARCH_COLLABORATION.md)
+
 ## OECD / PISA relevance
 
 An OECD call concerning AI-mediated assessment motivates this work, but **HALA is independent of OECD and PISA**. No institutional partnership, procurement award, endorsement or acceptance is implied. Applicability to international assessment of 15-year-olds would require substantial additional work on curricula, translations, fairness, participant protections and cross-national measurement invariance. Our current feasibility design envisages consenting adults only, contingent on ethical authorisation.
