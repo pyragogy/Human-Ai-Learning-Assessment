@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>HALA · Research Demonstrator v0.2</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="top"><a class="brand" href="https://pyragogy.org" target="_blank" rel="noopener noreferrer"><span class="brand-mark">◇</span> PYRAGOGY <span class="slash">/</span> RESEARCH</a><span class="version">HALA v0.2 · SCRIPTED DEMO</span></header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="pulse"></span> RESEARCH INSTRUMENT · SYNTHETIC ONLY</div>
+        <h1>What remains<br>when the <em>AI is gone?</em></h1>
+        <p class="lede">Explore a five-stage research journey designed to distinguish AI-assisted performance from independently demonstrated learning.</p>
+        <div class="meta"><span>THREE STUDY ARMS</span><span>FIVE STAGES</span><span>ZERO REAL LEARNERS</span></div>
+      </section>
+      <section class="study" aria-labelledby="study-title">
+        <div class="section-head"><div><div class="overline">01 / THE EXPERIMENT</div><h2 id="study-title">Research journey</h2></div><span id="status" class="status">NOT STARTED</span></div>
+        <nav aria-label="Study progression" class="stages" id="stages"><div>T0<span>Baseline</span></div><div>T1<span>Learning</span></div><div>T2<span>Post-test</span></div><div>T3<span>Transfer</span></div><div>T4<span>Retention*</span></div></nav>
+        <div id="intro">
+          <p class="instruction">Choose an experimental condition. The scenario and responses in this demonstration are illustrative; no real AI model is connected and no student outcomes are measured.</p>
+          <div class="arm-grid" id="arms">
+            <button type="button" class="arm selected" data-arm="A"><span class="arm-id">A</span><strong>Non-AI comparator</strong><small>Structured self-study using fixed materials.</small></button>
+            <button type="button" class="arm" data-arm="B"><span class="arm-id">B</span><strong>Explanatory tutor</strong><small>Scripted model of supportive instruction.</small></button>
+            <button type="button" class="arm" data-arm="C"><span class="arm-id">C</span><strong>Critical collaborator</strong><small>Scripted questioning and verification.</small></button>
+          </div>
+          <button class="primary" type="button" id="start">Start synthetic journey <span aria-hidden="true">→</span></button>
+        </div>
+        <div id="exercise" class="hidden" aria-live="polite">
+          <div class="tasklabel" id="tasklabel"></div>
+          <h3 id="tasktitle"></h3>
+          <p class="scenario" id="scenario"></p>
+          <p id="question"></p>
+          <label for="answer" id="answerlabel">Your illustrative response (not scored)</label>
+          <textarea id="answer" maxlength="4000" rows="5" placeholder="Explain your reasoning…"></textarea>
+          <p class="notice" id="tasknotice"></p>
+          <button type="button" class="primary" id="continue">Continue <span aria-hidden="true">→</span></button>
+          <button type="button" class="secondary" id="restart">Restart demo</button>
+        </div>
+        <div id="complete" class="hidden" aria-live="polite">
+          <div class="done-mark">✓</div><h3>Journey completed.</h3>
+          <p>You have explored the five-stage flow. This run is a methodological illustration, <strong>not evidence of learning</strong>. T4 took place in the same session and does not measure real retention.</p>
+          <p class="instruction">Answers were not graded and are held only in volatile server memory until restart. Do not use this tool to collect participant data.</p>
+          <button type="button" class="primary" id="again">Explore another arm <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="error hidden" id="error" role="alert"></p>
+      </section>
+      <section class="method">
+        <div class="overline">02 / SCIENTIFIC BOUNDARIES</div><h2>What this proves. What it doesn't.</h2>
+        <div class="two-cols"><div><h3>Technical demonstration</h3><p>Local session sequencing, isolated assessment-stage delivery, mock teaching modes, and automated integrity checks.</p></div><div><h3>Not an efficacy claim</h3><p>There are no real learners, no validated test scores, no blinded raters, and no causal findings. Secure assessment isolation would require a separate protected service.</p></div></div>
+        <div class="quote">“Measure learning. Not just assisted performance.”</div>
+        <p class="footnote">* T4 retention is displayed immediately to demonstrate the sequence; genuine retention requires a later appointment after 7–14 days. The current environment is for development only.</p>
+      </section>
+    </main>
+    <footer><span>HALA · Human–AI Learning Assessment</span><span>Research by <a href="https://pyragogy.org" target="_blank" rel="noopener noreferrer">Pyragogy</a> · <a href="https://github.com/pyragogy/human-ai-learning-assessment" target="_blank" rel="noopener noreferrer">Repository</a></span></footer>
+  </div>
+</body>
+</html>
