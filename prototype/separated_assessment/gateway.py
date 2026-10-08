@@ -29,6 +29,10 @@ MAX_RESPONSE = 4000
 def worker(command, socket_path=None):
     """Talk to the assessor through a local Unix socket, never from tutor context."""
     destination = socket_path or ASSESSOR_SOCKET
+    secret = os.environ.get("HALA_ASSESSOR_SECRET")
+    if not secret or len(secret) < 32:
+        raise ValueError("HALA_ASSESSOR_SECRET must be configured")
+    command = {**command, "auth": secret}
     with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
         sock.settimeout(3)
         sock.connect(destination)
