@@ -195,7 +195,10 @@ class Handler(BaseHTTPRequestHandler):
                     if not isinstance(token, str):
                         raise ValueError("Missing session token")
                     if path == "/api/end":
-                        return self.respond({"deleted": SESSIONS.pop(token, None) is not None})
+                        state = SESSIONS.pop(token, None)
+                        if state is not None:
+                            worker({"op": "end", "session": state["worker_session"]})
+                        return self.respond({"deleted": state is not None})
                     if token not in SESSIONS:
                         raise ValueError("Unknown or expired session")
                     return self.respond(advance(SESSIONS[token], body.get("stage"), body.get("answer", "")))
