@@ -6,10 +6,13 @@
 
 | Candidate for future evaluation | Deployment option | What must be checked before any evaluative pilot |
 |---|---|---|
+| **Mistral Large 4** (`mistral-large-4`, announced 6 Oct 2026, public preview via Mistral Studio) | EU-hosted API; open-weights release expected later (not yet available at submission) | Usable API snapshot and terms, open-weights availability/date, EU data residency guarantees, no-training terms, tariffs, region, multilingual performance, safety, and independently verified compliance (nationality ≠ legal guarantee) |
 | OpenAI GPT-4o, snapshot `gpt-4o-2024-08-06` | Hosted API | Continued availability of snapshot, provider retention/training terms, region, exact tariffs, language performance and safety |
 | Anthropic Claude API model (exact version not yet selected) | Hosted API | Verified model ID and commercial availability, no-training and retention terms, tariff, stability and language performance |
 | DeepSeek-V3 family | Self-hosted | Specific weights and licence, GPU requirements, jurisdiction, measured throughput and full total cost |
 | Meta Llama 4 Scout | Self-hosted | Exact weights/license, GPU requirements, language/equity tests and full total cost |
+
+**European-first model strategy (owner decision, October 2026):** the proposal prioritises EU-hosted and independently deployable AI models, with Mistral Large 4 as a concrete EU candidate for post-selection evaluation. This is a design principle (data control, reproducibility, provider independence), not a preselection: OpenAI, Anthropic and open-weight alternatives remain under consideration, and the final choice is a joint research-design decision made with the OECD against predefined criteria.
 
 **Nothing in this table asserts current contractual rights, confirmed pricing, model availability or suitability.** Vendor selection may change as products evolve.
 
