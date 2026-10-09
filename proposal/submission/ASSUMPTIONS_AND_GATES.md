@@ -5,16 +5,16 @@
 All models listed below are current as of October 2026. Terms verified against
 public provider documentation; **no model is selected or deployed**.
 
-| Model | Provider | Type | Est. per-session cost | Data-training terms | Status |
+| Model | Provider | Type | Published pricing (verified 2026-10-11) | Data-training terms | Status |
 |-------|----------|------|-----------------------|---------------------|--------|
-| GPT-4o | OpenAI | Hosted API | Token-based: ~$0.15/M input + ~$0.60/M output | API opt-out available; must verify no training on assessment data; enterprise terms may differ |
-| Anthropic API flagship | Anthropic | Hosted API | Token-based (published per-M token rates) | Contractual prohibition on training from API submissions; distinction between default policy, retention opt-out, and explicit feedback must be verified |
-| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume |
-| Llama 4 Scout | Meta | Self-hosted (community licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume |
+| GPT-4o (`gpt-4o-2024-08-06`) | OpenAI | Hosted API | $2.50/M input, $10/M output — https://platform.openai.com/docs/pricing | API data not trained on by default; org-level opt-out; enterprise terms may differ (verify) | Candidate, not contracted |
+| Claude Opus 5.5 | Anthropic | Hosted API | $4/M input, $20/M output, standard tier — https://docs.anthropic.com/en/docs/about-claude/pricing | Contractual prohibition on training from API submissions; distinction between default policy, retention opt-out, and explicit feedback must be verified | Candidate, not contracted |
+| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume | Documented alternative |
+| Llama 4 Scout | Meta | Self-hosted (community licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume | Documented alternative |
 
 **Previous draft errors corrected:**
-- Claude 3.5 Sonnet was **retired from API in 2025**; replaced with generic "current Anthropic API flagship" (exact ID to be confirmed at deployment)
-- Claude Opus 4 also **retired from ordinary API** per latest documentation
+- Claude 3.5 Sonnet was **retired from API in 2025**
+- Claude Opus 4 and the generic "current Anthropic API flagship" were replaced with the **specific, currently-available model ID Claude Opus 5.5** (verified against Anthropic docs pricing, 2026-10-11; standard tier $4/M in, $20/M out)
 - "Llama 4 70B" does not correspond to Meta's documented Llama 4 models; replaced with Llama 4 Scout
 - Per-session pricing removed; replaced with token-based methodology + per-M rates
 - Self-hosting **not assumed cheaper** — infrastructure cost may exceed API at low volume
@@ -41,12 +41,13 @@ order-of-magnitude estimates:
 | Output tokens per call | ~200 | ~800 | Model response |
 | Total tokens/session | ~20k | ~240k | Product of above |
 
-**Hosted API cost estimate (indicative):** At ~$0.15/M input + ~$0.60/M output
-(Anthropic current rates), a session ranges from roughly $0.01 to $0.15.
-**Self-hosted:** GPU infrastructure at ~$2-3/hr; at low volume (<1000 sessions),
-self-hosting is likely more expensive per session than API.
-**Precise budget requires** prompt structure, max tokens, retry policy and
-infrastructure choices to be determined during development.
+**Hosted API cost estimate (indicative, from token-based methodology in the PDF):**
+At 50 turns, ~800 input + ~300 output tokens/turn, <5% retries, before caching:
+- GPT-4o: ~$0.03--$0.09 per session
+- Claude Opus 5.5: ~$0.05--$0.15 per session
+These are order-of-magnitude illustrations, not fixed prices; final cost depends on
+prompt structure, max tokens, retry policy and infrastructure choices to be
+determined during development.
 
 ## Data flow and safeguarding
 

@@ -79,18 +79,30 @@ valid proficiency measures. This is the central falsification criterion of
 the programme, not a post-hoc qualification.
 
 \medskip
-\noindent\textbf{Illustrative scenario} (for development, not a pre-validated
-item). A student receives two sources on screen time and adolescent sleep:
-a correlational study reporting a negative association and an experimental
+\noindent\textbf{Illustrative scenario} (hypothetical synthetic stimuli, for
+illustration only---no real empirical studies are cited). A student receives
+two \emph{synthetic} source cards on screen time and adolescent sleep: a
+correlational study reporting a negative association and an experimental
 study showing no short-term effect. The AI agent proposes an interpretation
 (\textquoteleft Screen time may not affect sleep directly; the correlation could
 reflect other factors like evening use\textquoteright). The student can accept,
 challenge, request additional evidence, or formulate an alternative explanation.
-The protocol records which information is introduced by the AI, which by the
-student, and whether the assessment changes when an unaided reasoning probe
-is inserted. Two AI roles---explanatory assistant (bounded Socratic prompts)
-and critical collaborator (counterexample and verification requests)---enable
-systematic comparison across interaction conditions.
+Two AI roles---explanatory assistant (bounded Socratic prompts) and critical
+collaborator (counterexample and verification requests)---enable systematic
+comparison across interaction conditions.
+
+\smallskip
+\noindent\emph{Worked observable (for the rater manual):} AI turn:\enspace
+\textquoteleft Could the correlation reflect a third factor?\textquoteright\enspace Student turn:\enspace
+\textquoteleft Maybe kids who use screens at night also sleep less for other reasons\textquoteright.
+Rater tags \texttt{COMPETING\_CAUSE}: the student proposes a rival explanation
+without asserting it as fact. Failure case: student replies \textquoteleft Yeah,
+maybe\textquoteright after a similar AI prompt; the rater records
+\texttt{undetermined}---no code fires. The system never marks an utterance
+\textquoteleft correct\textquoteright or \textquoteleft incorrect\textquoteright: it records only observables, with
+\texttt{learner\_origin\ =\ indeterminate}. Unaided probes interspersed during
+the task are a design proposal requiring testing for reactivity, order, and
+fatigue---they are not claimed to be causal AI-contribution estimators.\par
 
 \medskip
 \noindent\textbf{Measurement development sequence.} Observational codes will
@@ -144,20 +156,23 @@ a scoring system.
 \end{itemize}
 
 \noindent\textbf{None of these external inputs or partnerships is secured
-today.} The project describes a bounded co-design programme (estimated
-4--6 months for the deliverables above), conditional on collaboration
-being established. Broader deployment requires partner agreements and
-financing; the OECD call does not remunerate the selected partner.
+today.} The project describes a bounded co-design programme, provisionally
+estimated at 4--6 months for the deliverables above and contingent on
+collaboration being established and resourcing confirmed; it is not a
+committed delivery deadline or SLA. Broader deployment requires partner
+agreements and financing; the OECD call does not remunerate the selected
+partner.
 
 \section{Intellectual property}
 
 \noindent\textbf{Background:} task concepts, source code, and documentation
 developed independently before this collaboration. The repository is private
-with no explicit licence; a permissive open-source licence would be applied
-before joint work, subject to agreement on scope and terms. \textbf{Foreground:}
-co-developed specifications and designs. A bounded research licence to the
-OECD would be negotiated in writing before work begins. Third-party rights
-will be inventoried in the submission.
+with no explicit licence; any change to its licensing (for example a
+permissive open-source licence) is the owner's decision and remains
+conditional on agreement on scope and terms before joint work begins.
+\textbf{Foreground:} co-developed specifications and designs. A bounded
+research licence to the OECD would be negotiated in writing before work begins.
+Third-party rights will be inventoried in the submission.
 
 \section{Privacy, security, and feasibility}
 
@@ -173,15 +188,28 @@ GDPR/DPA (not automatic parental consent under Art.~8 alone---roles of
 controller and processor must be established with the partner institution),
 and contractual prohibition on model-provider training from assessment data.
 
-\noindent\textbf{Candidate models.} No model is selected or deployed.
-Two candidates identified with current verified terms: GPT-4o (OpenAI
-API, opt-out for training data) and the current Anthropic API flagship
-(contractual prohibition on training from submissions). Self-hosted
-alternatives (DeepSeek-V3, Llama~4~Scout) are documented but not
-assumed cheaper---at low volume, infrastructure costs may exceed
-API pricing. A precise model choice and token-based cost projection
-require prompt design decisions to be made during the development phase.
+\noindent\textbf{Candidate models.} No model is selected, contracted, or
+deployed. Two candidates identified with terms verified against provider
+pricing pages on 2026-10-11 (availability may vary by region; re-verified
+before any deployment): (1) \textbf{GPT-4o}, released model ID
+\texttt{gpt-4o-2024-08-06} (OpenAI API; \$2.50/M input, \$10/M output;
+API data are not trained on by default, org-level opt-out detailed at
+\url{https://platform.openai.com/docs/pricing}); (2) \textbf{Claude Opus 5.5}
+(Anthropic API; \$4/M input, \$20/M output, standard tier; contractual
+prohibition on training from submissions at
+\url{https://docs.anthropic.com/en/docs/about-claude/pricing}). Self-hosted
+alternatives (DeepSeek-V3, Llama~4~Scout) are documented but not assumed
+cheaper---at low volume, infrastructure costs may exceed API pricing.
 All models require adversarial prompt-leakage testing before assessment use.
+
+\smallskip
+\noindent\emph{Cost methodology (indicative, hypothetical).} Configure by token
+budget, not by session: turns (\textless 60), input tokens per turn (~800), output
+tokens per turn (~300), retries (\textless 5\%)---then multiply by the provider's price
+per million tokens. At 50 turns this yields roughly \$0.03--\$0.09 per session
+for GPT-4o and \$0.05--\$0.15 for Claude Opus 5.5, before caching or batch
+discounts. Final cost depends on prompt structure fixed during development;
+no fixed per-session price is claimed.\par
 
 \medskip
 {\color{ruleblue}\rule{\textwidth}{0.7pt}}
