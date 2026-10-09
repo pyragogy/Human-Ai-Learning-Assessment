@@ -1,8 +1,11 @@
-# HALA Research Demonstrator v0.2
+# HALA legacy single-process research demonstrator (port 8765)
 
-**Status:** local interactive software prototype · scripted content with deterministic C-arm branching · simulated study flow · **not approved for human-subjects research**.
+**Status:** legacy local interactive software prototype · scripted content with deterministic C-arm branching · simulated study flow · **not approved for human-subjects research**.
 
-## Start in under one minute
+> [!WARNING]
+> This is the older single-process demo; **do not use it to assess HALA's process-separated architecture**. Run `python -m prototype.separated_assessment.launch_local` instead for the synthetic two-process worker + gateway (port 8766). Neither is secure for real research participants.
+
+## Start the legacy demo
 
 Requires Python 3.10+ (standard library, no dependencies or API keys).
 
@@ -41,7 +44,7 @@ python -m compileall -q prototype
 python prototype/journey.py > synthetic_journey.json
 ```
 
-CI executes these tests. The term “independent” describes the intended *measurement condition*, not an independently validated learning assessment.
+Run these tests locally/on your own VPS. GitHub Actions is disabled to avoid hosted runner usage. The term “independent” describes the intended *measurement condition*, not an independently validated learning assessment.
 
 ## Architecture (development only)
 
@@ -69,4 +72,4 @@ A genuinely independent assessment service, consent-gated storage, versioned int
 
 ## PI review and v0.3 architecture
 
-The [PI VPS audit](../../research/reviews/PI_VPS_AUDIT_TRIAGE_2026-10-08.md) identified session-lifetime and interactivity weaknesses. The follow-up implements a local session TTL, disposal endpoint and deterministic adaptive mock. The proposed **separate evaluator service** is designed, **not implemented**: [RFC-003](../../research/architecture/RFC_003_SEALED_ASSESSMENT.md). A single process containing teaching and assessment remains unsuitable for real evaluation secrecy.
+The [PI VPS audit](../../research/reviews/PI_VPS_AUDIT_TRIAGE_2026-10-08.md) identified session-lifetime and interactivity weaknesses. The follow-up implements a local session TTL, disposal endpoint and deterministic adaptive mock. A separate-process Unix socket assessment worker and gateway are now **implemented as a synthetic fixture**: [integration guide](../separated_assessment/INTEGRATION.md) and [RFC-003](../../research/architecture/RFC_003_SEALED_ASSESSMENT.md). This **legacy** server still runs the tutor and item bank in the same process and is unsuitable for secrecy-sensitive evaluation. The newer gateway also lacks independently verified distinct-OS-user security.
