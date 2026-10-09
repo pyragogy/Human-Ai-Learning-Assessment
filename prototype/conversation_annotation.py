@@ -24,8 +24,9 @@ def _tokens(text):
 def annotate(transcript):
     """Return descriptive tags only. Input must alternate AI and learner turns.
 
-    The assistance flag means only that the preceding AI turn may have
-    scaffolded the behavior. It does not imply low ability or cheating.
+    Known-pattern matches flag only listed prompts; a negative result never
+    means scaffolding was absent. Neither keyword codes nor token overlap
+    establish learner competence or authorship.
     """
     if not isinstance(transcript, list):
         raise ValueError("Expected transcript list")
@@ -43,8 +44,10 @@ def annotate(transcript):
         if len(message) > 4000:
             raise ValueError("Turn too long")
         if speaker == "learner":
-            codes = [code for code, pattern in PATTERNS.items()
-                     if re.search(pattern, message, flags=re.I)]
+            # Minimum length is a syntactic guard, not evidence of meaning.
+            codes = ([code for code, pattern in PATTERNS.items()
+                      if re.search(pattern, message, flags=re.I)]
+                     if len(TOKEN.findall(message.lower())) >= 3 else [])
             antecedent = previous if previous_speaker == "ai" else ""
             overlap = _tokens(message) & _tokens(antecedent)
             ratio = len(overlap) / max(1, len(_tokens(message)))
@@ -52,9 +55,11 @@ def annotate(transcript):
             rows.append({
                 "turn_number": index + 1,
                 "observed_codes": codes,
-                "elicitation": "potential_ai_scaffold" if prompted else
-                               ("preceded_by_ai" if antecedent else "no_ai_antecedent"),
-                "lexical_echo_flag": ratio >= 0.5 and len(overlap) >= 2,
+                "known_scaffold_pattern": prompted,
+                "preceded_by_ai": bool(antecedent),
+                "lexical_overlap_ratio": round(ratio, 3),
+                "lexical_echo_flag": (ratio >= 0.5 and len(overlap) >= 2
+                                       and len(_tokens(message)) <= len(_tokens(antecedent))),
                 "learner_origin": "indeterminate",
                 "proficiency_score": None,
             })
