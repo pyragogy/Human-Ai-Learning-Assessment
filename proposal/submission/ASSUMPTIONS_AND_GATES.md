@@ -1,120 +1,99 @@
-# ASSUMPTIONS AND GATES — HALA PISA RDI 2026 Submission
+# HALA submission — assumptions and gates
+Date: 2026-10-09. Supporting working document, not an authorised contract or pilot.
+The two-page LaTeX source is the current proposal. No model/provider is selected.
 
-## Model-selection gate — explicitly deferred until collaboration
+## Candidate models and current-source checks
+Only two specific candidates are needed to make the proposal concrete; neither is a purchasing commitment. Other models remain eligible after an equivalent evidence review.
 
-**Owner decision, 9 October 2026:** no AI model, provider, hosted service or GPU deployment has been selected. The final model choice is a **prospective, joint research-design decision**, not an implementation commitment hidden in the proposal.
+| Candidate | Verified public status on 2026-10-09 | Training / retention feasibility | Unresolved acceptance gate |
+|---|---|---|---|
+| Mistral Large 4, API alias `mistral-large-4`, documentation v26.10 | Public preview announced 2026-10-06. Announcement says weights forthcoming later in October; no currently usable self-hosted package or immutable snapshot is asserted. | API training opt-out and ZDR are separate settings. Documentation permits requesting ZDR for supported stateless paid API calls; approval is discretionary. Feedback/sharing routes need exclusion. | Verify preview-specific rights, approved API endpoint, opt-out, DPA, hosting/transfers, subprocessors and deletion. A mutable alias alone fails a reproducibility gate: obtain an acceptable version guarantee or use another model. |
+| OpenAI GPT-4o, `gpt-4o-2024-08-06` | Listed snapshot in current official model documentation; account access not tested. | API data are not used for training by default unless sharing is enabled. Abuse monitoring can retain content; ZDR is an eligibility/configuration gate, not an automatic property of the model. | Recheck availability, account access, regional processing, endpoint retention, training/sharing configuration and contractual protections before pilot. |
 
-| Candidate for future evaluation | Deployment option | What must be checked before any evaluative pilot |
-|---|---|---|
-| OpenAI GPT-4o, snapshot `gpt-4o-2024-08-06` | Hosted API | Continued availability of snapshot, provider retention/training terms, region, exact tariffs, language performance and safety |
-| Anthropic Claude API model (exact version not yet selected) | Hosted API | Verified model ID and commercial availability, no-training and retention terms, tariff, stability and language performance |
-| DeepSeek-V3 family | Self-hosted | Specific weights and licence, GPU requirements, jurisdiction, measured throughput and full total cost |
-| Meta Llama 4 Scout | Self-hosted | Exact weights/license, GPU requirements, language/equity tests and full total cost |
+EU hosting is a candidate-selection preference, not a GDPR certificate. No provider contract, commercial account upgrade, live API call or paid infrastructure is authorised by this package. Self-hosting remains an option only after an exact weight revision, rights, realistic GPU capacity, operations and egress controls are verified.
 
-**Nothing in this table asserts current contractual rights, confirmed pricing, model availability or suitability.** Vendor selection may change as products evolve.
+### Dated indicative inference tariffs (not session estimates)
+USD per million text tokens; read on 2026-10-09, recheck before any budget decision. No workload, free tier, cache hit rate, VAT, region surcharge or discount duration is assumed.
 
-### Pre-registration model stability
+| Candidate | Uncached input | Cached input | Output | Source / caution |
+|---|---:|---:|---:|---|
+| Mistral Large 4 | $1.36 | $0.14 | $4.18 | Model card's displayed undiscounted prices; page also shows temporary launch prices $0.68 / $0.07 / $2.09. Do not budget recurring delivery from a launch promotion. |
+| GPT-4o | $2.50 | $1.25 | $10.00 | Current model card, standard text pricing; exact account, endpoint and snapshot tariff must be reconfirmed. |
 
-After exploratory benchmarking and **before data collection**, record immutable model identifiers/snapshots where possible, prompt and decoding version, tools/retrieval corpus, service terms, region, retention controls and cost basis. Use the **same locked experimental exposure** within each pre-specified arm/phase. Forced provider updates trigger a documented interruption or new phase and sensitivity review, not a silent swap.
-
-### Cost model (no unsupported prices)
-
-Use measured token volumes and a dated price sheet:
+These are published indicative tariffs, not fabricated performance measurements or an offer to provide services. No per-session cost is defensible until the task workload is measured.
 
 ```text
-C_session = (N_input * P_input + N_output * P_output) / 1_000_000
-            + C_compute + C_storage + C_network + C_oversight
+C_inference = (N_uncached * P_uncached
+             + N_cached * P_cached + N_output * P_output) / 1_000_000
+C_programme = C_inference + C_hosting + C_storage_network
+            + C_rater_adjudication + C_translation_adaptation
+            + C_psychometrics + C_security_privacy + C_operations
 ```
 
-`N_input` and `N_output` must include every model call, full prior context, retries, auxiliary checking and tool response tokens. `P_input`/`P_output` are prices per million tokens from the chosen provider and tier, not assumed constants. For self-hosting model the all-in compute/operations cost and utilisation instead of invented per-token economics. Record peak concurrency and geography. **No per-session numerical cost is supportable yet** because task design, model/version, provider and prompts have not been locked.
+Count full conversation history, retries and auxiliary calls. Cache/reasoning/tool charges and region/tier differences must follow the chosen service's actual billing rules. For self-hosting, replace hosted inference charges with all-in compute and utilisation costs; do not double count the same infrastructure. Compare latency, peak concurrency, failure rates and language coverage using a versioned synthetic workload. Pricing is only one factor: no valid scaling claim follows from cheap tokens.
 
-### Pre-pilot acceptance criteria
+### Version and provider-dependence gate
+Before each evaluative phase, freeze model revision, prompts, decoding, tools/retrieval, annotation manual and analysis plan. Preserve actual outputs, since a version/seed does not ensure deterministic API replay. Export versioned traces and metadata in provider-independent form. Withdrawal/forced updates pause assessment and trigger a new comparability review; never silently mix versions or replace a failed provider mid-assessment.
 
-- Prompt leakage, instruction override and age-appropriate safety checks;
-- Multilingual accessibility, cross-country comparability and low-resource language failure analysis;
-- Availability/latency under realistic concurrent load and a documented failure fallback;
-- Written exclusion of participant data from model training;
-- Verified provider-specific conditions for retention, transfers, logging, subprocessors and deletion;
-- Pilot approval from actual educational/psychometric and privacy partners, none secured.
+## Construct, task and annotation gates
+The call-specific study asks about proficiency evidence during interaction. Unaided proficiency and AI-supported collaborative proficiency are separate candidate constructs. The original T2 learning estimand in `research/PROTOCOL_V1.md` is unchanged.
 
-## Data flow and safeguarding
+Proposed design: agent role × assistance level × task, adapted language versions, unaided anchors with order/reactivity checks, calibrated raters and student-level clustering. Agreement metrics, variance-component models, differential functioning, sample/precision rationale and construct-specific retain/revise/reject thresholds must be justified and preregistered before pilot collection. No universal agent-variance threshold is adopted.
 
-```
-Student browser → Gateway (port 8766) → Worker (Unix socket)
-                    ↓
-               HMAC-authenticated IPC
-                    ↓
-          No external network from worker (synthetic-only)
-```
+The worked PDF rubric and proposed contextual fields are manual specifications, not claims of implemented scoring:
+- `behaviour_code=COMPETING_CAUSE`: plausible rival explanation for the same pattern, without unwarranted certainty;
+- `support_context=AI-suggested`: keep actual preceding AI turn and support level;
+- `code_status=insufficient_evidence`: short assent supplies too little evidence for that code; it is not an ability zero;
+- `learner_origin=indeterminate`: cognitive origin is unknown even when behavioural evidence is sufficient.
+Lexical echo is descriptive possible uptake, never proof of copying, originality or absence of support. The existing regex fixture is heuristic and emits no proficiency score.
 
-**Current limitations (not deployment-ready):**
-- **No OS-level user isolation:** all processes run as `coder` user; gateway
-  and worker share the same OS account. Full isolation requires separate
-  system users with Unix-socket permissions (documented in
-  `prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md` but not deployed).
-- **No security certification or penetration testing** conducted.
+## Data flow, age-15 safeguarding and security
+Current software is synthetic only, with no live LLM integration or participant access. Two-process separation is not deployed OS-identity isolation or security certification. Earlier agent reports of tests are software evidence, not independent security/psychometric approval.
 
-**Required for any student-facing pilot:**
-1. Formal Data Protection Impact Assessment
-2. Pseudonymisation at point of collection (session hash, not student ID)
-3. Appropriate legal basis under GDPR/DPA — **not automatically parental
-   consent under Art. 8 alone**; requires determination of controller vs.
-   processor roles, risk assessment, and actual pilot conditions with the
-   partner institution
-4. Data minimisation: only task responses, timestamps, dialogue traces
-5. Retention: raw data deleted after 12 months; anonymised aggregate scores
-   retained for reproducibility
-6. **No collected student data available to model provider for training** —
-   verified through contractual terms for hosted API; architecturally
-   enforced for self-hosted (data never leave host)
-7. Assessment items and scoring logic separated from AI tutor context
-   (audited: 4 audits, 66 tests passing)
+| Stage of proposed pilot flow | Minimum controls before use |
+|---|---|
+| Partner-held identity/permissions register | Separate identity keys, institution-controlled access, documented lawful basis, ethics determination, age-appropriate assent and guardian permissions where applicable. |
+| Browser to approved gateway | Random session identifier (not a claim of anonymisation), encrypted transport, data minimisation, prohibited personal disclosures and safe interaction policy. |
+| Gateway to approved model endpoint / self-hosted service | Only approved task context, pseudonymised dialogue and required synthetic materials; no identity keys or withheld unaided items. Review free-text reidentification risk. Contractual training exclusion, sharing/feedback disabled, approved retention and transfers. |
+| Protected trace store and human ratings | Encryption, access roles, separate identity linkage, versioned provenance, appropriate rater access, audit logs and incident-response responsibility. |
+| Research exports and deletion | Raw traces stay out of Git. Retention schedule and withdrawal/deletion procedures agreed before collection and tested across logs, backups and processors. Release only disclosure-reviewed anonymised aggregates or synthetic fixtures. |
 
-## IP and licensing
+Pseudonymisation is not anonymisation. No invented 12-month retention commitment remains. Complete a DPIA and agree controller/processor roles, applicable GDPR/partner rules, hosting jurisdiction, subprocessors and cross-border safeguards before a student pilot. No training/fine-tuning on collected student data, including through feedback or optional data sharing. Self-hosting alone does not enforce egress or remove administrator/logging risks. Isolate withheld anchor items and scoring service from AI context; test prompt injection, leakage, unsafe content, timeouts and fail-closed behaviour before participants.
 
-| Category | Scope | Status |
-|----------|-------|--------|
-| Background | Existing task concepts, source code, documentation | Private repository, **no explicit licence defined**. Any licensing change requires an explicit decision by the project owner, followed by negotiation of scope and terms with the OECD. |
-| Foreground | Co-developed specifications, rubrics, protocol designs | To be negotiated; propose bounded research licence to OECD |
-| Third-party | Model provider terms, dataset licences, library dependencies | Inventory to be verified and disclosed before signing a collaboration agreement; disclose known third-party dependencies in proposal |
+## IP and licensing gates
+- Background: existing independently developed task concepts, code and documentation. Private repository has no explicit repository licence.
+- Foreground: co-developed specifications, rubrics and designs. Ownership, research/evaluation rights, reuse, publication and confidentiality require written agreement before joint work.
+- Third-party: inventory libraries, model/API or weight licences, synthetic-card provenance and generated-content rights. Access to an API does not grant unrestricted sublicensing rights.
+No current OECD licence, permissive repository licence, institutional affiliation or provider agreement is asserted or granted.
 
-**Correction from previous draft:** The repository does not currently carry an
-MIT or Apache 2.0 licence. We cannot offer OECD rights not yet defined. A
-licence decision is a prerequisite for any joint work, not an existing asset.
+## Three bounded work packages and dependencies
+No FTE, fixed schedule, recurring meetings, paid review or service availability is promised. Durations and resource allocation remain joint scoping decisions.
 
-## Delivery milestones
+| Work package | HALA proposed output | Required OECD/partner input | Acceptance evidence |
+|---|---|---|---|
+| P1: construct and estimand agreement | Blueprints, construct map, proposed inference/falsifier rules | Competencies, delivery constraints, psychometric guidance | Agreed constructs, responsibilities and provisional analysis plan |
+| P2: tasks, prompts and observation instrument | Three task specs, prompt registry, manual, synthetic/adversarial traces | Curriculum/accessibility, translation and safeguarding requirements | Versioned package with explicit negative cases and reproducible checks |
+| P3: instrument review and pilot readiness | Rater-calibration/reliability plan; data-flow/threat model, provider comparison, full-cost worksheet and dependency register | Actual assessment/language specialists, educational partner, ethics, privacy, recruitment and resources | Justified criteria/preregistration before collection, approved safeguards/IP/roles and feasible budget; otherwise no pilot or empirical reliability report |
 
-Approximately 0.5 FTE research engineer + 0.25 FTE assessment designer,
-assuming collaboration is established.
+Cooperation is unpaid. No fieldwork funding, adolescent cohort, reviewer or institution is secured. Synthetic authoring and pilot readiness are different deliverables; failure to secure partners does not become a fictitious deployment commitment.
 
-| Milestone | Estimated duration | Dependency |
-|-----------|-------------------|------------|
-| Task specification × 3 with prompt registries | 6–8 weeks | OECD construct guidance |
-| Process-coding manual (draft) | 4–6 weeks | Task specs complete |
-| Synthetic trace pipeline + adversarial tests | 4–6 weeks | Coding manual draft |
-| Deployment design + DPIA framework | 3–4 weeks | Model + infrastructure selected |
-| Independent technical review gate | — | OECD reviewer + external expert |
-| Psychometric review gate | — | Psychometric collaborator (not secured) |
+## External dispatch gates (separate from manuscript quality)
+1. OECD clarification of independent natural-person eligibility.
+2. Confirm operative call/deadline and acceptable route despite the supplied PDF's 2024 date. The public OECD listing was rechecked on 2026-10-09 and shows 26 October 2026, 23:59 Paris. This does not itself resolve the PDF discrepancy.
+3. Owner confirms proposer identity/contact, bounded capacity, legal/IP posture and final outgoing PDF; no extra affiliation is assumed.
+4. Any external email, agreement, financing or filing requires the owner's explicit authorisation. This work sends none, merges nothing and leaves issue #14 open.
+No fixed provider choice is needed to describe specific candidates; contractual controls and final selection remain pre-pilot gates, not invented current capabilities.
 
-## Explicit partnership dependencies
-
-- **OECD confirmation**: eligibility of independent researcher, 2026 deadline,
-  submission format, IP requirements
-- **Educational partner**: school access, ethics approval, pilot recruitment
-  (not secured; no commitment)
-- **Psychometric collaborator**: scoring validation, equating, DIF analysis
-  (not secured; no commitment)
-- **GPU infrastructure**: only if self-hosting is selected; no budget or supplier assumed
-- **Licence decision**: scope and terms are an explicit owner/partner negotiation, not a promised permissive release
-
-## Open questions requiring owner decision
-
-1. Authorize eligibility inquiry email to EDU.PisaInnovation@oecd.org?
-2. Accept the 2026 date as authoritative and proceed?
-3. Preferred submission scope: full proposal vs. exploratory methods
-   contribution (Track A in `BOUNDED_OFFER.md`)?
-4. Authorize merging of PR branch to main vs. keep as branch?
-5. Any institutional affiliation to state (none currently)?
-6. Budget for GPU infrastructure if self-hosted path is chosen?
-7. Licence decision for the repository before collaboration?
-8. Verify available snapshots, terms, language performance and real costs during post-acceptance model selection.
+## Public sources checked on 2026-10-09
+- OECD listing: https://www.oecd.org/en/about/calls-for-tenders.html
+- Mistral announcement: https://mistral.ai/it/news/mistral-large-4/
+- Mistral model card / prices: https://docs.mistral.ai/models/mistral-large-4-0
+- Mistral training opt-out: https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training
+- Mistral ZDR: https://docs.mistral.ai/admin/monitor-comply/zero-data-retention
+- OpenAI model / snapshot / prices: https://developers.openai.com/api/docs/models/gpt-4o
+- OpenAI data controls: https://developers.openai.com/api/docs/guides/your-data
+- OECD (2017), PISA 2015 Assessment and Analytical Framework: https://doi.org/10.1787/9789264281820-en
+- OECD controlled-agent explanation: https://www.oecd.org/en/topics/sub-issues/student-problem-solving-skills/pisa-2015-collaborative-problem-solving.html
+- OECD (2026), PISA 2025 Assessment and Analytical Framework: https://doi.org/10.1787/86c36975-en
+- Poehner & Lantolf (2005), Dynamic assessment in the language classroom: https://doi.org/10.1191/1362168805lr166oa ; institutional record https://pure.psu.edu/en/publications/dynamic-assessment-in-the-language-classroom/
+Primary public sources establish product/method facts, not HALA suitability, legal approval or validity. The restricted OECD call is not included.
