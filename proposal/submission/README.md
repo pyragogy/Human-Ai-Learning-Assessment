@@ -4,7 +4,7 @@
 
 | File | Purpose |
 |------|---------|
-| `hala_pisa_rdi_2026.tex` | Main submission document (~2 pages, two-column) |
+| `hala_pisa_rdi_2026.tex` | Main submission document (~2 pages, single-column, 10pt) |
 | `ASSUMPTIONS_AND_GATES.md` | Candidate models, costs, data-flow, milestones, dependencies |
 | `hala_pisa_rdi_2026.pdf` | Compiled PDF (optional, not committed by default) |
 
@@ -13,8 +13,8 @@
 Requires a standard LaTeX distribution with the following packages (common
 in TeX Live):
 
-- `geometry`, `booktabs`, `graphicx`, `xcolor`, `hyperref`, `needspace`,
-  `titlesec`, `microtype`, `mathpazo`, `amsmath`, `caption`, `float`
+- `geometry`, `booktabs`, `xcolor`, `hyperref`, `titlesec`, `microtype`,
+  `mathpazo`, `parskip`, `enumitem`
 
 Compile with `pdflatex` (2 passes recommended for cross-references):
 
@@ -40,7 +40,7 @@ The proposal synthesises content from:
   system limits
 - PR #12 — synthetic annotation pipeline
 
-Template formatting adapted from `Unpeeragogy-An-Evidence-Grounded-Audit-Protocol-v0.2.tex`.
+Formatting: single-column professional proposal layout (not academic two-column article style).
 
 ## Submission checklist
 

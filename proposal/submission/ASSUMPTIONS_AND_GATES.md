@@ -2,32 +2,44 @@
 
 ## Candidate AI models
 
-All models listed below have public terms compatible with research use and
-non-training of submitted data, verified October 2026.
+All models listed below are current as of October 2026. Terms verified against
+public provider documentation; **no model is selected or deployed**.
 
-| Model | Provider | Type | Est. per-session cost | Data-training terms |
-|-------|----------|------|-----------------------|-------------------|
-| Claude 3.5 Sonnet (Oct 2026) | Anthropic | Hosted API | $0.03--0.08 | Contractual prohibition on training from API submissions (confirmed in Anthropic commercial terms) |
-| GPT-4o mini (Oct 2026) | OpenAI | Hosted API | $0.01--0.03 | API opt-out available; must verify no training on assessment data |
-| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~$0.01 (compute only) | Full data control; local deployment |
-| Llama 4 70B (quantised) | Meta | Self-hosted (community licence) | ~$0.02 (compute only) | Full data control; local deployment |
+| Model | Provider | Type | Est. per-session cost | Data-training terms | Status |
+|-------|----------|------|-----------------------|---------------------|--------|
+| Claude Opus 4 | Anthropic | Hosted API | ~$0.05–0.20 | Contractual prohibition on training from API submissions (default commercial terms, verified via Anthropic Privacy Center); distinction between default policy, retention opt-out, and explicit feedback cases must be verified before deployment |
+| GPT-4o | OpenAI | Hosted API | ~$0.03–0.15 | API opt-out available; verify no training on assessment data; enterprise terms may differ |
+| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~$0.01 (compute only) | Full data control; requires GPU infrastructure, no data leave deployment host |
+| Llama 4 Scout | Meta | Self-hosted (community licence) | ~$0.02 (compute only) | Full data control; requires GPU infrastructure |
 
-**Recommended primary model:** Claude 3.5 Sonnet with contractual non-training
-guarantee and established evaluation performance.
+**Previous draft errors corrected:**
+- Claude 3.5 Sonnet was **retired from API in 2025**; replaced with Claude Opus 4 (current flagship)
+- "Llama 4 70B" does not correspond to Meta's documented Llama 4 models; replaced with Llama 4 Scout
+- Per-session cost estimates rounded and presented as indicative, not precise
 
-**Fallback strategy:** Self-hosted DeepSeek-V3 or Llama 4 on EU-based
-infrastructure (Hetzner or equivalent), ensuring data never leaves the
-deployment jurisdiction.
-
-**Risk:** Anthropic and OpenAI API terms may change; self-hosted alternatives
-require GPU infrastructure (estimated $1.50–3.00/hour for 70B-class models).
-
-### Required pre-deployment tests
+### Required pre-deployment tests (all models)
 
 - Adversarial prompt-leakage and instruction-override test suite
-- Output consistency across repeated inputs
-- Latency measurement (target: <3s per turn)
+- Output consistency across repeated identical inputs
+- Latency measurement (target: <3s per turn for interactive use)
 - Failure-mode catalogue (timeout, refusal, off-topic, hallucination)
+- Terms verification: distinguish default API policy from retention/non-training options
+
+### Cost calculation methodology (indicative)
+
+Estimates derived from current published API pricing (October 2026). Final
+costs depend on model selection, prompt design, max tokens per turn, retry
+policy, and infrastructure choices. A precise cost model will be produced
+during the development phase.
+
+| Parameter | Low estimate | High estimate | Basis |
+|-----------|-------------|---------------|-------|
+| Turns per session | 40 | 150 | Task design estimate (to be calibrated) |
+| API calls per turn | 1 | 4 | Prompt + optional critic/retrieval |
+| Input tokens per call | 500 | 2000 | Prompt + conversation history |
+| Output tokens per call | 200 | 800 | Model response |
+| Total tokens/session | ~50k | ~500k | Product of above |
+| Est. cost (hosted API) | ~$0.05 | ~$0.20 | At ~$0.15/M input + ~$0.60/M output |
 
 ## Data flow and safeguarding
 
@@ -36,45 +48,56 @@ Student browser → Gateway (port 8766) → Worker (Unix socket)
                     ↓
                HMAC-authenticated IPC
                     ↓
-          No external network from worker
-                    ↓
-          Synthetic-only → no real data collected
+          No external network from worker (synthetic-only)
 ```
 
-**For any future student-facing pilot:**
+**Current limitations (not deployment-ready):**
+- **No OS-level user isolation:** all processes run as `coder` user; gateway
+  and worker share the same OS account. Full isolation requires separate
+  system users with Unix-socket permissions (documented in
+  `prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md` but not deployed).
+- **No security certification or penetration testing** conducted.
 
+**Required for any student-facing pilot:**
 1. Formal Data Protection Impact Assessment
-2. Pseudonymisation at point of collection (student ID → session hash)
-3. Consent workflow (parental/guardian for minors, per GDPR Art. 8 + DPA)
+2. Pseudonymisation at point of collection (session hash, not student ID)
+3. Appropriate legal basis under GDPR/DPA — **not automatically parental
+   consent under Art. 8 alone**; requires determination of controller vs.
+   processor roles, risk assessment, and actual pilot conditions with the
+   partner institution
 4. Data minimisation: only task responses, timestamps, dialogue traces
-5. Retention schedule: raw data deleted after 12 months; anonymised
-   aggregate scores retained for reproducibility
-6. No collected data available to model provider (contractual +
-   architectural enforcement)
+5. Retention: raw data deleted after 12 months; anonymised aggregate scores
+   retained for reproducibility
+6. **No collected student data available to model provider for training** —
+   verified through contractual terms for hosted API; architecturally
+   enforced for self-hosted (data never leave host)
 7. Assessment items and scoring logic separated from AI tutor context
-   (verified by independent audit: 4 audits, 66 tests passing)
-8. No formal security certification or penetration testing conducted
+   (audited: 4 audits, 66 tests passing)
 
 ## IP and licensing
 
-| Category | Scope | Licence |
-|----------|-------|---------|
-| Background | Existing methods, task concepts, source code, documentation | Open-source (MIT / Apache 2.0) |
+| Category | Scope | Status |
+|----------|-------|--------|
+| Background | Existing task concepts, source code, documentation | Private repository, **no explicit licence defined**. Before any collaboration, a permissive open-source licence (MIT/Apache 2.0) would be applied subject to OECD agreement on scope and terms. |
 | Foreground | Co-developed specifications, rubrics, protocol designs | To be negotiated; propose bounded research licence to OECD |
-| Third-party | Model provider terms, dataset licences, library dependencies | Inventory in submission; no rights conflicts anticipated |
+| Third-party | Model provider terms, dataset licences, library dependencies | Inventory to be produced before submission |
+
+**Correction from previous draft:** The repository does not currently carry an
+MIT or Apache 2.0 licence. We cannot offer OECD rights not yet defined. A
+licence decision is a prerequisite for any joint work, not an existing asset.
 
 ## Delivery milestones
 
-Assuming 0.5 FTE research engineer + 0.25 FTE assessment designer:
+Approximately 0.5 FTE research engineer + 0.25 FTE assessment designer,
+assuming collaboration is established.
 
 | Milestone | Estimated duration | Dependency |
 |-----------|-------------------|------------|
-| Task specification × 3 | 6–8 weeks | OECD construct guidance |
-| Prompt registry + versioning | 2–4 weeks | Model selection confirmed |
-| Coding manual + rubric draft | 4–6 weeks | Task specs complete |
-| Synthetic trace pipeline | 4–6 weeks | Coding manual draft |
-| Deployment design + DPIA | 3–4 weeks | Model and infrastructure selected |
-| Technical review gate | — | OECD reviewer + independent expert |
+| Task specification × 3 with prompt registries | 6–8 weeks | OECD construct guidance |
+| Process-coding manual (draft) | 4–6 weeks | Task specs complete |
+| Synthetic trace pipeline + adversarial tests | 4–6 weeks | Coding manual draft |
+| Deployment design + DPIA framework | 3–4 weeks | Model + infrastructure selected |
+| Independent technical review gate | — | OECD reviewer + external expert |
 | Psychometric review gate | — | Psychometric collaborator (not secured) |
 
 ## Explicit partnership dependencies
@@ -87,6 +110,7 @@ Assuming 0.5 FTE research engineer + 0.25 FTE assessment designer:
   (not secured; no commitment)
 - **GPU infrastructure**: for self-hosted model fallback (not procured;
   estimated €150–300/month)
+- **Licence decision**: open-source licence must be assigned before joint work
 
 ## Open questions requiring owner decision
 
@@ -94,6 +118,9 @@ Assuming 0.5 FTE research engineer + 0.25 FTE assessment designer:
 2. Accept the 2026 date as authoritative and proceed?
 3. Preferred submission scope: full proposal vs. exploratory methods
    contribution (Track A in `BOUNDED_OFFER.md`)?
-4. Authorize merging of this PR branch to main?
+4. Authorize merging of PR branch to main vs. keep as branch?
 5. Any institutional affiliation to state (none currently)?
 6. Budget for GPU infrastructure if self-hosted path is chosen?
+7. Licence decision for the repository before collaboration?
+8. Confirm current Anthropic and Meta model lineups (Opus 4 and Llama 4 Scout
+   are used as reasonable 2026 estimates; exact IDs to be verified)?
