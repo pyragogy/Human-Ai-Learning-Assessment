@@ -32,4 +32,4 @@ Provide blinded methodological review using these prompts. Reviewers must declar
 ## Structured disposition
 Reviewer ID / affiliation (if approved) / date / scope / evidence consulted / PASS-REVISE-BLOCK / critical findings / reproducible example / severity / remedy / remaining uncertainty.
 
-**No reviewer sign-off currently exists.**
+**Review provenance:** PI, an independent *AI-agent* technical challenger, has posted auditable findings on GitHub (#5–#11 and merged PR #12). PI reported 66 local tests passing on the last reviewed PR head. These are agent-performed software reviews, **not** a qualified independent human psychometric review, study ethics clearance or institutional sign-off. No external human reviewer approval is established.
