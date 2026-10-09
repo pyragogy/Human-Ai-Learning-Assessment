@@ -177,28 +177,20 @@ The technical demonstrator can test system integrity. **It cannot demonstrate th
 - [Classroom-independent development strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
 - [Synthetic three-arm journey and tests](prototype/JOURNEY_DEMO.md)
 
-## Interactive research demonstrator · v0.2
+## Interactive synthetic assessment demonstrator
 
-**A working local browser experience**, not a real AI-learning trial. Choose one of three scripted learning conditions, then walk through T0 baseline, T1 learning, T2 independent post-test, T3 transfer and a *same-session illustration* of T4 retention.
+The recommended browser demonstration is the **two-process local fixture**: separate assessment worker and gateway, localhost port **8766**. The launcher starts both services, creates a temporary development secret and terminates them on exit. It does **not** configure separate Linux users or make the system appropriate for real participants.
 
 ```bash
-python prototype/webdemo/server.py
-# Open http://127.0.0.1:8765
+python -m prototype.separated_assessment.launch_local
+# Browse to http://127.0.0.1:8766
 ```
 
-No API key, external services or dependencies. The tool does **not** grade answers, store real learner outcomes, or provide genuine delayed retention. It is **not approved for participant research**.
+For a remote VPS, use SSH port forwarding. The old single-process server on port 8765 is **legacy** and retained only for historical development. Neither path connects a real LLM or conducts a delayed T4 visit; all examples are synthetic.
 
-[Launch instructions & scientific limitations](prototype/webdemo/README.md) · [Browser interface](prototype/webdemo/index.html) · [State-machine tests](prototype/tests/test_webdemo.py)
+[Run instructions](prototype/separated_assessment/INTEGRATION.md) · [Assessment worker](prototype/separated_assessment/README.md) · [Security runbook (not deployed)](prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md)
 
-## Separate assessment worker · experimental
-
-A **standalone Unix-socket assessment process** now demonstrates stage-specific, expiring capabilities; technical negative tests cover replay, missing/extra packet fields and assessment order.
-
-[Worker and limitations](prototype/separated_assessment/README.md) · [Boundary contract tests](prototype/tests/test_boundaries.py) · [v0.3 security design](research/architecture/RFC_003_ADDENDUM_A.md)
-
-**Security follow-up to PI #9:** the assessor now refuses commands without a configured shared secret; worker sessions are bounded/expiring and browser session disposal revokes its worker-side state. See [VPS process-identity runbook](prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md) and [PI acceptance issue #10](https://github.com/pyragogy/human-ai-learning-assessment/issues/10). Distinct Linux service identities and protected code distribution still require real VPS configuration and negative tests; **not currently certified**.
-
-**New local integration:** the [two-process browser gateway](prototype/separated_assessment/INTEGRATION.md) is now connected to the worker and exercises the full A/B/C journey at `http://127.0.0.1:8766`. The old single-process UI remains available at port 8765 for backwards-compatible development. Separate OS-user permissions, independently authenticated orchestrator access, signed receipts and field-grade data safeguards **are still missing**. Never call this secure assessment isolation or use it with real learners.
+The worker requires authenticated IPC, expires sessions and enforces stage order; **operating-system identity separation is still not deployed**. A shared-secret check alone does not establish secure assessment isolation. There are no independently signed receipts or approved controls for minors.
 
 ## Reproducibility and public-release readiness
 
@@ -208,7 +200,7 @@ HALA includes adversarial fixtures that deliberately challenge the data pipeline
 
 ## How this research is built: critical human–AI collaboration
 
-The project also documents its own **build → challenge → human adjudication → independent verification** workflow. A separate AI reviewer, **PI**, has been assigned to audit the VPS-hosted demo through [issue #5](https://github.com/pyragogy/human-ai-learning-assessment/issues/5); the owner reports that work has begun. Findings are not assumed before they are submitted and reproduced.
+The project also documents its own **build → challenge → human adjudication → independent verification** workflow. The independent-agent reviewer **PI** has filed evidence-backed VPS audit comments and checked the revised [synthetic annotation PR #12](https://github.com/pyragogy/human-ai-learning-assessment/pull/12); PI reported **66/66 local Python tests passing** on the reviewed commit. This is agent-performed software checking, not external scientific peer review.
 
 Our rule: **No agent approves its own work.** This workflow is an auditable development practice, **not** evidence of human learning or a substitute for independent human peer review.
 
