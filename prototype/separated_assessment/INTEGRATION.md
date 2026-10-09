@@ -4,6 +4,16 @@
 
 Two independent Python processes now run a browser-facing journey orchestrator and an assessment worker. The gateway talks to the worker using a Unix-domain socket, retrieves the *current* item only and does not import the worker's private item bank. The existing `prototype/webdemo/server.py` is a **legacy single-process demo**, preserved for comparison.
 
+## Recommended: one command (Linux/macOS local synthetic demo)
+
+From the repository root:
+
+```bash
+python -m prototype.separated_assessment.launch_local
+```
+
+The launcher creates a private temporary socket directory and generates a development-only secret in process memory, then starts the independent worker and browser gateway. It cleans up processes on shutdown. Visit **http://127.0.0.1:8766**. All test answers must be fictitious. **This convenience launcher runs both services under your current OS user, so it is not proof of security isolation.** For genuine separate service accounts, consult [VPS runbook](VPS_ISOLATION_RUNBOOK.md).
+
 ## Start (two terminals; Linux/macOS with Unix sockets)
 
 Before starting, configure the *same* high-entropy value in the `HALA_ASSESSOR_SECRET` environment variable for both processes. This value must be at least 32 characters, must **never be committed**, and should be injected through restricted service configuration rather than pasted into shell history. For distinct Linux service accounts, follow [VPS isolation runbook](VPS_ISOLATION_RUNBOOK.md); do not run these simple same-account commands as evidence of OS-level isolation.\n\nIn terminal 1, from the repository root:
