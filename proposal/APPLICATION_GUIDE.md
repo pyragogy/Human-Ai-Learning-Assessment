@@ -21,6 +21,14 @@ The four-page *Call for Proposals — AI-Mediated Assessment Solutions for PISA*
 
 Full crosswalk: [Official call audit](OFFICIAL_CALL_REQUIREMENTS_AUDIT_2026.md). Do not republish the uploaded PDF: marked Restricted Use.
 
+## Submission format — checked against the supplied four-page call
+
+The document requests a proposal of **approximately two pages**, covering solution/model IDs/task scope, OECD collaboration, IP and third-party rights, and privacy/security including safeguards against use of participant data for model training. The final page provides `EDU.PisaInnovation@oecd.org` as the submission destination. **No compulsory LaTeX template, TeX source delivery, file-extension rule, portal registration or mandatory annex list is stated in the supplied four pages.**
+
+**Working file choice:** produce editable `.tex` source internally, compile to a readable **two-page PDF**, and submit the PDF as an email attachment **after owner approval and, if possible, written OECD clarification**. This is a sensible submission interpretation, not an explicit OECD PDF mandate. The supplied PDF says **26 October 2024**, whereas the 2026 public OECD announcement states **26 October 2026**; ask the designated contact to resolve the year discrepancy. Keep a local final-version digest and email receipt. No application has been sent.
+
+**Production tracker:** [PI LaTeX submission assignment](https://github.com/pyragogy/human-ai-learning-assessment/issues/14). No GitHub Actions jobs may be re-enabled for PDF builds.
+
 ## Recommended first contact
 Write to EDU.PisaInnovation@oecd.org asking whether an independent researcher may submit, confirming the 2026 deadline despite the supplied PDF showing 2024, whether email and a two-page PDF suffice, and required IP/data rights. The official call is now available; do not request it as if missing. Do not assert intent to provide unsupported psychometric validation or prospective adolescent access.
 
@@ -34,7 +42,7 @@ Write to EDU.PisaInnovation@oecd.org asking whether an independent researcher ma
 
 ## Submission checklist
 - [x] Review supplied four-page full call and preserve its provenance, without republishing Restricted Use material.
-- [ ] Map every mandatory requirement to evidence and owners.
+- [x] Map the four proposal sections and 70/30 scoring criteria to draft documentation; exact individual eligibility remains unknown.
 - [ ] Verify eligibility and no-remuneration / IP terms.
 - [ ] Decide precisely what can be delivered without unfunded commitments.
 - [ ] Secure expert psychometric collaborator if required.
