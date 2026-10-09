@@ -194,7 +194,7 @@ Student data must not be used for model training.
 \smallskip
 \noindent\emph{Cost and provider-dependence gate.} For each candidate, the
 reproducible inference budget is
-\(C=(N_{\rm in}P_{\rm in}+N_{\rm out}P_{\rm out})/10^6+C_{\rm compute}+C_{\rm other}\),
+\[C={\textstyle\frac{N_{\rm in}P_{\rm in}+N_{\rm out}P_{\rm out}}{10^6}}+C_{\rm compute}+C_{\rm other}\],
 where token volumes include full dialogue history, retries and auxiliary
 calls. Published token tariffs, actual workloads, latency, hosting and
 privacy guarantees will be tested before choosing a deployment. No
