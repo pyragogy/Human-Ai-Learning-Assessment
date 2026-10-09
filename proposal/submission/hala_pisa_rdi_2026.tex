@@ -1,4 +1,4 @@
-\documentclass[9pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,7 +11,7 @@
 \usepackage{parskip}
 \usepackage{enumitem}
 
-\geometry{a4paper, margin=1.7cm, top=1.3cm, bottom=1.2cm}
+\geometry{a4paper, margin=1.7cm, top=1.4cm, bottom=1.3cm}
 
 % ── Colors ──
 \definecolor{deepblue}{RGB}{0, 51, 102}
@@ -53,16 +53,14 @@ Attributed to Proficiency Rather Than to Interaction Policy\par}
 
 \noindent\textbf{The measurement problem.} PISA's transition toward AI-mediated
 assessment introduces a validity question that existing frameworks do not answer:
-when a student produces a response through dialogue with an AI, can the observed
-performance be attributed to the student's proficiency, or does it reflect the
-AI's scaffolding, the interaction policy, or the combination? Without a method
-to test this attribution, scores from AI-mediated tasks remain ambiguous
-regardless of how engaging the interaction is.
+when students work with AI, whose reasoning does the response reveal?
+Apparent proficiency may reflect the learner, the agent's prompts, or both.
+HALA turns this attribution problem into a testable measurement programme,
+rather than treating conversational fluency as evidence of competence.
 
 \noindent\textbf{Core research programme.} HALA proposes to test \emph{when}
 evidence from student--AI dialogue can be attributed to student proficiency
-rather than to the interaction policy or the AI's scaffolding. Three
-experimental questions structure the investigation:
+rather than to the interaction policy or the AI's scaffolding. Three questions guide the investigation:
 
 \begin{enumerate}[leftmargin=1.5em, nosep]
   \item Which student reasoning behaviours are observable and codifiable with
@@ -80,10 +78,9 @@ the programme, not a post-hoc qualification.
 
 \medskip
 \noindent\textbf{Illustrative scenario} (hypothetical synthetic stimuli, for
-illustration only---no real empirical studies are cited). A student receives
-two \emph{synthetic} source cards on screen time and adolescent sleep: a
-correlational study reporting a negative association and an experimental
-study showing no short-term effect. The AI agent proposes an interpretation
+illustration only---no real empirical studies are cited). A student evaluates
+two \emph{synthetic} source cards about screen use and sleep: a
+correlational claim and an apparently conflicting experimental result. The AI agent proposes an interpretation
 (\textquoteleft Screen time may not affect sleep directly; the correlation could
 reflect other factors like evening use\textquoteright). The student can accept,
 challenge, request additional evidence, or formulate an alternative explanation.
@@ -98,11 +95,9 @@ comparison across interaction conditions.
 Rater tags \texttt{COMPETING\_CAUSE}: the student proposes a rival explanation
 without asserting it as fact. Failure case: student replies \textquoteleft Yeah,
 maybe\textquoteright after a similar AI prompt; the rater records
-\texttt{undetermined}---no code fires. The system never marks an utterance
-\textquoteleft correct\textquoteright or \textquoteleft incorrect\textquoteright: it records only observables, with
-\texttt{learner\_origin\ =\ indeterminate}. Unaided probes interspersed during
-the task are a design proposal requiring testing for reactivity, order, and
-fatigue---they are not claimed to be causal AI-contribution estimators.\par
+\texttt{undetermined}---no code fires. This provisional tag is not an ability score or authorship finding:
+\texttt{learner\_origin\ =\ indeterminate}. Short unaided probes would serve as
+external validity anchors, with order and reactivity effects explicitly tested.\par
 
 \medskip
 \noindent\textbf{Measurement development sequence.} Observational codes will
@@ -156,12 +151,9 @@ a scoring system.
 \end{itemize}
 
 \noindent\textbf{None of these external inputs or partnerships is secured
-today.} The project describes a bounded co-design programme, provisionally
-estimated at 4--6 months for the deliverables above and contingent on
-collaboration being established and resourcing confirmed; it is not a
-committed delivery deadline or SLA. Broader deployment requires partner
-agreements and financing; the OECD call does not remunerate the selected
-partner.
+today.} We propose a bounded, jointly scoped co-design phase;
+subsequent pilot deployment depends on agreed resources, ethics approvals,
+and partners. The call provides no partner remuneration.
 
 \section{Intellectual property}
 
@@ -188,28 +180,25 @@ GDPR/DPA (not automatic parental consent under Art.~8 alone---roles of
 controller and processor must be established with the partner institution),
 and contractual prohibition on model-provider training from assessment data.
 
-\noindent\textbf{Candidate models.} No model is selected, contracted, or
-deployed. Two candidates identified with terms verified against provider
-pricing pages on 2026-10-11 (availability may vary by region; re-verified
-before any deployment): (1) \textbf{GPT-4o}, released model ID
-\texttt{gpt-4o-2024-08-06} (OpenAI API; \$2.50/M input, \$10/M output;
-API data are not trained on by default, org-level opt-out detailed at
-\url{https://platform.openai.com/docs/pricing}); (2) \textbf{Claude Opus 5.5}
-(Anthropic API; \$4/M input, \$20/M output, standard tier; contractual
-prohibition on training from submissions at
-\url{https://docs.anthropic.com/en/docs/about-claude/pricing}). Self-hosted
-alternatives (DeepSeek-V3, Llama~4~Scout) are documented but not assumed
-cheaper---at low volume, infrastructure costs may exceed API pricing.
-All models require adversarial prompt-leakage testing before assessment use.
+\noindent\textbf{Model choice and scale.} No model or provider is selected.
+Candidate classes for benchmarking include OpenAI GPT-4o
+(\texttt{gpt-4o-2024-08-06}, hosted API), an Anthropic Claude API model
+(exact model/version subject to availability and provider terms), and
+self-hosted open-weight alternatives (DeepSeek-V3 or Llama~4~Scout,
+subject to licence and hardware review). The OECD and proposer would
+select and \emph{freeze} precise model snapshots, decoding settings,
+prompts and tool versions \emph{before} any evaluative pilot. Model
+updates require a documented new phase, not an unrecorded substitution.
+Student data must not be used for model training.
 
 \smallskip
-\noindent\emph{Cost methodology (indicative, hypothetical).} Configure by token
-budget, not by session: turns (\textless 60), input tokens per turn (~800), output
-tokens per turn (~300), retries (\textless 5\%)---then multiply by the provider's price
-per million tokens. At 50 turns this yields roughly \$0.03--\$0.09 per session
-for GPT-4o and \$0.05--\$0.15 for Claude Opus 5.5, before caching or batch
-discounts. Final cost depends on prompt structure fixed during development;
-no fixed per-session price is claimed.\par
+\noindent\emph{Cost and provider-dependence gate.} For each candidate, the
+reproducible inference budget is
+\(C=(N_{\rm in}P_{\rm in}+N_{\rm out}P_{\rm out})/10^6+C_{\rm compute}+C_{\rm other}\),
+where token volumes include full dialogue history, retries and auxiliary
+calls. Published token tariffs, actual workloads, latency, hosting and
+privacy guarantees will be tested before choosing a deployment. No
+unsupported per-session price or zero-cost self-hosting is assumed.
 
 \medskip
 {\color{ruleblue}\rule{\textwidth}{0.7pt}}
