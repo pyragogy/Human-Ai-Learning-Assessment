@@ -1,8 +1,24 @@
 name: Research integrity checks
+# Run full integrity checks only when executable research code or this workflow
+# changes. Documentation-only proposal edits do not need a Python runner.
 on:
   push:
     branches: [main]
+    paths:
+      - 'prototype/**'
+      - '.github/workflows/research-checks.yml'
   pull_request:
+    paths:
+      - 'prototype/**'
+      - '.github/workflows/research-checks.yml'
+  workflow_dispatch:
+
+# Many consecutive writes can otherwise queue redundant Linux runners.
+# Keep independent PR/main check groups; abandon superseded attempts.
+concurrency:
+  group: integrity-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   synthetic-pipeline:
     runs-on: ubuntu-latest
