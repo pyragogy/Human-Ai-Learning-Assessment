@@ -1,0 +1,214 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage[svgnames]{xcolor}
+\usepackage[breaklinks=true,colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=deepblue]{hyperref}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+
+\geometry{a4paper, margin=1.7cm, top=1.4cm, bottom=1.3cm}
+
+% ── Colors ──
+\definecolor{deepblue}{RGB}{0, 51, 102}
+\definecolor{headinggray}{RGB}{60, 60, 60}
+\definecolor{ruleblue}{RGB}{180, 195, 210}
+
+% ── Sections ──
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{deepblue}}{}{0em}{}
+\titlespacing{\section}{0pt}{1ex}{0.4ex}
+
+% ── Widow / orphan ──
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+% ── Add color to rules (if booktabs used elsewhere) ──
+% (no tables in this proposal that require colored rules)
+
+\begin{document}
+
+% ── Header ──
+\noindent{\Huge\bfseries\textcolor{deepblue}{Human--AI Learning Assessment}\par}
+\medskip
+\noindent{\large\mdseries Testing When Evidence from Student--AI Dialogue Can Be\\[-0.2em]
+Attributed to Proficiency Rather Than to Interaction Policy\par}
+\medskip
+\noindent
+\textbf{Proposer:} Fabrizio Terzi, Pyragogy Research\quad
+\textbf{Contact:} fabrizio.terzi@pyragogy.org\\
+\textbf{Repository:} \url{https://github.com/pyragogy/human-ai-learning-assessment}\quad
+\textbf{Date:} October 2026
+
+\medskip
+{\color{ruleblue}\rule{\textwidth}{0.7pt}}
+
+\section{Proposed solution and PISA relevance}
+
+\noindent\textbf{The measurement problem.} PISA's transition toward AI-mediated
+assessment introduces a validity question that existing frameworks do not answer:
+when students work with AI, whose reasoning does the response reveal?
+Apparent proficiency may reflect the learner, the agent's prompts, or both.
+HALA turns this attribution problem into a testable measurement programme,
+rather than treating conversational fluency as evidence of competence.
+
+\noindent\textbf{Core research programme.} HALA proposes to test \emph{when}
+evidence from student--AI dialogue can be attributed to student proficiency
+rather than to the interaction policy or the AI's scaffolding. Three questions guide the investigation:
+
+\begin{enumerate}[leftmargin=1.5em, nosep]
+  \item Which student reasoning behaviours are observable and codifiable with
+    sufficient reliability across raters and tasks?
+  \item How much do these behavioural indicators change when the AI agent,
+    its prompting style, and the task structure vary?
+  \item Which indicators survive comparison with independent unaided probes
+    and tests of cross-linguistic comparability?
+\end{enumerate}
+
+\noindent Indicators that fail these tests---that primarily track agent
+prompting rather than learner-generated reasoning---will not be advanced as
+valid proficiency measures. This is the central falsification criterion of
+the programme, not a post-hoc qualification.
+
+\medskip
+\noindent\textbf{Illustrative scenario} (hypothetical synthetic stimuli, for
+illustration only---no real empirical studies are cited). A student evaluates
+two \emph{synthetic} source cards about screen use and sleep: a
+correlational claim and an apparently conflicting experimental result. The AI agent proposes an interpretation
+(\textquoteleft Screen time may not affect sleep directly; the correlation could
+reflect other factors like evening use\textquoteright). The student can accept,
+challenge, request additional evidence, or formulate an alternative explanation.
+Two AI roles---explanatory assistant (bounded Socratic prompts) and critical
+collaborator (counterexample and verification requests)---enable systematic
+comparison across interaction conditions.
+
+\smallskip
+\noindent\emph{Worked observable (for the rater manual):} AI turn:\enspace
+\textquoteleft Could the correlation reflect a third factor?\textquoteright\enspace Student turn:\enspace
+\textquoteleft Maybe kids who use screens at night also sleep less for other reasons\textquoteright.
+Rater tags \texttt{COMPETING\_CAUSE}: the student proposes a rival explanation
+without asserting it as fact. Failure case: student replies \textquoteleft Yeah,
+maybe\textquoteright after a similar AI prompt; the rater records
+\texttt{undetermined}---no code fires. This provisional tag is not an ability score or authorship finding:
+\texttt{learner\_origin\ =\ indeterminate}. Short unaided probes would serve as
+external validity anchors, with order and reactivity effects explicitly tested.\par
+
+\medskip
+\noindent\textbf{Measurement development sequence.} Observational codes will
+not be presented as a validated instrument at the start of the collaboration.
+They will be developed through a predeclared sequence:
+
+\begin{enumerate}[leftmargin=1.5em, nosep]
+  \item Define the observation opportunities each task must provide (minimum
+    evidence for each code to be scorable);
+  \item Annotate the student action and the preceding AI intervention
+    separately, preserving turn-level provenance;
+  \item Evaluate inter-rater agreement and test whether code distributions
+    shift when the AI agent, prompt version, or task changes;
+  \item Compare conversational indicators against independent unaided probes
+    and examine language comparability;
+  \item Retain only indicators that survive these tests; discard those that
+    primarily track prompting.
+\end{enumerate}
+
+\noindent Candidate codes (draft) include: \textbf{EVIDENCE\_REQUEST}
+(student requests grounds for a claim), \textbf{COMPETING\_CAUSE} (proposes
+rival explanation), \textbf{DISCRIMINATING\_TEST} (designs comparison to
+distinguish hypotheses), \textbf{SOURCE\_APPRAISAL} (evaluates credibility),
+\textbf{JUSTIFIED\_REVISION} (revises with evidence link), and
+\textbf{CALIBRATED\_UNCERTAINTY} (proportional confidence). Each is
+recorded per turn with \texttt{learner\_origin\ =\ indeterminate}---the
+system does not identify the cognitive author. A heuristic annotation
+pipeline exists (adversarial testing against naive surface scoring) but
+produces no proficiency estimate; it is a falsification instrument, not
+a scoring system.
+
+\section{Collaboration with OECD}
+
+\noindent\textbf{Proposer delivers:}
+\begin{itemize}[leftmargin=1.5em, nosep]
+  \item Three task specifications with version-controlled prompt registries
+    and a process-coding manual, developed through iterative co-design;
+  \item A reproducible synthetic interaction trace pipeline and adversarial
+    test suite for detecting prompt-contamination;
+  \item A deployment and data-protection design (DPIA-ready framework)
+    and a written report on the conditions under which a pilot would
+    become feasible.
+\end{itemize}
+
+\noindent\textbf{OECD guidance required:}
+\begin{itemize}[leftmargin=1.5em, nosep]
+  \item Target competency constructs and PISA delivery requirements;
+  \item Multilingual adaptation and equivalence standards;
+  \item Student safeguarding and data-processing expectations;
+  \item Access to authorised pilot partners and psychometric specialists.
+\end{itemize}
+
+\noindent\textbf{None of these external inputs or partnerships is secured
+today.} We propose a bounded, jointly scoped co-design phase;
+subsequent pilot deployment depends on agreed resources, ethics approvals,
+and partners. The call provides no partner remuneration.
+
+\section{Intellectual property}
+
+\noindent\textbf{Background:} task concepts, source code, and documentation
+developed independently before this collaboration. The repository is private
+with no explicit licence; any change to its licensing (for example a
+permissive open-source licence) is the owner's decision and remains
+conditional on agreement on scope and terms before joint work begins.
+\textbf{Foreground:} co-developed specifications and designs. A bounded
+research licence to the OECD would be negotiated in writing before work begins.
+Third-party rights will be inventoried in the submission.
+
+\section{Privacy, security, and feasibility}
+
+\noindent\textbf{Current state:} the HALA prototype is synthetic only---it
+runs on a private VPS, generates no real participant data, and stores no
+personal information. Architecture: two-process separation (gateway and
+worker) with HMAC-authenticated IPC, audited but uncertified. OS-level
+user isolation is not deployed.
+
+\noindent\textbf{Required for any student-facing pilot:} data protection
+impact assessment, pseudonymisation, appropriate legal basis under
+GDPR/DPA (not automatic parental consent under Art.~8 alone---roles of
+controller and processor must be established with the partner institution),
+and contractual prohibition on model-provider training from assessment data.
+
+\noindent\textbf{Model choice and scale.} No model or provider is selected.
+Candidate classes for benchmarking include OpenAI GPT-4o
+(\texttt{gpt-4o-2024-08-06}, hosted API), an Anthropic Claude API model
+(exact model/version subject to availability and provider terms), and
+self-hosted open-weight alternatives (DeepSeek-V3 or Llama~4~Scout,
+subject to licence and hardware review). The OECD and proposer would
+select and \emph{freeze} precise model snapshots, decoding settings,
+prompts and tool versions \emph{before} any evaluative pilot. Model
+updates require a documented new phase, not an unrecorded substitution.
+Student data must not be used for model training.
+
+\smallskip
+\noindent\emph{Cost and provider-dependence gate.} For each candidate, the
+reproducible inference budget is
+\[C={\textstyle\frac{N_{\rm in}P_{\rm in}+N_{\rm out}P_{\rm out}}{10^6}}+C_{\rm compute}+C_{\rm other}\],
+where token volumes include full dialogue history, retries and auxiliary
+calls. Published token tariffs, actual workloads, latency, hosting and
+privacy guarantees will be tested before choosing a deployment. No
+unsupported per-session price or zero-cost self-hosting is assumed.
+
+\medskip
+{\color{ruleblue}\rule{\textwidth}{0.7pt}}
+\medskip
+
+\noindent\textbf{Readiness statement.} This proposal describes a planned
+research programme, not an existing operational system. No validated scores,
+student data, ethics approval, institutional partnership, or deployed AI
+tutor exist. The programme's core question---whether evidence from
+AI-mediated dialogue can be validly attributed to student proficiency---is
+the object of study, not a capability claim.
+
+\end{document}
