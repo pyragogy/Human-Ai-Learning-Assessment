@@ -143,8 +143,10 @@ The original HALA protocol measures *independent learning* after assistance, wit
 | [Ethics and data governance](governance/ETHICS.md) | Research oversight, privacy and safeguarding |
 | [Adversarial audit](research/ADVERSARIAL_AUDIT.md) | Known threats and blocking issues |
 | [Roadmap](ROADMAP.md) | Development stages and evidence gates |
+| [Maintenance report — 9 October 2026](research/MAINTENANCE_REPORT_2026-10-09.md) | Open gate map, reviewed merge provenance, no-cost local testing and PI submission handoff |
 | [OECD call intelligence](proposal/CALL_INTELLIGENCE.md) | Opportunity tracking, not an endorsement or affiliation |
-| [Application guide](proposal/APPLICATION_GUIDE.md) | Submission due diligence and open eligibility questions |
+| [Application guide](proposal/APPLICATION_GUIDE.md) | OECD two-page email proposal requirements, LaTeX-to-PDF authoring and open eligibility questions |
+| [PI submission assignment](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) | Prepare approximately two-page English LaTeX proposal as a reviewed PR, not a sent application |
 
 ## Intellectual foundations
 
