@@ -1,0 +1,9 @@
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+texput.log
+# compiled PDF kept local unless explicitly intended
+proposal/submission/hala_pisa_rdi_2026.pdf
