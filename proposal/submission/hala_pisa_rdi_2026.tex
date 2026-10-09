@@ -1,0 +1,243 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{needspace}
+\usepackage[breaklinks=true,colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=deepblue]{hyperref}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{float}
+
+\geometry{a4paper, margin=0.6in, includefoot}
+
+% ── Colors (muted professional palette) ──
+\definecolor{deepblue}{RGB}{0, 51, 102}
+\definecolor{headinggray}{RGB}{60, 60, 60}
+\definecolor{ruleblue}{RGB}{180, 195, 210}
+
+% ── Section headings ──
+\usepackage{titlesec}
+\titleformat{\section}{\needspace{2\baselineskip}\large\bfseries\color{deepblue}}{}{0em}{}
+\titleformat{\subsection}{\needspace{1.5\baselineskip}\normalsize\bfseries\color{headinggray}}{}{0em}{}
+\titleformat{\subsubsection}{\needspace{2\baselineskip}\small\bfseries}{}{0em}{}
+
+% ── Widow / orphan control ──
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+% ── Colored table rules ──
+\let\oldtoprule\toprule
+\let\oldmidrule\midrule
+\let\oldbottomrule\bottomrule
+\renewcommand{\toprule}{\arrayrulecolor{deepblue}\oldtoprule}
+\renewcommand{\midrule}{\arrayrulecolor{deepblue}\oldmidrule}
+\renewcommand{\bottomrule}{\arrayrulecolor{deepblue}\oldbottomrule}
+
+\addtolength{\textheight}{+0.4in}
+
+\begin{document}
+
+\twocolumn[%
+  \begin{center}
+    {\Huge\bfseries\textcolor{deepblue}{Human–AI Learning Assessment}\par}
+    {\LARGE\mdseries\textcolor{headinggray}{A Process-Aware Framework for Distinguishing\\[0.2em] AI-Mediated Performance from Independent Proficiency}\par}
+    \vspace{0.8em}
+    {\small\textbf{Fabrizio Terzi}$^{1\ast}$\quad
+     $\ast$\textcolor{headinggray}{Corresponding author: fabrizio.terzi@pyragogy.org}\\[0.2em]
+     $^{1}$Pyragogy Research, \url{https://github.com/pyragogy/human-ai-learning-assessment}\\[0.2em]
+     \textcolor{headinggray}{Proposal: PISA RDI AI-Mediated Assessment Solutions \textperiodcentering\ October 2026}\par}
+  \end{center}
+  \vspace{0.3em}
+  {\color{ruleblue}\rule{\textwidth}{0.7pt}}
+  \vspace{0.3em}
+  \begin{abstract}
+  \small\noindent
+  When students solve assessment tasks through AI dialogue, observed performance
+  reflects both competence and AI scaffolding. We propose a dual-evidence framework
+  combining blinded scoring of interaction traces with independent response anchors
+  to distinguish collaborative proficiency from model-dependent output. Three
+  causal-reasoning and evidence-evaluation tasks are proposed, comparing explanatory
+  assistant and critical collaborator AI roles. Candidate models, indicative costs,
+  data-security architecture and a conversational-scoring example are included.
+  No validated instrument, field deployment, or human-participant data collection
+  exists.
+  \end{abstract}
+  \vspace{0.2em}
+  {\color{ruleblue}\rule{\textwidth}{0.7pt}}
+  \vspace{0.6em}
+]\relax
+
+\section{Proposed solution and PISA relevance}
+\label{sec:solution}
+
+PISA's transition to AI-mediated assessment raises a fundamental validity
+question: when a student solves a task through AI dialogue, observed performance
+reflects \emph{both} competence and AI scaffolding. HALA addresses this through a
+\textbf{dual-evidence design}: (1) blinded scoring of interaction traces using
+behaviourally anchored codes, and (2) independent response anchors---unaided
+probes---that estimate what the student can do without AI support. The comparison
+makes the proficiency contribution interpretable.
+
+\subsection{Proposed assessment tasks}
+
+Three interactive tasks are proposed for development (specifications only; no
+field-tested items exist):
+
+\begin{enumerate}
+  \item \textbf{Causal claim evaluation.} Students investigate a proposed
+    cause---effect relationship (e.g., ``Screen time reduces sleep quality''),
+    request and evaluate evidence, identify competing causes, and propose a
+    discriminating test.
+  \item \textbf{Source credibility assessment.} Students evaluate AI-generated
+    claims against supplied source materials, appraise provenance and relevance,
+    and justify whether to trust or revise each claim.
+  \item \textbf{Evidence-led revision.} Students draft a brief recommendation,
+    interrogate an AI-provided counterexample, and document how new evidence
+    changes their position---including residual uncertainty.
+\end{enumerate}
+
+Each task is designed for approximately 15--20 minutes of interaction, yielding
+a time-ordered dialogue trace and a student-produced final artefact. Tasks
+require age-appropriate language (PISA target: 15-year-olds) and carefully
+curated, safe source materials.
+
+\subsection{Two AI roles}
+
+A within-subject or randomised design permits comparison of two prespecified AI
+interaction policies:
+\begin{itemize}
+  \item \textbf{Explanatory Assistant (A):} bounded clarifications, restatement
+    of concepts, and non-directive Socratic prompts.
+  \item \textbf{Critical Collaborator (C):} requests for counterexamples,
+    verification demands, and prompts that require the student to justify or
+    revise their reasoning.
+\end{itemize}
+Both roles operate under strict prompt versioning, identical domain access, and
+comparable time constraints. The contrast between roles generates process data
+that tests whether proficiency signals are stable across interaction policies.
+
+\subsection{Candidate AI models}
+\label{sec:models}
+
+The proposal identifies candidate models for development; \textbf{no model is
+selected or deployed}. Verified compatible with research and non-training terms:
+\begin{quote}
+\small
+Claude 3.5 Sonnet (Anthropic, hosted, \$0.03--0.08/session)\quad
+GPT-4o mini (OpenAI, hosted, \$0.01--0.03/session)\\
+DeepSeek-V3-0324 (self-hosted, \textasciitilde\$0.01/session)\quad
+Llama 4 70B (quantised self-hosted, \textasciitilde\$0.02/session)
+\end{quote}
+\normalsize
+\textbf{Primary:} Claude 3.5 Sonnet, with contractual prohibition on training
+from API data. \textbf{Fallback:} self-hosted DeepSeek-V3 on EU infrastructure.
+All candidates must pass prompt-leakage and instruction-override testing before
+assessment use. Costs assume 3--8 calls/turn, 100--300 turns/session.
+
+\subsection{Observational codes (draft)}
+
+Six codes target reasoning behaviours observable in student turns:\small
+\begin{quote}\textbf{EVIDENCE\_REQUEST}\normalsize --- student requests grounds for a claim\small\\
+\textbf{COMPETING\_CAUSE}\normalsize --- proposes rival explanation\small\\
+\textbf{DISCRIMINATING\_TEST}\normalsize --- designs comparison to distinguish hypotheses\small\\
+\textbf{SOURCE\_APPRAISAL}\normalsize --- evaluates credibility or relevance\small\\
+\textbf{JUSTIFIED\_REVISION}\normalsize --- revises conclusion with evidence link\small\\
+\textbf{CALIBRATED\_UNCERTAINTY}\normalsize --- proportional confidence given evidence
+\end{quote}
+\normalsize Each code is scored per turn with a learner-originated flag. Proficiency
+is not computed automatically---blinded human rating with predeclared rubrics
+and inter-rater reliability assessment is required. Synthetic adversarial
+testing of the annotation system has been conducted locally (PR~\#12), confirming
+discrimination between genuine reasoning and AI-prompted compliance.
+
+\section{Collaboration with OECD}
+\label{sec:collab}
+
+Pyragogy proposes to contribute:
+\begin{itemize}
+  \item Three task specifications with version-controlled prompt registries
+    and process-coding manuals;
+  \item Reproducible synthetic interaction trace pipeline and adversarial
+    integrity tests;
+  \item A deployment and data-protection design complying with OECD data
+    governance requirements;
+  \item Biweekly co-design reviews during a bounded development phase,
+    followed by an independent technical and psychometric review gate.
+\end{itemize}
+
+We request OECD guidance on: target competency constructs, multilingual
+adaptation standards, student safeguarding, scoring strategies, and access
+to authorised pilot partners. \textbf{None of these inputs or partnerships
+is secured.} Any pilot involving minors requires an approved partner and
+ethics committee, not an automatic development deliverable.
+
+\section{Intellectual property}
+\label{sec:ip}
+
+\textbf{Background:} existing methods and code developed independently,
+retained under open-source licence. \textbf{Foreground:} co-developed
+specifications and joint advancements. A bounded research licence to the
+OECD may be negotiated, with scope, reuse and confidentiality in writing
+before work begins. No current OECD endorsement or partnership is implied.
+Third-party model and library rights will be inventoried in the submission.
+
+\section{Privacy, security, and feasibility}
+\label{sec:security}
+
+\subsection{Data protection}
+
+The current HALA prototype is \textbf{synthetic only}---it generates no
+real participant data, stores no personal information, and operates on
+localhost or on a private VPS with no external network exposure. For any
+future student-facing deployment:
+\begin{itemize}
+  \item Formal data-flow impact assessment, data minimisation, and
+    pseudonymisation before collection;
+  \item Appropriate consent or legal basis, restricted retention and
+    deletion schedules, controlled access, and incident procedures;
+  \item \textbf{No collected student data may be used for model-provider
+    training}, verified through contractual terms and, for self-hosted
+    models, architectural enforcement (data never leave the deployment
+    host);
+  \item Assessment items and scoring logic separated from the AI tutor
+    context under independently tested process and account boundaries.
+\end{itemize}
+The current architecture (two-process gateway and assessor with HMAC
+authentication, Unix-socket isolation, and capability-gated stage access)
+is designed to enforce these boundaries. It has been audited by an
+independent agent (four audits, 66 tests passing) but \textbf{has not
+undergone formal security certification or penetration testing}.
+
+\subsection{Feasibility and costs}
+
+Estimated per-session inference cost: \$0.03--\$0.08 for hosted API models
+(free for self-hosted after initial compute setup). Estimated development
+phase: 4--6 months for three tasks, coding manual, synthetic pipeline,
+and deployment design, requiring approximately 0.5 FTE research engineer
+and 0.25 FTE assessment designer. The OECD call does not remunerate the
+selected partner; Pyragogy proposes a bounded co-design commitment first,
+with broader deployment conditional on external financing and partner
+agreements.
+
+\section*{Readiness statement}
+
+This proposal describes a planned development programme, not an existing
+operational assessment system. No validated scores, student data, ethics
+approval, institutional partnership, or deployed AI tutor exist. All claims
+are prospective and conditional on the collaboration being established.
+
+\medskip
+\noindent\textbf{Contact:} \textcolor{deepblue}{\texttt{EDU.PisaInnovation@oecd.org}} \quad
+\textbf{Repository:} \url{https://github.com/pyragogy/human-ai-learning-assessment} \\
+\noindent\textit{Independent researcher eligibility and 2026 deadline require written OECD
+confirmation before submission.}
+
+\end{document}
