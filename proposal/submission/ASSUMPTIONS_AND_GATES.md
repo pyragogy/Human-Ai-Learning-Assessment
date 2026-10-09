@@ -7,15 +7,17 @@ public provider documentation; **no model is selected or deployed**.
 
 | Model | Provider | Type | Est. per-session cost | Data-training terms | Status |
 |-------|----------|------|-----------------------|---------------------|--------|
-| Claude Opus 4 | Anthropic | Hosted API | ~$0.05–0.20 | Contractual prohibition on training from API submissions (default commercial terms, verified via Anthropic Privacy Center); distinction between default policy, retention opt-out, and explicit feedback cases must be verified before deployment |
-| GPT-4o | OpenAI | Hosted API | ~$0.03–0.15 | API opt-out available; verify no training on assessment data; enterprise terms may differ |
-| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~$0.01 (compute only) | Full data control; requires GPU infrastructure, no data leave deployment host |
-| Llama 4 Scout | Meta | Self-hosted (community licence) | ~$0.02 (compute only) | Full data control; requires GPU infrastructure |
+| GPT-4o | OpenAI | Hosted API | Token-based: ~$0.15/M input + ~$0.60/M output | API opt-out available; must verify no training on assessment data; enterprise terms may differ |
+| Anthropic API flagship | Anthropic | Hosted API | Token-based (published per-M token rates) | Contractual prohibition on training from API submissions; distinction between default policy, retention opt-out, and explicit feedback must be verified |
+| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume |
+| Llama 4 Scout | Meta | Self-hosted (community licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume |
 
 **Previous draft errors corrected:**
-- Claude 3.5 Sonnet was **retired from API in 2025**; replaced with Claude Opus 4 (current flagship)
+- Claude 3.5 Sonnet was **retired from API in 2025**; replaced with generic "current Anthropic API flagship" (exact ID to be confirmed at deployment)
+- Claude Opus 4 also **retired from ordinary API** per latest documentation
 - "Llama 4 70B" does not correspond to Meta's documented Llama 4 models; replaced with Llama 4 Scout
-- Per-session cost estimates rounded and presented as indicative, not precise
+- Per-session pricing removed; replaced with token-based methodology + per-M rates
+- Self-hosting **not assumed cheaper** — infrastructure cost may exceed API at low volume
 
 ### Required pre-deployment tests (all models)
 
@@ -27,19 +29,24 @@ public provider documentation; **no model is selected or deployed**.
 
 ### Cost calculation methodology (indicative)
 
-Estimates derived from current published API pricing (October 2026). Final
-costs depend on model selection, prompt design, max tokens per turn, retry
-policy, and infrastructure choices. A precise cost model will be produced
-during the development phase.
+Estimates derived from current published API pricing (October 2026). The
+proposal does not state a fixed per-session price; it provides token-based
+order-of-magnitude estimates:
 
 | Parameter | Low estimate | High estimate | Basis |
 |-----------|-------------|---------------|-------|
-| Turns per session | 40 | 150 | Task design estimate (to be calibrated) |
-| API calls per turn | 1 | 4 | Prompt + optional critic/retrieval |
-| Input tokens per call | 500 | 2000 | Prompt + conversation history |
-| Output tokens per call | 200 | 800 | Model response |
-| Total tokens/session | ~50k | ~500k | Product of above |
-| Est. cost (hosted API) | ~$0.05 | ~$0.20 | At ~$0.15/M input + ~$0.60/M output |
+| Turns per session | ~30 | ~80 | Task design estimate (to be calibrated; 150 turns in 15-20 min is unrealistic) |
+| API calls per turn | 1 | 3 | Prompt + optional continuation/retrieval |
+| Input tokens per call | ~500 | ~2000 | Prompt + conversation history |
+| Output tokens per call | ~200 | ~800 | Model response |
+| Total tokens/session | ~20k | ~240k | Product of above |
+
+**Hosted API cost estimate (indicative):** At ~$0.15/M input + ~$0.60/M output
+(Anthropic current rates), a session ranges from roughly $0.01 to $0.15.
+**Self-hosted:** GPU infrastructure at ~$2-3/hr; at low volume (<1000 sessions),
+self-hosting is likely more expensive per session than API.
+**Precise budget requires** prompt structure, max tokens, retry policy and
+infrastructure choices to be determined during development.
 
 ## Data flow and safeguarding
 
