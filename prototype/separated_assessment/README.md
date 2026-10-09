@@ -4,12 +4,22 @@
 
 ## What has been built
 
-- `prototype/separated_assessment/service.py`: Unix socket service supporting `start`, `issue`, `item` and `complete`.
+- `prototype/separated_assessment/service.py`: Unix socket service supporting authenticated `start`, `issue`, `item`, `complete` and `end`.
 - `prototype/separated_assessment/private_items.py`: synthetic assessment item bank, separate from the tutor mock module.
 - `prototype/boundaries.py`: explicit allowlists for tutor-facing context and blinded rater packets.
 - `prototype/tests/test_boundaries.py`: deterministic negative tests for unknown/expired/replaced capabilities, replay, stage order, packet schema violations and Unix socket round trips.
 
-## Run on Linux, local only
+## Recommended local synthetic run
+
+From repository root:
+
+```bash
+python -m prototype.separated_assessment.launch_local
+```
+
+This starts the worker and gateway with an ephemeral development secret on one local OS account. Browse to `http://127.0.0.1:8766` (or use SSH forwarding on a VPS). It is **not a secure study deployment**. The launcher has not yet been independently smoke-tested on the VPS; see the open security/operations gate.
+
+## Run the assessor alone (advanced developer mode)
 
 From the repository root, after configuring a shared secret (minimum 32 characters) in the environment:
 
@@ -43,3 +53,8 @@ See [RFC-003](../../research/architecture/RFC_003_SEALED_ASSESSMENT.md) and [PI 
 ## Security gate after PI issue #9
 
 The worker now requires a minimum-length shared secret for requests, bounds live worker sessions, applies inactivity expiry and returns size-limited responses. These checks are exercised in CI. The **OS-user separation has not been applied to the owner's VPS**. The dedicated [runbook](VPS_ISOLATION_RUNBOOK.md) provides a proposed deployment design and mandatory negative checks for PI. This remains a synthetic-only research demonstrator, not a validated research instrument.
+
+
+## Hosted CI and review
+
+GitHub Actions has been deliberately **disabled by the owner** due to account-billing/spending concerns. Run `python -m unittest discover -s prototype/tests -v` locally or on a private VPS. PI reported 66 passing tests for merged PR #12; that report does not verify the newly added one-command launcher. No public port or real student-data collection is authorised.
