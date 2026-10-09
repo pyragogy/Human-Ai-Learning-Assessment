@@ -1,53 +1,41 @@
 # ASSUMPTIONS AND GATES — HALA PISA RDI 2026 Submission
 
-## Candidate AI models
+## Model-selection gate — explicitly deferred until collaboration
 
-All models listed below are current as of October 2026. Terms verified against
-public provider documentation; **no model is selected or deployed**.
+**Owner decision, 9 October 2026:** no AI model, provider, hosted service or GPU deployment has been selected. The final model choice is a **prospective, joint research-design decision**, not an implementation commitment hidden in the proposal.
 
-| Model | Provider | Type | Published pricing (verified 2026-10-11) | Data-training terms | Status |
-|-------|----------|------|-----------------------|---------------------|--------|
-| GPT-4o (`gpt-4o-2024-08-06`) | OpenAI | Hosted API | $2.50/M input, $10/M output — https://platform.openai.com/docs/pricing | API data not trained on by default; org-level opt-out; enterprise terms may differ (verify) | Candidate, not contracted |
-| Claude Opus 5.5 | Anthropic | Hosted API | $4/M input, $20/M output, standard tier — https://docs.anthropic.com/en/docs/about-claude/pricing | Contractual prohibition on training from API submissions; distinction between default policy, retention opt-out, and explicit feedback must be verified | Candidate, not contracted |
-| DeepSeek-V3-0324 | DeepSeek | Self-hosted (MIT licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume | Documented alternative |
-| Llama 4 Scout | Meta | Self-hosted (community licence) | ~compute cost (~$2-3/hr GPU) | Full data control; not assumed cheaper at low volume | Documented alternative |
+| Candidate for future evaluation | Deployment option | What must be checked before any evaluative pilot |
+|---|---|---|
+| OpenAI GPT-4o, snapshot `gpt-4o-2024-08-06` | Hosted API | Continued availability of snapshot, provider retention/training terms, region, exact tariffs, language performance and safety |
+| Anthropic Claude API model (exact version not yet selected) | Hosted API | Verified model ID and commercial availability, no-training and retention terms, tariff, stability and language performance |
+| DeepSeek-V3 family | Self-hosted | Specific weights and licence, GPU requirements, jurisdiction, measured throughput and full total cost |
+| Meta Llama 4 Scout | Self-hosted | Exact weights/license, GPU requirements, language/equity tests and full total cost |
 
-**Previous draft errors corrected:**
-- Claude 3.5 Sonnet was **retired from API in 2025**
-- Claude Opus 4 and the generic "current Anthropic API flagship" were replaced with the **specific, currently-available model ID Claude Opus 5.5** (verified against Anthropic docs pricing, 2026-10-11; standard tier $4/M in, $20/M out)
-- "Llama 4 70B" does not correspond to Meta's documented Llama 4 models; replaced with Llama 4 Scout
-- Per-session pricing removed; replaced with token-based methodology + per-M rates
-- Self-hosting **not assumed cheaper** — infrastructure cost may exceed API at low volume
+**Nothing in this table asserts current contractual rights, confirmed pricing, model availability or suitability.** Vendor selection may change as products evolve.
 
-### Required pre-deployment tests (all models)
+### Pre-registration model stability
 
-- Adversarial prompt-leakage and instruction-override test suite
-- Output consistency across repeated identical inputs
-- Latency measurement (target: <3s per turn for interactive use)
-- Failure-mode catalogue (timeout, refusal, off-topic, hallucination)
-- Terms verification: distinguish default API policy from retention/non-training options
+After exploratory benchmarking and **before data collection**, record immutable model identifiers/snapshots where possible, prompt and decoding version, tools/retrieval corpus, service terms, region, retention controls and cost basis. Use the **same locked experimental exposure** within each pre-specified arm/phase. Forced provider updates trigger a documented interruption or new phase and sensitivity review, not a silent swap.
 
-### Cost calculation methodology (indicative)
+### Cost model (no unsupported prices)
 
-Estimates derived from current published API pricing (October 2026). The
-proposal does not state a fixed per-session price; it provides token-based
-order-of-magnitude estimates:
+Use measured token volumes and a dated price sheet:
 
-| Parameter | Low estimate | High estimate | Basis |
-|-----------|-------------|---------------|-------|
-| Turns per session | ~30 | ~80 | Task design estimate (to be calibrated; 150 turns in 15-20 min is unrealistic) |
-| API calls per turn | 1 | 3 | Prompt + optional continuation/retrieval |
-| Input tokens per call | ~500 | ~2000 | Prompt + conversation history |
-| Output tokens per call | ~200 | ~800 | Model response |
-| Total tokens/session | ~20k | ~240k | Product of above |
+```text
+C_session = (N_input * P_input + N_output * P_output) / 1_000_000
+            + C_compute + C_storage + C_network + C_oversight
+```
 
-**Hosted API cost estimate (indicative, from token-based methodology in the PDF):**
-At 50 turns, ~800 input + ~300 output tokens/turn, <5% retries, before caching:
-- GPT-4o: ~$0.03--$0.09 per session
-- Claude Opus 5.5: ~$0.05--$0.15 per session
-These are order-of-magnitude illustrations, not fixed prices; final cost depends on
-prompt structure, max tokens, retry policy and infrastructure choices to be
-determined during development.
+`N_input` and `N_output` must include every model call, full prior context, retries, auxiliary checking and tool response tokens. `P_input`/`P_output` are prices per million tokens from the chosen provider and tier, not assumed constants. For self-hosting model the all-in compute/operations cost and utilisation instead of invented per-token economics. Record peak concurrency and geography. **No per-session numerical cost is supportable yet** because task design, model/version, provider and prompts have not been locked.
+
+### Pre-pilot acceptance criteria
+
+- Prompt leakage, instruction override and age-appropriate safety checks;
+- Multilingual accessibility, cross-country comparability and low-resource language failure analysis;
+- Availability/latency under realistic concurrent load and a documented failure fallback;
+- Written exclusion of participant data from model training;
+- Verified provider-specific conditions for retention, transfers, logging, subprocessors and deletion;
+- Pilot approval from actual educational/psychometric and privacy partners, none secured.
 
 ## Data flow and safeguarding
 
@@ -86,9 +74,9 @@ Student browser → Gateway (port 8766) → Worker (Unix socket)
 
 | Category | Scope | Status |
 |----------|-------|--------|
-| Background | Existing task concepts, source code, documentation | Private repository, **no explicit licence defined**. Before any collaboration, a permissive open-source licence (MIT/Apache 2.0) would be applied subject to OECD agreement on scope and terms. |
+| Background | Existing task concepts, source code, documentation | Private repository, **no explicit licence defined**. Any licensing change requires an explicit decision by the project owner, followed by negotiation of scope and terms with the OECD. |
 | Foreground | Co-developed specifications, rubrics, protocol designs | To be negotiated; propose bounded research licence to OECD |
-| Third-party | Model provider terms, dataset licences, library dependencies | Inventory to be produced before submission |
+| Third-party | Model provider terms, dataset licences, library dependencies | Inventory to be verified and disclosed before signing a collaboration agreement; disclose known third-party dependencies in proposal |
 
 **Correction from previous draft:** The repository does not currently carry an
 MIT or Apache 2.0 licence. We cannot offer OECD rights not yet defined. A
@@ -116,9 +104,8 @@ assuming collaboration is established.
   (not secured; no commitment)
 - **Psychometric collaborator**: scoring validation, equating, DIF analysis
   (not secured; no commitment)
-- **GPU infrastructure**: for self-hosted model fallback (not procured;
-  estimated €150–300/month)
-- **Licence decision**: open-source licence must be assigned before joint work
+- **GPU infrastructure**: only if self-hosting is selected; no budget or supplier assumed
+- **Licence decision**: scope and terms are an explicit owner/partner negotiation, not a promised permissive release
 
 ## Open questions requiring owner decision
 
@@ -130,5 +117,4 @@ assuming collaboration is established.
 5. Any institutional affiliation to state (none currently)?
 6. Budget for GPU infrastructure if self-hosted path is chosen?
 7. Licence decision for the repository before collaboration?
-8. Confirm current Anthropic and Meta model lineups (Opus 4 and Llama 4 Scout
-   are used as reasonable 2026 estimates; exact IDs to be verified)?
+8. Verify available snapshots, terms, language performance and real costs during post-acceptance model selection.
