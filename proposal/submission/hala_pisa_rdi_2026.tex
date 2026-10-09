@@ -51,12 +51,37 @@ Attributed to Proficiency Rather Than to Interaction Policy\par}
 
 \section{Proposed solution and PISA relevance}
 
-\noindent\textbf{The measurement problem.} PISA's transition toward AI-mediated
-assessment introduces a validity question that existing frameworks do not answer:
-when students work with AI, whose reasoning does the response reveal?
-Apparent proficiency may reflect the learner, the agent's prompts, or both.
-HALA turns this attribution problem into a testable measurement programme,
-rather than treating conversational fluency as evidence of competence.
+\noindent\textbf{The assessment challenge.} Interactive assessment already recognises
+that a final answer need not tell the whole story. Process data, use of
+feedback, strategic choices and revisions can provide additional evidence
+of how learners approach complex tasks. OECD's PISA 2025
+\emph{Learning in the Digital World} assessment, for instance,
+combines response and process evidence in interactive environments.
+
+Conversational AI introduces an additional interpretive challenge.
+Unlike a static resource, an AI assistant may propose an explanation,
+suggest a counterexample or ask a question that changes the direction
+of the student's next response. A student who identifies a competing
+cause after the AI asks whether a third factor could explain a correlation
+has produced an observable action; it is not yet evidence that the student
+could have generated that reasoning independently. Conversely, a
+learner may understand an issue but not express it in a form that an
+interaction code recognises. An apparent increase in reasoning
+behaviours might therefore reflect the assistant's prompting policy,
+the learner's competence, or their combination.
+
+\noindent\textbf{Existing foundations and HALA's specific question.}
+Evidence-Centred Design, argument-based validation and analysis of
+assessment process data provide substantial theoretical and operational
+foundations. HALA does not claim these frameworks are absent or
+ineffective. Instead, it investigates a narrower empirical question:
+\emph{under what conditions can process evidence from AI-mediated
+dialogue support defensible claims about learner proficiency?}
+This requires distinguishing what the learner visibly does, what the
+AI has supplied, and what can legitimately be inferred from their
+interaction. We do not presume that independent authorship can be
+recovered from a dialogue transcript, nor that every observation
+should become a proficiency score.
 
 \noindent\textbf{Core research programme.} HALA proposes to test \emph{when}
 evidence from student--AI dialogue can be attributed to student proficiency
@@ -71,10 +96,13 @@ rather than to the interaction policy or the AI's scaffolding. Three questions g
     and tests of cross-linguistic comparability?
 \end{enumerate}
 
-\noindent Indicators that fail these tests---that primarily track agent
-prompting rather than learner-generated reasoning---will not be advanced as
-valid proficiency measures. This is the central falsification criterion of
-the programme, not a post-hoc qualification.
+\noindent\textbf{Interpretation and falsification.} Human raters may
+agree on an observable behaviour without that behaviour establishing
+independent competence. HALA will retain candidate indicators only
+when evidence supports reliability, adequate independence from agent
+prompting, and appropriate convergence with unaided probes and
+cross-linguistic checks. Inconclusive or negative results will be
+reported explicitly rather than repackaged as validated scores.
 
 \medskip
 \noindent\textbf{Illustrative scenario} (hypothetical synthetic stimuli, for
@@ -89,17 +117,20 @@ collaborator (counterexample and verification requests)---enable systematic
 comparison across interaction conditions.
 
 \smallskip
+\needspace{12\baselineskip}
 \noindent\emph{Worked observable (for the rater manual):} AI turn:\enspace
 \textquoteleft Could the correlation reflect a third factor?\textquoteright\enspace Student turn:\enspace
 \textquoteleft Maybe kids who use screens at night also sleep less for other reasons\textquoteright.
 Rater tags \texttt{COMPETING\_CAUSE}: the student proposes a rival explanation
 without asserting it as fact. Failure case: student replies \textquoteleft Yeah,
 maybe\textquoteright after a similar AI prompt; the rater records
-\texttt{undetermined}---no code fires. This provisional tag is not an ability score or authorship finding:
+\texttt{undetermined}---no code fires. Because the AI has already suggested the third-factor direction,
+this tag is not an ability score or an authorship finding:
 \texttt{learner\_origin\ =\ indeterminate}. Short unaided probes would serve as
 external validity anchors, with order and reactivity effects explicitly tested.\par
 
 \medskip
+\needspace{6\baselineskip}
 \noindent\textbf{Measurement development sequence.} Observational codes will
 not be presented as a validated instrument at the start of the collaboration.
 They will be developed through a predeclared sequence:
@@ -164,8 +195,9 @@ permissive open-source licence) is the owner's decision and remains
 conditional on agreement on scope and terms before joint work begins.
 \textbf{Foreground:} co-developed specifications and designs. A bounded
 research licence to the OECD would be negotiated in writing before work begins.
-Third-party rights will be inventoried in the submission.
+Third-party rights will be assessed before a collaboration agreement.
 
+\needspace{40\baselineskip}
 \section{Privacy, security, and feasibility}
 
 \noindent\textbf{Current state:} the HALA prototype is synthetic only---it
@@ -206,6 +238,15 @@ where token volumes include full dialogue history, retries and auxiliary
 calls. Published token tariffs, actual workloads, latency, hosting and
 privacy guarantees will be tested before choosing a deployment. No
 unsupported per-session price or zero-cost self-hosting is assumed.
+
+\medskip
+\noindent{\small\textbf{Relevant methodological foundations.}
+OECD (2026), \emph{PISA 2025 Assessment and Analytical Framework}
+(\url{https://doi.org/10.1787/86c36975-en});
+OECD, \emph{Innovating Assessments to Measure and Support Complex Skills},
+chapter on Evidence-Centred Design and PISA Learning in the Digital World.
+These are precedents for the approach, not validation of HALA's proposed
+indicators.}
 
 \medskip
 {\color{ruleblue}\rule{\textwidth}{0.7pt}}
