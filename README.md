@@ -7,7 +7,7 @@
 [![Research status](https://img.shields.io/badge/research-protocol%20%2B%20prototype-1e3a5f?style=for-the-badge)](research/PROTOCOL.md)
 [![Scientific integrity](https://img.shields.io/badge/claims-evidence--first-167d88?style=for-the-badge)](research/ADVERSARIAL_AUDIT.md)
 [![Stage](https://img.shields.io/badge/validation-not%20yet%20established-986b31?style=for-the-badge)](assessment/MEASUREMENT.md)
-[![Research checks](https://github.com/pyragogy/human-ai-learning-assessment/actions/workflows/research-checks.yml/badge.svg?branch=main)](https://github.com/pyragogy/human-ai-learning-assessment/actions/workflows/research-checks.yml)
+[![Automation](https://img.shields.io/badge/Actions-disabled%20by%20owner-986b31?style=for-the-badge)](prototype/separated_assessment/INTEGRATION.md)
 
 **An open-science-oriented research initiative by [Pyragogy](https://pyragogy.org)**
 
@@ -87,21 +87,27 @@ Explore the [measurement specification](assessment/MEASUREMENT.md) and [item blu
 
 The first implementation is an auditable **Python standard-library** data-validation and descriptive-scoring pipeline. It verifies score boundaries, stage independence, consistent assignment, uniqueness and missing follow-up records.
 
+For developers with access to this **private** repository, from its root (Linux/macOS, Python 3.10+):
+
 ```bash
-git clone https://github.com/pyragogy/human-ai-learning-assessment.git
-cd human-ai-learning-assessment
+# Synthetic-only two-process interactive journey, loopback port 8766
+python -m prototype.separated_assessment.launch_local
+```
 
-# Run the six integrity tests
+Browse to **http://127.0.0.1:8766**, or on a VPS use an SSH tunnel (`ssh -L 8766:127.0.0.1:8766 your-user@your-vps`). Stop with Ctrl+C. The launcher generates a short-lived local credential and manages the assessor and gateway processes. It is a **same-user development fixture**, not secure privilege separation or field-ready deployment.
+
+```bash
+# Run the tests locally or on the VPS; GitHub Actions is disabled to avoid runner charges
 python -m unittest discover -s prototype/tests -v
-
-# Analyze synthetic example records
+python -m compileall -q prototype
 python prototype/analyse.py prototype/fixtures/synthetic_scores.csv
 ```
 
-> [!NOTE]
-> This repository is currently **private**. Clone access requires collaborator permission. Example records are fabricated. The script **does not** estimate treatment efficacy, psychometric reliability, or causal effects; AI tutoring, participant onboarding, data protection infrastructure and assessment delivery are not yet implemented.
+The legacy single-process demo (`prototype/webdemo/server.py`, port 8765) remains for historical comparison and **must not** be mistaken for the two-process assessment architecture. The C-arm is a deterministic scripted mock, not a live LLM. T4 is same-session in the demo, **not** 7–14-day retention. Synthetic text only; there is no user consent workflow or production data protection.
 
-Continuous checks: [research-checks workflow](.github/workflows/research-checks.yml) · [prototype documentation](prototype/README.md).
+[Interactive integration](prototype/separated_assessment/INTEGRATION.md) · [One-command launcher](prototype/separated_assessment/launch_local.py) · [Adversarial synthetic annotator](research/reviews/PI_ADVERSARIAL_SYNTHETIC_ANNOTATION.md) · [PISA-specific research extension](research/PISA_RDI_CONVERSATIONAL_ASSESSMENT_EXTENSION.md)
+
+**Review provenance:** PI's agent review reports **66 passing local tests** on PR #12 at SHA `ae2c1d2`; the PR has been merged. This is an agent-reported software verification, **not external academic review**. The new launcher needs its own local smoke verification. GitHub Actions is disabled; no current hosted-runner CI claim is made.
 
 ## Research maturity — no shortcuts
 
@@ -111,13 +117,17 @@ Continuous checks: [research-checks workflow](.github/workflows/research-checks.
 | Arm definitions and study protocol | **Documented — draft** |
 | Measurement rubric and item blueprint | **Designed — unvalidated** |
 | Synthetic data validation + descriptive pipeline | **Implemented** |
-| Automated research-integrity checks | **Implemented** |
-| Interactive AI learning environment | **Not implemented** |
+| Automated research-integrity checks | **Available for local/VPS execution; hosted GitHub Actions disabled** |
+| Interactive synthetic A/B/C journey | **Implemented as mock; no real AI model** |
 | Human-subject ethics authorisation | **Not obtained** |
 | Learner pilot and psychometric validation | **Not conducted** |
 | Independent replication | **Not conducted** |
 
 See the [adversarial self-audit](research/ADVERSARIAL_AUDIT.md). These are **internal checks**, not a substitute for independent specialist review.
+
+## Two research strands — do not conflate
+
+The original HALA protocol measures *independent learning* after assistance, with T2 as the proposed primary outcome. The separate [PISA-RDI conversational assessment extension](research/PISA_RDI_CONVERSATIONAL_ASSESSMENT_EXTENSION.md) asks whether AI-mediated interactions can yield valid proficiency evidence; its observations are **not** calibrated scores. The [synthetic annotation prototype](prototype/conversation_annotation.py) retains an explicit null proficiency score. Neither study has recruited participants, and no psychometric validity is claimed.
 
 ## Research library
 
