@@ -4,7 +4,7 @@
 
 | File | Purpose |
 |------|---------|
-| `hala_pisa_rdi_2026.tex` | Main submission document (~2 pages, single-column, 10pt) |
+| `hala_pisa_rdi_2026.tex` | Main submission document (target exactly 2 A4 pages, single-column, 10pt) |
 | `ASSUMPTIONS_AND_GATES.md` | Candidate models, costs, data-flow, milestones, dependencies |
 | `hala_pisa_rdi_2026.pdf` | Compiled PDF (optional, not committed by default) |
 
@@ -46,8 +46,10 @@ Formatting: single-column professional proposal layout (not academic two-column 
 
 - [ ] Verify all four OECD call sections covered (solution+models, collaboration,
       IP, privacy/security)
+- [ ] Validate model selection is expressly conditional, experimental snapshots will be locked, and costs include all calls, retries and hosting (no imaginary session prices)
 - [ ] Confirm 70/30 scoring criteria addressed inline
 - [ ] Verify no secrets, proprietary data, or Restricted Use PDF in repo
 - [ ] Confirm independent researcher eligibility with OECD
 - [ ] Confirm 2026 deadline with OECD (PDF shows 2024, live listing 2026)
+- [ ] Compile current HEAD **locally** and verify **exactly two A4 pages** with readable type and no overflowing text
 - [ ] Owner approval before sending to EDU.PisaInnovation@oecd.org
