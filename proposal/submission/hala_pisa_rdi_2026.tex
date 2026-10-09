@@ -1,17 +1,17 @@
-\documentclass[10pt]{article}
+\documentclass[9pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
 \usepackage{microtype}
-\usepackage{booktabs}
-\usepackage[svgnames,table]{xcolor}
+\usepackage{needspace}
+\usepackage[svgnames]{xcolor}
 \usepackage[breaklinks=true,colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=deepblue]{hyperref}
 \usepackage{geometry}
 \usepackage{parskip}
 \usepackage{enumitem}
 
-\geometry{a4paper, margin=1.8cm, top=1.5cm, bottom=1.5cm}
+\geometry{a4paper, margin=1.7cm, top=1.3cm, bottom=1.2cm}
 
 % ── Colors ──
 \definecolor{deepblue}{RGB}{0, 51, 102}
@@ -21,28 +21,24 @@
 % ── Sections ──
 \usepackage{titlesec}
 \titleformat{\section}{\large\bfseries\color{deepblue}}{}{0em}{}
-\titlespacing{\section}{0pt}{1.2ex}{0.6ex}
+\titlespacing{\section}{0pt}{1ex}{0.4ex}
 
 % ── Widow / orphan ──
 \clubpenalty=10000
 \widowpenalty=10000
+\displaywidowpenalty=10000
 \raggedbottom
 
-% ── Table rules ──
-\let\oldtoprule\toprule
-\let\oldmidrule\midrule
-\let\oldbottomrule\bottomrule
-\renewcommand{\toprule}{\arrayrulecolor{deepblue}\oldtoprule}
-\renewcommand{\midrule}{\arrayrulecolor{deepblue}\oldmidrule}
-\renewcommand{\bottomrule}{\arrayrulecolor{deepblue}\oldbottomrule}
+% ── Add color to rules (if booktabs used elsewhere) ──
+% (no tables in this proposal that require colored rules)
 
 \begin{document}
 
 % ── Header ──
-\noindent{\Huge\bfseries\textcolor{deepblue}{Human–AI Learning Assessment}\par}
+\noindent{\Huge\bfseries\textcolor{deepblue}{Human--AI Learning Assessment}\par}
 \medskip
-\noindent{\large\mdseries A Process-Aware Framework for Distinguishing AI-Mediated\\[-0.2em]
-Performance from Independent Proficiency\par}
+\noindent{\large\mdseries Testing When Evidence from Student--AI Dialogue Can Be\\[-0.2em]
+Attributed to Proficiency Rather Than to Interaction Policy\par}
 \medskip
 \noindent
 \textbf{Proposer:} Fabrizio Terzi, Pyragogy Research\quad
@@ -55,179 +51,147 @@ Performance from Independent Proficiency\par}
 
 \section{Proposed solution and PISA relevance}
 
-\noindent\textbf{The measurement problem.} When a student solves a task through
-dialogue with an AI, the observed response reflects both the student's competence
-and the AI's scaffolding. These two contributions are not separable from the
-final answer alone. A superficially correct response may mask the absence of
-independent reasoning; a tentative or fragmented answer may reflect genuine
-proficiency that the interaction format did not elicit. PISA's transition toward
-AI-mediated assessment makes this ambiguity a validity threat.
+\noindent\textbf{The measurement problem.} PISA's transition toward AI-mediated
+assessment introduces a validity question that existing frameworks do not answer:
+when a student produces a response through dialogue with an AI, can the observed
+performance be attributed to the student's proficiency, or does it reflect the
+AI's scaffolding, the interaction policy, or the combination? Without a method
+to test this attribution, scores from AI-mediated tasks remain ambiguous
+regardless of how engaging the interaction is.
 
-\textbf{Dual-evidence design.} HALA addresses this through two parallel
-measurement channels: (1) blinded scoring of the student--AI interaction
-trajectory using behaviourally anchored observational codes, and (2)
-independent response anchors---short unaided probes interspersed during the
-task---that estimate what the student can produce without AI support. The
-comparison between the interaction-based score and the independent-probe
-score provides an empirical estimate of the AI's contribution, making the
-proficiency signal interpretable rather than assumed.
+\noindent\textbf{Core research programme.} HALA proposes to test \emph{when}
+evidence from student--AI dialogue can be attributed to student proficiency
+rather than to the interaction policy or the AI's scaffolding. Three
+experimental questions structure the investigation:
 
-\noindent\textbf{Proposed task family (specifications, not field-tested).}
-Three interactive tasks are proposed for development:
+\begin{enumerate}[leftmargin=1.5em, nosep]
+  \item Which student reasoning behaviours are observable and codifiable with
+    sufficient reliability across raters and tasks?
+  \item How much do these behavioural indicators change when the AI agent,
+    its prompting style, and the task structure vary?
+  \item Which indicators survive comparison with independent unaided probes
+    and tests of cross-linguistic comparability?
+\end{enumerate}
 
-\begin{itemize}[leftmargin=1.5em, nosep]
-  \item \textbf{Causal claim.} Students evaluate a proposed cause--effect
-    relationship (e.g., screen time and sleep quality), request evidence,
-    identify competing causes, and propose a discriminating test.
-  \item \textbf{Source credibility.} Students assess AI-generated claims
-    against supplied materials, appraise provenance, and justify whether
-    to trust or revise each claim.
-  \item \textbf{Evidence-led revision.} Students draft a recommendation,
-    interrogate a counterexample, and document how evidence changes their
-    position, including residual uncertainty.
-\end{itemize}
-\noindent Each task is designed for an estimated 15--20~min of interaction
-(duration to be calibrated during development). Tasks require age-appropriate
-language for 15-year-old learners and carefully curated source materials.
-Two AI roles---explanatory assistant (bounded Socratic prompts) and critical
-collaborator (counterexample and verification requests)---enable systematic
-comparison of interaction conditions.
+\noindent Indicators that fail these tests---that primarily track agent
+prompting rather than learner-generated reasoning---will not be advanced as
+valid proficiency measures. This is the central falsification criterion of
+the programme, not a post-hoc qualification.
 
-\noindent\textbf{Observational codes (draft).} Six codes target reasoning
-behaviours observable in student turns. Each is recorded per turn with
-\texttt{learner\_origin\ =\ indeterminate} (the system does not identify
-the cognitive author):\par
-\smallskip
-\noindent\small
-\textbf{EVIDENCE\_REQUEST} --- student requests grounds for a claim\hfill
-\textbf{COMPETING\_CAUSE} --- proposes rival explanation\\
-\textbf{DISCRIMINATING\_TEST} --- designs comparison to distinguish hypotheses\hfill
-\textbf{SOURCE\_APPRAISAL} --- evaluates credibility or relevance\\
-\textbf{JUSTIFIED\_REVISION} --- revises conclusion with evidence link\hfill
-\textbf{CALIBRATED\_UNCERTAINTY} --- proportional confidence given evidence
-\par\normalsize\smallskip
-\noindent Blinded human rating with predeclared rubrics and inter-rater
-reliability assessment is required before any score is interpreted.
-A deterministic heuristic annotation pipeline exists (six keyword codes,
-adversarial testing against naive surface scoring) but produces no
-proficiency estimate and cannot distinguish learner-originated from
-AI-prompted behaviour. The pipeline is a falsification instrument---it
-exposes how easily surface codes can be triggered, not a validated
-scoring system.
+\medskip
+\noindent\textbf{Illustrative scenario} (for development, not a pre-validated
+item). A student receives two sources on screen time and adolescent sleep:
+a correlational study reporting a negative association and an experimental
+study showing no short-term effect. The AI agent proposes an interpretation
+(\textquoteleft Screen time may not affect sleep directly; the correlation could
+reflect other factors like evening use\textquoteright). The student can accept,
+challenge, request additional evidence, or formulate an alternative explanation.
+The protocol records which information is introduced by the AI, which by the
+student, and whether the assessment changes when an unaided reasoning probe
+is inserted. Two AI roles---explanatory assistant (bounded Socratic prompts)
+and critical collaborator (counterexample and verification requests)---enable
+systematic comparison across interaction conditions.
 
-\noindent\textbf{Candidate models and estimated usage.} No model is selected
-or deployed. The primary candidate is a current Anthropic model (Claude Opus~4,
-API access with contractual prohibition on training from submissions).
-Alternative candidates include GPT-4o (OpenAI, hosted API with opt-out), a
-self-hosted DeepSeek-V3 (full data control, MIT licence), and Llama~4~Scout
-(Meta, community licence, self-hosted). All require adversarial
-prompt-leakage testing before assessment use.
+\medskip
+\noindent\textbf{Measurement development sequence.} Observational codes will
+not be presented as a validated instrument at the start of the collaboration.
+They will be developed through a predeclared sequence:
 
-Estimated inference per session: approximately 40--150 task-specific
-student--AI exchanges, each requiring 1--4 API calls (prompt, critic,
-retrieval as needed). At current hosted-API pricing, this yields roughly
-\$0.05--\$0.20 per session for the primary model, substantially less for
-self-hosted alternatives (compute cost only). A precise cost model
-requires specifying the prompt structure, maximum tokens per turn, retry
-policy, and infrastructure. These figures are indicative; exact cost
-feasibility will be assessed during the development phase.
+\begin{enumerate}[leftmargin=1.5em, nosep]
+  \item Define the observation opportunities each task must provide (minimum
+    evidence for each code to be scorable);
+  \item Annotate the student action and the preceding AI intervention
+    separately, preserving turn-level provenance;
+  \item Evaluate inter-rater agreement and test whether code distributions
+    shift when the AI agent, prompt version, or task changes;
+  \item Compare conversational indicators against independent unaided probes
+    and examine language comparability;
+  \item Retain only indicators that survive these tests; discard those that
+    primarily track prompting.
+\end{enumerate}
+
+\noindent Candidate codes (draft) include: \textbf{EVIDENCE\_REQUEST}
+(student requests grounds for a claim), \textbf{COMPETING\_CAUSE} (proposes
+rival explanation), \textbf{DISCRIMINATING\_TEST} (designs comparison to
+distinguish hypotheses), \textbf{SOURCE\_APPRAISAL} (evaluates credibility),
+\textbf{JUSTIFIED\_REVISION} (revises with evidence link), and
+\textbf{CALIBRATED\_UNCERTAINTY} (proportional confidence). Each is
+recorded per turn with \texttt{learner\_origin\ =\ indeterminate}---the
+system does not identify the cognitive author. A heuristic annotation
+pipeline exists (adversarial testing against naive surface scoring) but
+produces no proficiency estimate; it is a falsification instrument, not
+a scoring system.
 
 \section{Collaboration with OECD}
 
-Pyragogy proposes a bounded research collaboration with clearly separated
-contributions:
+\noindent\textbf{Proposer delivers:}
+\begin{itemize}[leftmargin=1.5em, nosep]
+  \item Three task specifications with version-controlled prompt registries
+    and a process-coding manual, developed through iterative co-design;
+  \item A reproducible synthetic interaction trace pipeline and adversarial
+    test suite for detecting prompt-contamination;
+  \item A deployment and data-protection design (DPIA-ready framework)
+    and a written report on the conditions under which a pilot would
+    become feasible.
+\end{itemize}
 
-\medskip
-\noindent\begin{tabular}{@{}p{6.2cm}p{6.2cm}@{}}
-\toprule
-\textbf{Proposer delivers} & \textbf{OECD guidance required}\\
-\midrule
-Task specifications ×3 with version-controlled prompts and process-coding manual (draft) &
-Target competency constructs and PISA delivery requirements\\[6pt]
-Reproducible synthetic interaction trace pipeline and adversarial test suite &
-Multilingual adaptation and equivalence standards\\[6pt]
-Deployment and data-protection design (DPIA-ready framework) &
-Student safeguarding and data-processing expectations\\[6pt]
-Biweekly co-design reviews, independent review gate, open-science documentation &
-Access to pilot partners, psychometric specialists, authorised schools\\
-\bottomrule
-\end{tabular}
-\medskip
+\noindent\textbf{OECD guidance required:}
+\begin{itemize}[leftmargin=1.5em, nosep]
+  \item Target competency constructs and PISA delivery requirements;
+  \item Multilingual adaptation and equivalence standards;
+  \item Student safeguarding and data-processing expectations;
+  \item Access to authorised pilot partners and psychometric specialists.
+\end{itemize}
 
 \noindent\textbf{None of these external inputs or partnerships is secured
-today.} Any pilot involving minors requires an approved partner and ethics
-committee approval, not an automatic development deliverable. The proposal
-describes a development programme conditional on the collaboration being
-established.
+today.} The project describes a bounded co-design programme (estimated
+4--6 months for the deliverables above), conditional on collaboration
+being established. Broader deployment requires partner agreements and
+financing; the OECD call does not remunerate the selected partner.
 
 \section{Intellectual property}
 
-\noindent\textbf{Background.} Existing task concepts, source code, and
-documentation developed independently before this collaboration. The current
-repository is private with no explicit licence; a permissive open-source
-licence (e.g., MIT or Apache~2.0) would be applied before any joint work,
-subject to agreement with the OECD on scope and terms.
-
-\noindent\textbf{Foreground.} Co-developed specifications, rubrics, and
-protocol designs. A bounded research and evaluation licence to the OECD
-would be negotiated, with scope, reuse rights, publication conditions, and
-confidentiality agreed in writing before work begins. No current OECD
-endorsement or partnership is implied. All third-party model, dataset, and
-library rights will be inventoried in the submission.
+\noindent\textbf{Background:} task concepts, source code, and documentation
+developed independently before this collaboration. The repository is private
+with no explicit licence; a permissive open-source licence would be applied
+before joint work, subject to agreement on scope and terms. \textbf{Foreground:}
+co-developed specifications and designs. A bounded research licence to the
+OECD would be negotiated in writing before work begins. Third-party rights
+will be inventoried in the submission.
 
 \section{Privacy, security, and feasibility}
 
-\noindent\textbf{Current state.} The HALA prototype is synthetic only. It
-runs on localhost or a private VPS with no external network exposure. It
-generates no real participant data and stores no personal information. The
-architecture separates assessment logic (gateway on port~8766) from item
-storage and scoring (worker on Unix socket) using HMAC-authenticated IPC.
-This design has been audited by an independent agent (four audits, 66~tests
-passing) but has not undergone formal security certification or penetration
-testing, and does not implement OS-level user isolation (all processes run
-under a single account).
+\noindent\textbf{Current state:} the HALA prototype is synthetic only---it
+runs on a private VPS, generates no real participant data, and stores no
+personal information. Architecture: two-process separation (gateway and
+worker) with HMAC-authenticated IPC, audited but uncertified. OS-level
+user isolation is not deployed.
 
-\noindent\textbf{Future student-facing deployment.} Any pilot must satisfy:
-\begin{itemize}[leftmargin=1.5em, nosep]
-  \item Formal Data Protection Impact Assessment before collection;
-  \item Pseudonymisation at collection, restricted retention, controlled
-    access, and incident procedures;
-  \item Appropriate legal basis under GDPR/DPA (this will not be a simple
-    parental consent under Art.~8 alone---roles of data controller and
-    processor, risk assessment, and actual pilot conditions must be
-    established with the partner institution);
-  \item \textbf{No collected student data used for model-provider training},
-    verified through contractual terms and, for self-hosted models,
-    architectural enforcement (data never leave the deployment host).
-\end{itemize}
+\noindent\textbf{Required for any student-facing pilot:} data protection
+impact assessment, pseudonymisation, appropriate legal basis under
+GDPR/DPA (not automatic parental consent under Art.~8 alone---roles of
+controller and processor must be established with the partner institution),
+and contractual prohibition on model-provider training from assessment data.
 
-\noindent\textbf{Feasibility.} The OECD call does not remunerate the selected
-partner. Pyragogy proposes a bounded co-design commitment first (estimated
-4--6~months for the deliverables above, requiring approximately 0.5~FTE
-research engineer and 0.25~FTE assessment designer). Broader deployment
-and validation are conditional on external financing, partner agreements,
-and any necessary ethics approvals. All per-session cost estimates are
-indicative and derived from current API published pricing---actual costs
-depend on final model selection, prompt design, throughput, and
-infrastructure decisions made during the collaboration.
+\noindent\textbf{Candidate models.} No model is selected or deployed.
+Two candidates identified with current verified terms: GPT-4o (OpenAI
+API, opt-out for training data) and the current Anthropic API flagship
+(contractual prohibition on training from submissions). Self-hosted
+alternatives (DeepSeek-V3, Llama~4~Scout) are documented but not
+assumed cheaper---at low volume, infrastructure costs may exceed
+API pricing. A precise model choice and token-based cost projection
+require prompt design decisions to be made during the development phase.
+All models require adversarial prompt-leakage testing before assessment use.
 
 \medskip
 {\color{ruleblue}\rule{\textwidth}{0.7pt}}
 \medskip
 
 \noindent\textbf{Readiness statement.} This proposal describes a planned
-development programme, not an existing operational assessment system.
-No validated scores, student data, ethics approval, institutional
-partnership, or deployed AI tutor exist. The measurement difficulty that
-makes the proposal interesting---that AI-mediated interaction can produce
-observable evidence of competence, but that evidence does not automatically
-constitute a valid measure of student competence---is precisely the object
-of study, not a gap to be concealed.
-
-\medskip
-\noindent
-\textit{Independent researcher eligibility and the 2026 deadline discrepancy
-(PDF: 2024, live OECD listing: 2026) require written OECD confirmation
-before submission.}
+research programme, not an existing operational system. No validated scores,
+student data, ethics approval, institutional partnership, or deployed AI
+tutor exist. The programme's core question---whether evidence from
+AI-mediated dialogue can be validly attributed to student proficiency---is
+the object of study, not a capability claim.
 
 \end{document}
