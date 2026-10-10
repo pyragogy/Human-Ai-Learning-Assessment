@@ -1,256 +1,125 @@
 <div align="center">
 
-<img src="assets/hala-hero.svg" alt="HALA — Human–AI Learning Assessment: Measure learning, not just assisted performance" width="100%" />
+<img src="assets/hala-hero.svg" alt="HALA — Human–AI Learning Assessment" width="100%" />
 
-<br />
+**What do we learn with AI — and what stays with us afterwards?**
 
-[![Version](https://img.shields.io/badge/version-1.0.0%20%C2%B7%20submission%20edition-1e3a5f?style=for-the-badge)](CHANGELOG.md)
-[![Submission](https://img.shields.io/badge/submission-sent%20%C2%B7%2009%20Oct%202026-167d88?style=for-the-badge)](proposal/submission/README.md)
-[![Code license](https://img.shields.io/badge/code-AGPL--3.0--only-1e3a5f?style=for-the-badge)](LICENSE)
-[![Research license](https://img.shields.io/badge/text%20%26%20figures-CC%20BY--SA%204.0-167d88?style=for-the-badge)](LICENSING.md)
+[![Version 1.0.0](https://img.shields.io/badge/v1.0.0-submission_edition-31566B?style=flat-square&labelColor=253746)](CHANGELOG.md)
+[![Code license](https://img.shields.io/badge/code-AGPL_3.0-31566B?style=flat-square&labelColor=253746)](LICENSE)
+[![Text and figures license](https://img.shields.io/badge/text_%26_figures-CC_BY--SA_4.0-31566B?style=flat-square&labelColor=253746)](LICENSING.md)
 
-[![Research](https://img.shields.io/badge/research-evidence--first-167d88?style=for-the-badge)](research/ADVERSARIAL_AUDIT.md)
-[![Data](https://img.shields.io/badge/data-synthetic%20only-1e3a5f?style=for-the-badge)](prototype/README.md)
-[![Validation](https://img.shields.io/badge/validation-not%20established-986b31?style=for-the-badge)](assessment/MEASUREMENT.md)
-[![Automation](https://img.shields.io/badge/Actions-disabled%20by%20owner-986b31?style=for-the-badge)](prototype/separated_assessment/INTEGRATION.md)
-
-**An open-science-oriented research initiative by [Pyragogy](https://pyragogy.org)**
-
-*How do we know what a student has truly learned when artificial intelligence participates in the learning process?*
-
-[**The research question**](#the-question-that-matters) · [**Study design**](#research-design) · [**Measurement**](#what-we-measure) · [**Prototype**](#run-the-reproducible-demonstrator) · [**Research resources**](#research-library) · [**Get involved**](#participation--collaboration)
+[Read the proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf) · [Explore the idea](#the-idea) · [Try the prototype](#try-the-prototype) · [Help it-grow](#help-hala-grow)
 
 </div>
 
-## v1.0.0 — submission edition
+## Welcome to HALA
 
-**Incomplete research prototype.** Version 1 anchors the OECD submission and its supporting synthetic research package, not a complete or validated assessment.
+**HALA explores how to recognise learning when AI is part of the process.** It brings together a research proposal, a proposed study design and a small software prototype.
 
-Code: **AGPL-3.0-only** · Original text/figures: **CC BY-SA 4.0**. See [license scope](LICENSING.md) and [version notes](CHANGELOG.md).
+Created by **Fabrizio Terzi**, within [Pyragogy](https://pyragogy.org), HALA is currently a personal research project developed with AI assistance. There is no established research team or institutional partnership. Sharing the work is a way to make the ideas useful, invite thoughtful criticism and meet people who would like to help.
 
-## OECD proposal status — 2026-10-10
-The owner confirms that the proposal was submitted to OECD on **9 October 2026**. We are awaiting OECD response.
+**Current stage:** an early research prototype using synthetic examples. No learner study has been conducted, and the assessment method has not been validated.
 
-**Submitted proposal PDF:** [Human–AI Learning Assessment — OECD PISA proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf).
+## The idea
 
-The owner identified the archived final preview as the submitted document. Its recorded SHA256 is `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`; see [submission archive and provenance](proposal/submission/README.md) for the earlier preview-digest discrepancy. No OECD receipt, selection, endorsement or scientific validation is implied. The repository remains private; public release and a blog post will be considered separately.
+AI can help us explain a concept, solve a problem or write a convincing answer. HALA asks what happens next: can we explain the idea ourselves, apply it to a different problem and remember it later?
 
-[Pre-publication review](governance/REPOSITORY_REVIEW_2026-10-10.md) · [Provenance and license decision](governance/PROVENANCE_AND_LICENSING.md) · [Citation](CITATION.cff)
+The proposed study compares three ways of learning:
 
----
-
-> [!IMPORTANT]
-> **Scientific maturity:** HALA is a research programme **under development**, not a validated educational assessment, proven learning intervention, or deployed PISA assessment. The software currently processes **synthetic data only**. There have been **no learner trials**, no established psychometric validity, and no independent confirmation of educational impact. All claims should be read against these limits.
-
-## The question that matters
-
-Artificial intelligence can help a student produce an excellent answer. But an excellent answer does not necessarily mean that learning occurred.
-
-**HALA — Human–AI Learning Assessment** investigates how to distinguish:
-
-| What we can observe | What we still need to establish |
+| Approach | Learning experience |
 | :--- | :--- |
-| **Assisted performance** — what a learner and AI produce together | **Independent competence** — what the learner can do without the AI |
-| **Interaction process** — questions, disagreement, evidence checks and revisions | **Learning mechanisms** — whether those processes contribute to later competence |
-| **Immediate improvement** — stronger performance shortly after a session | **Durable learning** — retention and transfer to unfamiliar problems |
+| **A · Without AI** | Learning resources and self-checks |
+| **B · AI tutor** | Explanations and guided support |
+| **C · Critical AI collaborator** | Questions, alternative views and challenges to reasoning |
 
-**Central hypothesis:** critical, well-structured interaction with AI *may* support deeper and more transferable learning than explanatory assistance alone. HALA is designed to test this claim, **including the possibility that it is false**.
+The hypothesis is that critical interaction with AI *may* support deeper learning than explanatory assistance alone. The study must also be able to show that this hypothesis is wrong.
 
-## Our north star
+<img src="assets/hala-method.svg" alt="Proposed study: independent baseline, assisted learning, independent post-test, transfer and delayed retention" width="100%" />
 
-<div align="center">
+Learning would be assessed independently before and after the session, then through unfamiliar problems and a follow-up 7–14 days later. The main planned comparison is post-session independent performance in C versus B, adjusted for baseline performance. Transfer and retention are additional outcomes.
 
-### Measure the learning that remains when the AI is gone.
+A separate [OECD/PISA research extension](research/PISA_RDI_CONVERSATIONAL_ASSESSMENT_EXTENSION.md) explores what evidence an AI-mediated conversation might provide about proficiency. It is a different research question; conversational observations are not calibrated proficiency scores.
 
-**Observe → Operationalise → Compare → Challenge → Replicate**
+## The submission edition
 
-</div>
+**Version 1.0.0** records the proposal and supporting materials prepared for the OECD submission. The author confirms that the proposal was sent on **9 October 2026**.
 
-No leaderboard disguised as science. No claim that a fluent AI-produced answer demonstrates understanding. No black-box score promoted to psychometric truth.
+**[Read the submitted proposal · PDF, 2 pages](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf)**
 
-## Research design
+The original PDF is archived unchanged. Its file history, checksum and the earlier preview-digest discrepancy are documented in the [submission archive](proposal/submission/README.md). No OECD receipt, acceptance or endorsement is recorded.
 
-<img src="assets/hala-method.svg" alt="HALA study timeline: independent baseline T0, AI collaborative learning T1, independent post-test T2, transfer T3, delayed retention T4" width="100%" />
+The repository is currently private. Making it public and writing a blog post are separate next steps. Version 1 describes this research snapshot; a GitHub release has not yet been published.
 
-We propose a controlled study with **three instructional conditions**:
+## What is here today
 
-| Study arm | Instructional experience | Scientific role |
-| :--- | :--- | :--- |
-| **A — Non-AI comparator** | Standardised learning resources and self-checks | Active comparison condition |
-| **B — Explanatory AI tutor** | Supportive explanations and comprehension prompts | Tests assisted instruction |
-| **C — Critical AI collaborator** | Hypothesis generation, alternative perspectives, challenges and evidence verification | Tests dialogic, critical collaboration |
+| Available | Still to establish |
+| :--- | :--- |
+| Research questions and a proposed study protocol | Independent scientific review |
+| Draft assessment tasks and scoring approach | Reliable, fair measures of learning |
+| A Python prototype with synthetic examples | A fully verified deployment for real use |
+| Submission PDF and documented project history | Ethics approval and a study with learners |
 
-All groups require comparable tasks, intended instructional time, assessment conditions and protected independent tests. Randomisation and baseline adjustment are planned for a later adequately designed study.
+The proposed **Epistemic Quality Index (EQI)** is an idea to investigate, not a validated instrument. The prototype can help check software behaviour; it cannot establish that someone has learned.
 
-**T0** independent baseline → **T1** assisted learning → **T2** independent post-test → **T3** novel-problem transfer → **T4** independent delayed retention (7–14 days).
+## Help HALA grow
 
-**Primary planned outcome:** baseline-adjusted difference in independently assessed T2 performance between C and B. Transfer, retention and interaction process indicators are secondary/exploratory outcomes. An initial pilot would establish feasibility and measurement properties, **not causal efficacy**.
+You do not need to join a formal team to contribute. A useful question, a clearer example or an honest account of how you learn with AI can help shape the next step.
 
-Read the [full research protocol](research/PROTOCOL.md), [hypotheses and disconfirmation rules](research/HYPOTHESES.md), [statistical analysis plan](research/ESTIMANDS_AND_ANALYSIS.md), and [intervention manual](research/INTERVENTION_MANUAL.md).
+- **Read and challenge:** which claims need stronger evidence? What would convince you?
+- **Make it clearer:** suggest better explanations, examples or accessible wording.
+- **Try the software:** report confusing steps or reproducible problems using synthetic data.
+- **Bring experience:** share perspectives from teaching, learning, assessment or software development.
 
-## What we measure
+With repository access, start with [Issues](../../issues) or the short [contribution guide](CONTRIBUTING.md). Otherwise, visit [Pyragogy](https://pyragogy.org). There are no existing partnerships implied by this invitation.
 
-| Construct | Core question | Evidence source |
-| :--- | :--- | :--- |
-| **Conceptual understanding** | Can the learner explain and apply the concept independently? | Blinded rubric-scored tasks |
-| **Critical reasoning** | Can the learner recognize poor evidence or mistaken inference? | Justification and error-detection items |
-| **Transfer** | Can knowledge be used in a new context? | Independent novel problems |
-| **Retention** | Does capability persist after a delay? | Follow-up assessment |
-| **Metacognitive calibration** | Does confidence align with demonstrated performance? | Confidence judgments + independent outcomes |
-| **Collaborative process** | Does the learner challenge, verify and improve reasoning? | Consented, structured process indicators |
+Please keep personal learner records, private conversations and credentials out of the repository.
 
-The proposed **Epistemic Quality Index (EQI)** is a theoretical candidate for further operationalisation — **not a validated psychometric instrument**. We will examine item properties, inter-rater agreement, fairness, measurement invariance, construct validity, intervention fidelity and reproducibility before advancing any claims.
+## Try the prototype
 
-Explore the [measurement specification](assessment/MEASUREMENT.md) and [item blueprint](assessment/ITEM_BLUEPRINT.md).
-
-## Run the reproducible demonstrator
-
-The first implementation is an auditable **Python standard-library** data-validation and descriptive-scoring pipeline. It verifies score boundaries, stage independence, consistent assignment, uniqueness and missing follow-up records.
-
-For developers with access to this **private** repository, from its root (Linux/macOS, Python 3.10+):
+On Linux/macOS with Python 3.10+, from the repository root:
 
 ```bash
-# Synthetic-only two-process interactive journey, loopback port 8766
 python -m prototype.separated_assessment.launch_local
 ```
 
-Browse to **http://127.0.0.1:8766**, or on a VPS use an SSH tunnel (`ssh -L 8766:127.0.0.1:8766 your-user@your-vps`). Stop with Ctrl+C. The launcher generates a short-lived local credential and manages the assessor and gateway processes. It is a **same-user development fixture**, not secure privilege separation or field-ready deployment.
+Open **http://127.0.0.1:8766** and stop the demo with **Ctrl+C**. For a remote server, follow the [SSH tunnel instructions](prototype/separated_assessment/INTEGRATION.md).
+
+The demo uses synthetic data and a scripted AI stand-in. Its two processes run under the same user account; it does not provide operating-system isolation. Its retention step occurs in the same session, so it does not test delayed learning. Use it for local exploration only.
+
+For software checks:
 
 ```bash
-# Run the tests locally or on the VPS; GitHub Actions is disabled to avoid runner charges
 python -m unittest discover -s prototype/tests -v
 python -m compileall -q prototype
 python prototype/analyse.py prototype/fixtures/synthetic_scores.csv
 ```
 
-The legacy single-process demo (`prototype/webdemo/server.py`, port 8765) remains for historical comparison and **must not** be mistaken for the two-process assessment architecture. The C-arm is a deterministic scripted mock, not a live LLM. T4 is same-session in the demo, **not** 7–14-day retention. Synthetic text only; there is no user consent workflow or production data protection.
+GitHub Actions remains disabled. The latest review environment blocked Unix sockets, leaving two socket tests and the gateway integration setup unverified there. Full supported-host testing and launcher checks remain tracked in [issue #3](../../issues/3). Earlier agent-reported test results are recorded in the [repository review](governance/REPOSITORY_REVIEW_2026-10-10.md).
 
-[Interactive integration](prototype/separated_assessment/INTEGRATION.md) · [One-command launcher](prototype/separated_assessment/launch_local.py) · [Adversarial synthetic annotator](research/reviews/PI_ADVERSARIAL_SYNTHETIC_ANNOTATION.md) · [PISA-specific research extension](research/PISA_RDI_CONVERSATIONAL_ASSESSMENT_EXTENSION.md)
+[Prototype guide](prototype/README.md) · [Demo instructions](prototype/separated_assessment/INTEGRATION.md) · [Assessment worker](prototype/separated_assessment/README.md)
 
-**Review provenance:** PI's agent review reports **66 passing local tests** on PR #12 at SHA `ae2c1d2`; the PR has been merged. This is an agent-reported software verification, **not external academic review**. The new launcher needs its own local smoke verification. GitHub Actions is disabled; no current hosted-runner CI claim is made.
+## Explore further
 
-## Research maturity — no shortcuts
-
-| Capability | State |
+| Start here | What you will find |
 | :--- | :--- |
-| Research question and falsifiable hypotheses | **Documented — draft** |
-| Arm definitions and study protocol | **Documented — draft** |
-| Measurement rubric and item blueprint | **Designed — unvalidated** |
-| Synthetic data validation + descriptive pipeline | **Implemented** |
-| Automated research-integrity checks | **Available for local/VPS execution; hosted GitHub Actions disabled** |
-| Interactive synthetic A/B/C journey | **Implemented as mock; no real AI model** |
-| Human-subject ethics authorisation | **Not obtained** |
-| Learner pilot and psychometric validation | **Not conducted** |
-| Independent replication | **Not conducted** |
+| [Study protocol](research/PROTOCOL_V1.md) | Study design, comparison groups and outcomes |
+| [Hypotheses](research/HYPOTHESES.md) · [Analysis plan](research/ESTIMANDS_AND_ANALYSIS.md) | Predictions and how they could be tested |
+| [Measurement](assessment/MEASUREMENT.md) · [Example task blueprint](assessment/ITEM_BLUEPRINT.md) | What independent assessment would need to measure |
+| [Roadmap](ROADMAP.md) | Future work and evidence needed |
+| [Claim register](research/CLAIM_REGISTER.md) · [Self-audit](research/ADVERSARIAL_AUDIT.md) | What is supported and what remains uncertain |
+| [Ethics](governance/ETHICS.md) · [Security](SECURITY.md) | Requirements before working with real participants |
+| [Prior work](research/PRIOR_WORK.md) | Intellectual foundations and their limits |
+| [Repository review](governance/REPOSITORY_REVIEW_2026-10-10.md) | Technical review and publication preparation |
 
-See the [adversarial self-audit](research/ADVERSARIAL_AUDIT.md). These are **internal checks**, not a substitute for independent specialist review.
+AI-assisted development and agent reviews are documented in the [collaboration record](governance/HUMAN_AI_RESEARCH_COLLABORATION.md). They are software and drafting support, not independent human scientific review.
 
-## Two research strands — do not conflate
+## Reuse and attribution
 
-The original HALA protocol measures *independent learning* after assistance, with T2 as the proposed primary outcome. The separate [PISA-RDI conversational assessment extension](research/PISA_RDI_CONVERSATIONAL_ASSESSMENT_EXTENSION.md) asks whether AI-mediated interactions can yield valid proficiency evidence; its observations are **not** calibrated scores. The [synthetic annotation prototype](prototype/conversation_annotation.py) retains an explicit null proficiency score. Neither study has recruited participants, and no psychometric validity is claimed.
+Original code is licensed under **AGPL-3.0-only**. Original text and figures, including the HALA proposal PDF, are licensed under **CC BY-SA 4.0**. Third-party works retain their own rights. See [license scope](LICENSING.md) for details.
 
-## Research library
-
-| Research artifact | Why it matters |
-| :--- | :--- |
-| [Research team and review roles](research/RESEARCH_TEAM.md) | Clear accountability and adversarial-review charters; roles **do not imply recruited human reviewers or running autonomous agents** |
-| [Protocol](research/PROTOCOL.md) | Study population, comparison conditions, bias controls and outcome definitions |
-| [Hypotheses](research/HYPOTHESES.md) | Predictions, limits and falsification criteria |
-| [Estimands and analysis](research/ESTIMANDS_AND_ANALYSIS.md) | Primary comparison and statistical decision principles |
-| [Intervention manual](research/INTERVENTION_MANUAL.md) | Tutor versus critical-collaborator behaviour |
-| [Measurement](assessment/MEASUREMENT.md) | Constructs, scoring and validity requirements |
-| [Item blueprint](assessment/ITEM_BLUEPRINT.md) | Example independent assessment tasks |
-| [Ethics and data governance](governance/ETHICS.md) | Research oversight, privacy and safeguarding |
-| [Adversarial audit](research/ADVERSARIAL_AUDIT.md) | Known threats and blocking issues |
-| [Roadmap](ROADMAP.md) | Development stages and evidence gates |
-| [Maintenance report — 9 October 2026](research/MAINTENANCE_REPORT_2026-10-09.md) | Open gate map, reviewed merge provenance, no-cost local testing and PI submission handoff |
-| [OECD call intelligence](proposal/CALL_INTELLIGENCE.md) | Opportunity tracking, not an endorsement or affiliation |
-| [Application guide](proposal/APPLICATION_GUIDE.md) | OECD two-page email proposal requirements, LaTeX-to-PDF authoring and open eligibility questions |
-| [PI submission assignment](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) | Completed authoring assignment; owner confirms the final proposal was sent on 9 October 2026 |
-
-## Intellectual foundations
-
-HALA draws research questions from the wider Pyragogy ecosystem. These works provide **conceptual or engineering foundations**, not empirical proof of HALA's outcomes.
-
-- **Fabrizio Terzi (2025)** — [*Cognitive Intraspecific Selection in Education*](https://doi.org/10.5281/zenodo.16962409). Epistemic selection and the evolution of ideas.
-- **Fabrizio Terzi (2025)** — [*The Cognitive Rhythm Theory*](https://doi.org/10.5281/zenodo.15480363). Temporal dynamics and human–AI co-creation.
-- **UnPeeragogy** — [Research artifact and DOI](https://doi.org/10.5281/zenodo.22309102). Critical collaboration, independent challenge and auditability.
-- [Pyragogy](https://pyragogy.org) — the broader human–AI co-learning research initiative.
-
-These sources require separate claim-level review; HALA does not inherit validity from their publication or archival DOI. See the [prior-work provenance register](research/PRIOR_WORK.md).
-
-## Research without a classroom
-
-HALA currently has **no recruited learners, school access or validated human-learning results**. Our near-term deliverable is a rigorous, classroom-independent **assessment method and synthetic technical demonstrator**. The required human studies will need educational and psychometric collaborators, ethical authorisations and recruitment capacity.
-
-- [Classroom-independent research strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
-- [What we can genuinely contribute to a partner](proposal/BOUNDED_OFFER.md)
-- [Evidence-backed claim register](research/CLAIM_REGISTER.md)
-
-The technical demonstrator can test system integrity. **It cannot demonstrate that any human has learned.**
-
-## Proposed collaboration model
-
-<img src="assets/collaboration-model.svg" alt="Proposed model: Pyragogy develops the methodology, assessment design and demonstrator; a prospective education partner provides participants, ethics oversight and psychometric expertise; together they can produce a joint scientific study. No partnership exists yet." width="100%" />
-
-**Pyragogy's contribution is intentionally bounded.** We can design and test technical and methodological building blocks without a classroom. A real learning-effect study requires an educational partner, independent review, appropriate ethics authorisations and actual participant data. This diagram is a **proposal**, not an existing agreement.
-
-- [Bounded partner offer](proposal/BOUNDED_OFFER.md)
-- [Classroom-independent development strategy](research/NO_CLASS_RESEARCH_STRATEGY.md)
-- [Synthetic three-arm journey and tests](prototype/JOURNEY_DEMO.md)
-
-## Interactive synthetic assessment demonstrator
-
-The recommended browser demonstration is the **two-process local fixture**: separate assessment worker and gateway, localhost port **8766**. The launcher starts both services, creates a temporary development secret and terminates them on exit. It does **not** configure separate Linux users or make the system appropriate for real participants.
-
-```bash
-python -m prototype.separated_assessment.launch_local
-# Browse to http://127.0.0.1:8766
-```
-
-For a remote VPS, use SSH port forwarding. The old single-process server on port 8765 is **legacy** and retained only for historical development. Neither path connects a real LLM or conducts a delayed T4 visit; all examples are synthetic.
-
-[Run instructions](prototype/separated_assessment/INTEGRATION.md) · [Assessment worker](prototype/separated_assessment/README.md) · [Security runbook (not deployed)](prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md)
-
-The worker requires authenticated IPC, expires sessions and enforces stage order; **operating-system identity separation is still not deployed**. A shared-secret check alone does not establish secure assessment isolation. There are no independently signed receipts or approved controls for minors.
-
-## Reproducibility and public-release readiness
-
-HALA includes adversarial fixtures that deliberately challenge the data pipeline, including re-signed yet invalid experimental sequences. See the [synthetic journey](prototype/JOURNEY_DEMO.md), [structural validator](prototype/validate.py) and [negative regression tests](prototype/tests/test_validate.py).
-
-**The repository remains private.** A public release requires explicit owner approval after [security, evidence, licensing and privacy review](governance/PUBLIC_RELEASE_GATE.md). Passing unit tests is not equivalent to ethical clearance, psychometric validation or readiness for human subjects.
-
-## How this research is built: critical human–AI collaboration
-
-The project also documents its own **build → challenge → human adjudication → independent verification** workflow. The independent-agent reviewer **PI** has filed evidence-backed VPS audit comments and checked the revised [synthetic annotation PR #12](https://github.com/pyragogy/human-ai-learning-assessment/pull/12); PI reported **66/66 local Python tests passing** on the reviewed commit. This is agent-performed software checking, not external scientific peer review.
-
-Our rule: **No agent approves its own work.** This workflow is an auditable development practice, **not** evidence of human learning or a substitute for independent human peer review.
-
-[Human–AI Research Collaboration Protocol](governance/HUMAN_AI_RESEARCH_COLLABORATION.md)
-
-## OECD / PISA relevance
-
-An OECD call concerning AI-mediated assessment motivates this work, but **HALA is independent of OECD and PISA**. No institutional partnership, procurement award, endorsement or acceptance is implied. Applicability to international assessment of 15-year-olds would require substantial additional work on curricula, translations, fairness, participant protections and cross-national measurement invariance. Our current feasibility design envisages consenting adults only, contingent on ethical authorisation.
-
-## Participation & collaboration
-
-We welcome rigorous challenges from learning scientists, psychometricians, assessment designers, human–AI interaction researchers, statisticians and privacy specialists.
-
-**Especially useful contributions:** critiques of construct validity, experimental confounds, item calibration, secure assessment isolation, accessibility and replication design.
-
-This project is currently private. Interested collaborators can start at [Pyragogy.org](https://pyragogy.org); repository access is **not** public by default. Project tasks and review checkpoints are tracked in [GitHub Issues](../../issues).
-
-> **Privacy rule:** no identifiable student records, private transcripts, participant identifiers or API credentials in Git. All current examples are synthetic.
+To cite this edition, use [CITATION.cff](CITATION.cff). The archived PDF reflects the submission date; the repository licenses were approved the following day.
 
 ---
 
-<div align="center">
-
-**Pyragogy · HALA**
-
-*Human–AI learning deserves evidence, not assumptions.*
-
-[Research](research/PROTOCOL.md) · [Measurement](assessment/MEASUREMENT.md) · [Integrity](research/ADVERSARIAL_AUDIT.md) · [Pyragogy](https://pyragogy.org)
-
-</div>
-
+**HALA · Pyragogy**  
+*A question worth exploring together: what remains when the AI is gone?*
