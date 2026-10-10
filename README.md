@@ -1,5 +1,8 @@
 <div align="center">
 
+## OECD proposal status — 2026-10-10
+Owner confirmed submission on 9 October 2026; awaiting OECD response. See [submission archive and provenance](proposal/submission/README.md). No OECD approval or scientific validation is implied. Repository publication and a blog post remain undecided.
+
 <img src="assets/hala-hero.svg" alt="HALA — Human–AI Learning Assessment: Measure learning, not just assisted performance" width="100%" />
 
 <br />

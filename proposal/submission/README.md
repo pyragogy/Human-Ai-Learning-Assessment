@@ -1,12 +1,21 @@
 # HALA — two-page OECD PISA proposal
-Working package for development/human review. **Not approved for dispatch.**
+Working package and submission archive. **Owner reports submitted on 2026-10-09; awaiting OECD response.**
 Issue [#14](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) remains open.
+
+## Current status — 2026-10-10
+The owner confirmed that the OECD PISA proposal was submitted on **2026-10-09**. Awaiting OECD response; no receipt, eligibility confirmation, selection or endorsement is documented here.
+
+The recovered final-named PDF is archived at [hala_pisa_rdi_2026_final_gaps.pdf](hala_pisa_rdi_2026_final_gaps.pdf).
+SHA256: `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`.
+This differs from the authoring preview digest recorded below (`571cfc54…`). The recovered file is not regenerated or altered; byte identity with the actual email attachment has not been independently established. Preserve this distinction until the sent attachment or its digest is checked.
+
+Pre-dispatch statements below describe the 9 October authoring checkpoint and are historical. Sending does not close scientific review, OECD eligibility/call clarification, contractual IP, or pre-pilot safeguards. The repository stays private; public release and a blog post remain undecided. No fresh email, merge, licence grant, paid service or Actions change is authorised by this status update.
 
 ## Files
 - `hala_pisa_rdi_2026.tex`: current two-page English proposal.
 - `ASSUMPTIONS_AND_GATES.md`: dated model/price sources, design, privacy/IP and resource dependencies.
 - `REVIEW_RESPONSE_2026-10-09.md`: response to the two AI reviews consolidated in PR #18, quality findings and remaining review gates.
-- PDF preview: generated locally, not committed. No restricted OECD source PDF is included.
+- Archived final-named PDF: `hala_pisa_rdi_2026_final_gaps.pdf`; provenance and digest caveat above. Authoring preview: generated locally, not committed. No restricted OECD source PDF is included.
 
 ## Reproduce locally
 From the repository root, using pdfLaTeX (TeX Live 2023 was used for this revision):
