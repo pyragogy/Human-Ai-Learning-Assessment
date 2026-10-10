@@ -1,9 +1,9 @@
-# Six synthetic cases: responses, provenance and counterexamples
+# Ten synthetic cases: responses, provenance and counterexamples
 
-**Fixture version:** HALA-KIT-S0.1. Everything below is authored, not observed.  
+**Fixture version:** HALA-KIT-S0.1.1. Everything below is authored, not observed.  
 Ratings are proposed discussion anchors. They are not independent human labels or validation evidence.
 
-Read [Task L and Task I](TASKS.md) first. Rate the Task L answer before opening the details. The order of each proposed profile is **accuracy / evidence / reasoning / verification**, all ordinal 0–3. No aggregate score is supplied.
+Read [the source cards](TASKS.md) for each case's task first. Rate the Task L answer before opening the details. The order of each proposed profile is **accuracy / evidence / reasoning / verification**, all ordinal 0–3. No aggregate score is supplied.
 
 ## S01 — A polished answer supplied by AI
 
@@ -64,11 +64,11 @@ Learner: “Thanks.” Copies the paragraph.
 
 **Provenance:** authored as an unassisted fixture; no observed person.
 
-**Proposed L profile:** 2–3 / 3 / 3 / 2. The answer links the relevant pattern and two design details to a proportionate conclusion. Its check lacks an allocation method and explicit revision result. Accuracy 2 versus 3 is deliberately a discussion boundary: does the concise conclusion sufficiently bound the evidence?
+**Proposed L profile:** 3 / 3 / 3 / 2. The answer links the relevant pattern and two design details to a proportionate conclusion. Its check lacks an allocation method and explicit revision result. The explicit between-group pattern, causal limit and design reason meet the proposed accuracy-3 boundary.
 
 Do not penalize the awkward first sentence if its comparison is understood. Do not require the word “confounding”. Record disagreement rather than treating the range as a calibrated interval.
 
-**Possible falsifier:** raters cannot give a concrete reason for choosing 2 rather than 3; revise the accuracy anchor.
+**Possible falsifier:** external raters show that the proposed boundary cannot be applied consistently to this and comparable concise answers.
 
 </details>
 
@@ -129,7 +129,7 @@ Learner's submitted answer:
 **Subsequent I response:**  
 “The coated buildings used less electricity, but most also changed air conditioning. We don't know which helped. Compare buildings with the same equipment changes and weather exposure, some coated and some not. If coating still makes a difference, I'd trust the claim more.”
 
-**Proposed I profile:** 2–3 / 3 / 3 / 3. A useful comparison and revision condition are supplied; allocation/selection remain incompletely addressed. Accuracy is a review boundary.
+**Proposed I profile:** 2 / 3 / 3 / 3. A useful comparison and revision condition are supplied; allocation/selection remain incompletely addressed. It does not clearly state that the coated group fell more than the comparison group, which is the proposed accuracy-2 boundary.
 
 **Interpretation:** source-request counts would exaggerate what the L answer demonstrates. The later response supplies additional task evidence, but improvement or causation cannot be inferred across these unvalidated forms. A learner can display different reasoning on different tasks.
 
@@ -143,3 +143,61 @@ It can expose contradictions in proposed scoring, reveal vague anchors and produ
 
 No synthetic expected anchor should be stored as “ground truth”. Preserve proposed anchors, actual future reviewer ratings and adjudicated decisions as different records.
 
+
+## S07 — Bounded trust in a randomized result
+
+**Task:** R. **Submitted answer**
+
+> Quiet seating improved short-term performance on average in this study: groups were randomized, other learning conditions matched and scorers blinded. The estimated advantage was 4 points, with the supplied range supporting a positive but uncertain-sized effect. That does not establish retention or benefits in other libraries. I would replicate it in a different setting and assess retention; consistent benefits would strengthen broader use, while no benefit there would narrow the recommendation.
+
+<details>
+<summary>Reveal proposed anchor</summary>
+
+**Proposed profile:** 3 / 3 / 3 / 3. This is synthetic response quality, not actual learner competence. Causal confidence is proportionate to the stipulated design, results and scope.
+
+**Possible falsifier:** the rubric systematically lowers this answer because it does not offer a speculative confound. That would show a bias toward skepticism.
+
+</details>
+
+## S08 — Rejecting good evidence automatically
+
+**Task:** R. **Submitted answer**
+
+> Correlation never proves causation, so the study tells us nothing. Motivation must explain the improvement. I would demand a bigger study before considering any evidence.
+
+<details>
+<summary>Reveal proposed anchor</summary>
+
+**Proposed profile:** 0 / 1 / 0 / 1. It acknowledges improvement but ignores randomized allocation, matched conditions and the uncertainty card. The invented explanation is asserted as certain. “Bigger” does not specify the uncertainty or generalization question.
+
+**Possible falsifier:** the design card contains a documented allocation failure supporting that explanation. In this fixture it does not.
+
+</details>
+
+## S09 — Distinguishing uncertainty from no effect
+
+**Task:** U. **Submitted answer**
+
+> Zero is the estimated difference, but the range still includes both useful benefit and harm. Randomization helps causal interpretation; it does not make a small study precise. We cannot claim the seating conditions are equivalent when the range includes differences larger than the prespecified 3 points. I would run a properly planned study to narrow the range. A range entirely inside the practical bounds would support a negligible effect; a clearly positive range beyond them would support a useful benefit.
+
+<details>
+<summary>Reveal proposed anchor</summary>
+
+**Proposed profile:** 3 / 3 / 3 / 3. The argument uses the supplied uncertainty and practical boundary. The hypothetical follow-up conclusions require an appropriately prespecified analysis; this is not a computed equivalence test.
+
+**Possible falsifier:** the answer treats the zero point estimate alone as proof of no effect. It explicitly does not.
+
+</details>
+
+## S10 — No response available
+
+**Task:** L. **Response record:** no response submitted.
+
+<details>
+<summary>Reveal proposed handling</summary>
+
+**Proposed profile:** NA / NA / NA / NA. Reason: no response submitted. No competence inference is supported.
+
+**Possible falsifier:** a response is recovered and can be rated. Preserve the initial missing record and document the correction.
+
+</details>

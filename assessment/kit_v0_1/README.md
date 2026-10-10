@@ -1,4 +1,4 @@
-# HALA assessment kit v0.1
+# HALA assessment kit v0.1.1
 
 **Draft for synthetic rehearsal and external critique · 10 October 2026**  
 No participant study, validated scores or scientific signoff. English drafting version; translation and accessibility review pending.
@@ -7,7 +7,7 @@ A small way to challenge HALA's central distinction: an impressive assisted answ
 
 ## Start in ten minutes
 
-1. Read the two fictional [tasks](TASKS.md).
+1. Read the fictional [tasks](TASKS.md).
 2. Score the final responses in the [blind packet](BLIND_RESPONSES.md) using the [rubric](RUBRIC.md), without looking at proposed anchors.
 3. Open [the cases](SYNTHETIC_CASES.md) and each case's provenance and independent response. Ask whether your interpretation changes.
 4. Record disagreements using [the review sheet](review_sheet.csv) and [review questions](REVIEW.md).
@@ -30,7 +30,8 @@ The four dimensions retain the existing [item blueprint](../ITEM_BLUEPRINT.md). 
 | :--- | :--- | :--- |
 | Task L: library programme | Candidate assisted learning exercise | No B/C intervention tested or frozen |
 | Task I: reflective roof coating | Candidate independent post-session exercise | Not equated with L or a baseline form |
-| Six synthetic cases | Expose false interpretations and rubric weaknesses | Proposed anchors are authored expectations, not human reference labels |
+| Ten synthetic cases | Expose false interpretations and rubric weaknesses | Proposed anchors are authored expectations, not human reference labels |
+| Challenges R/U | Bounded causal trust and uncertainty | Synthetic rubric controls, not adopted study outcomes |
 | Rubric and review sheet | Make ratings and disagreements inspectable | No reliability coefficient or cutoff has been established |
 | Review questions | Prepare a narrow external assessment critique | No reviewer recruited or endorsement implied |
 
@@ -40,3 +41,5 @@ A full study still needs T0, reviewed forms, controlled interventions, independe
 
 Independent challenge and owner adjudication remain pending. The immediate useful result is a documented disagreement or counterexample, not a favorable score.
 
+
+See the [author's design critique and revision log](AUTHOR_CRITIQUE_2026-10-10.md) for unresolved limitations and the exact rationale for v0.1.1. The directory name remains kit_v0_1; document versions identify the revision.

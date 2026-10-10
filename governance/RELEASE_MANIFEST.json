@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "v1.0.0 submission-edition candidate integrity; excludes this manifest; no publication or validation implied",
-  "source_baseline": "f9d4479772ea8c227a365935f5473cefe4d86967",
+  "source_baseline": "5fec2e8dedf984e112ec8eb3c41b78d7e187711c",
   "license_status": "Owner-approved 2026-10-10: AGPL-3.0-only code; CC-BY-SA-4.0 original text and figures; see LICENSING.md.",
   "exact_file_hashes_only": true,
   "files": [
@@ -467,38 +467,43 @@
     },
     {
       "path": "assessment/kit_v0_1/README.md",
-      "sha256": "729717c892dece58d24d98648b6bc26534754e6404b13a830e1c9b8838cefd87",
-      "bytes": 3250
+      "sha256": "f61a6a99881b9829fc9ca69011c4df83f6691511f763bd3dca21b7f8ef72efba",
+      "bytes": 3587
     },
     {
       "path": "assessment/kit_v0_1/REVIEW.md",
-      "sha256": "c9fddaddc8c8888d6be8d143adfc3ceb7a59fb56f01dad191e120453862609da",
-      "bytes": 3431
+      "sha256": "71a3f21c26f2621a857b912e3f2c860638dd2c396e23fdd38eed9377056f405a",
+      "bytes": 3789
     },
     {
       "path": "assessment/kit_v0_1/RUBRIC.md",
-      "sha256": "fe8bcfd8737a6636e0d821bdabc38199e2984a66f210395a3d1f01558f2954f7",
-      "bytes": 5327
+      "sha256": "c625c49d02c4d4368268d151a366c3c457901b38b1fe7c44082938a4e20ba6cd",
+      "bytes": 6985
     },
     {
       "path": "assessment/kit_v0_1/SYNTHETIC_CASES.md",
-      "sha256": "e64b6ffcf2c3c1d64072d32bd43c5605db7a586d2151967c83fe28cfdbdbc59e",
-      "bytes": 9266
+      "sha256": "34059dd48c5a6f26c32e9cd4dc73caa2e96b2574488d181e8b5d84083c754c45",
+      "bytes": 12544
     },
     {
       "path": "assessment/kit_v0_1/TASKS.md",
-      "sha256": "9772922fa4167ebff8cf56e31add63a54e336d401123809d9f8a8dc9fb28e171",
-      "bytes": 4128
+      "sha256": "3223f47cf25e55032cf1bef3afa9655ba3cf09064e213d916ee02016cf54ae33",
+      "bytes": 6415
     },
     {
       "path": "assessment/kit_v0_1/review_sheet.csv",
-      "sha256": "47ac18fea459e0474b6caac506c764a9bb32baf4bf48a2537c9dd035d02f6f8e",
-      "bytes": 224
+      "sha256": "ca4ea544450e6fc39bea7ceb8db57df45f6b241570604e5bfc347a17fa155e9e",
+      "bytes": 283
     },
     {
       "path": "assessment/kit_v0_1/BLIND_RESPONSES.md",
-      "sha256": "aff4cd274ecf129d4bf3e7270d62d2dc884b0dea2fadfd994a6c94bf3fb2d7ed",
-      "bytes": 2328
+      "sha256": "072a98006da8d2a3848a2dc677fe4852ea0395069a6a1404167e8330e473dd17",
+      "bytes": 3629
+    },
+    {
+      "path": "assessment/kit_v0_1/AUTHOR_CRITIQUE_2026-10-10.md",
+      "sha256": "bef72958fe2ab0b61864e133cd6176d48ac51019847a8a5822522a15c48497c9",
+      "bytes": 3130
     }
   ]
 }

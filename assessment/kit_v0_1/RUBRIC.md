@@ -1,6 +1,6 @@
 # Task-specific analytic rubric
 
-**Version:** HALA-KIT-R0.1 · Proposed ordinal anchors  
+**Version:** HALA-KIT-R0.1.1 · Proposed ordinal anchors  
 Use the four dimensions independently. There is no validated total, pass mark, 0–100 conversion or EQI in this kit.
 
 ## Rating process
@@ -17,8 +17,8 @@ For missing or unavailable responses use **NA**, never zero. A submitted respons
 
 | Dimension | 0 | 1 | 2 | 3 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Conceptual accuracy** | Contradicts the design or asserts unsupported certainty | Notices a concern but treats the group difference as causal proof, or gives a label without applying it | Distinguishes association from causation and identifies a relevant limitation | Applies that distinction correctly and bounds what the observed pattern does and does not support |
-| **Evidence use** | No relevant evidence, or fundamentally misreads it | Names a card/detail without explaining its relevance | Correctly interprets relevant numerical/design details, but leaves an important link incomplete | Integrates the group pattern with allocation or co-intervention evidence and explains why both matter |
+| **Conceptual accuracy** | Dominant conclusion contradicts the design or claims proof of an effect/no effect that the cards cannot support | Contains a relevant concept or concern, but its application is vague or its tentative conclusion unsupported | Applies a relevant design/uncertainty distinction correctly, but omits the observed pattern or a boundary needed for the conclusion | Connects the observed pattern, design/uncertainty and a proportionate conclusion with an explicit relevant boundary |
+| **Evidence use** | No relevant evidence, or fundamentally misreads it | Names a card/detail without explaining its relevance | Correctly interprets relevant numerical/design details, but leaves an important link incomplete | Integrates the observed pattern with relevant design or uncertainty evidence and explains why both matter |
 | **Justified reasoning** | No inferential chain, or incompatible conclusion | Conclusion has a weak or generic reason | Coherent conclusion with a plausible competing explanation | Explicitly connects evidence, a plausible alternative and a proportionate conclusion |
 | **Verification / application** | No relevant check, or proposes an unethical/irrelevant action | Generic “check sources” or “get more data” | Specific relevant comparison, with an incomplete explanation of what it distinguishes | Feasible discriminating comparison plus a result that would strengthen, weaken or revise the conclusion |
 
@@ -51,3 +51,17 @@ Use the synthetic anchors to discuss the rubric, not to compute empirical rater 
 
 **Abstention boundary:** response quality may be rateable while learner-originated competence remains indeterminate.
 
+
+## Decision rules for overlapping anchors
+
+Use the dominant conclusion, not a single qualifying word, to distinguish accuracy 0 from 1. “No randomization proves no effect” is 0. A tentative causal suggestion with a relevant but unapplied concern can be 1. Quote the deciding phrase.
+
+Accuracy 3 does not require listing every limitation. For L/I, a correct between-group pattern plus an explicit causal limit and relevant design reason suffices. Accuracy 2 describes a correct partial application missing one of those links. S03 therefore proposes 3; S06's I response proposes 2 because it does not clearly state the between-group pattern. An external reviewer may reject these boundaries; preserve the disagreement.
+
+For R, randomization with the stipulated implementation and positive uncertainty range supports a bounded causal conclusion. Do not require a confound explanation where none is evidenced. For U, an estimate near zero with a wide range supports uncertainty, not evidence of equivalence.
+
+A justified replication, generalization check or precision-improving study can meet verification 3 if it states a discriminating result. Asking for randomization again is not automatically the best check.
+
+## Missingness rehearsal
+
+S10 has no submitted response: all four dimensions are NA, with reason “no response submitted”. This is different from an actual submitted answer such as “I do not know”, which can be rated for the evidence it displays. Never infer lack of competence from missingness.

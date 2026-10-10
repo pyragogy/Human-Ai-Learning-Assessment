@@ -1,6 +1,6 @@
-# Two fictional evidence-reasoning tasks
+# Fictional tasks and calibration challenges
 
-**Task version:** HALA-KIT-0.1 · English draft  
+**Task version:** HALA-KIT-0.1.1 · English draft  
 All entities, sources and numbers below are fictional. Source cards are task materials, not external references. No internet lookup is necessary. Neither task is validated or matched in difficulty.
 
 ## Task L — Did the quiet programme improve reading?
@@ -56,3 +56,27 @@ Task/rubric version, response condition, time allowed and spent, assistance avai
 
 This task can rehearse applying an idea to another setting. It does not establish form equivalence, independent learning gain, delayed retention or broad transfer. Human pilots would require the existing review and ethics gates.
 
+
+## Challenge R — When causal confidence is justified
+
+**Role:** synthetic positive control for the rubric, not an adopted learning-study item.
+
+**R1 · Design card.** Four hundred consenting adults were randomly assigned, with concealed allocation, to quiet or usual seating (200 each). Materials, practice time and opening hours were matched. Scorers were blind to seating assignment. All participants completed the reviewed, comparable test forms. No seating crossover or implementation deviation is recorded.
+
+**R2 · Results card.** Improvement was on average 4 points greater under quiet seating. For this fictional exercise, the reported uncertainty range is 1 to 7 points: it supports a positive average effect in this study, with uncertainty about its size. Accept the card's stipulated analysis; no interval calculation is required.
+
+**R3 · Scope card.** The study concerns one adult population, one library setting and short-term performance. It does not assess other settings or delayed retention.
+
+**Question:** what conclusion is justified, what remains uncertain, and what follow-up result would change how broadly you apply it? Do not invent a flaw absent from the cards. It is reasonable to ask about implementation, but an unsupported suspicion is not evidence that the experiment failed.
+
+## Challenge U — When a near-zero estimate is inconclusive
+
+**Role:** synthetic uncertainty control; a separate fictional study, not another analysis of R.
+
+**U1 · Design card.** The design and assessment conditions follow R, but only 40 adults were randomized (20 per condition), all completing the assessment.
+
+**U2 · Results card.** The estimated average difference is zero. The stipulated uncertainty range spans a 6-point disadvantage to a 6-point advantage. A 3-point difference was specified as practically important before analysis. No equivalence conclusion is warranted from this range.
+
+**Question:** what can we conclude, and what evidence would distinguish a negligible effect from an imprecise estimate?
+
+These cards give uncertainty in ordinary language. They do not teach interval-estimation methods or constitute real statistical output. R and U are rubric challenges; they are not equated with L/I or authorized additions to P01's outcome battery.

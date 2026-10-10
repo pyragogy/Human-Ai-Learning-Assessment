@@ -5,7 +5,7 @@ No authoring agent certifies this kit. Its documentation and file checks are not
 
 ## A bounded reviewer assignment
 
-At a pinned commit, read the tasks and rubric. Score the six responses in [the blind packet](BLIND_RESPONSES.md) before opening the cases. Disclose previous exposure to origins or anchors. Then reveal those materials and explain which inferences survive.
+At a pinned commit, read the tasks and rubric. Score the ten response records in [the blind packet](BLIND_RESPONSES.md) before opening the cases. Disclose previous exposure to origins or anchors. Then reveal those materials and explain which inferences survive.
 
 Questions:
 
@@ -48,3 +48,7 @@ Owner chooses the construct and scope; external human assessment/domain review c
 
 P01's original baseline-adjusted T2 C-versus-B comparison remains proposed and unchanged. The conversational extension remains separate. This kit supplies neither a complete T0–T4 battery nor a participant-ready intervention.
 
+
+## Additional v0.1.1 checks
+
+Score S07–S09 against their own R/U cards, not L. Explain why bounded trust, blanket rejection and imprecise no-effect claims should differ. Check S10 missingness without assigning zero. Review the [author critique](AUTHOR_CRITIQUE_2026-10-10.md); do not adopt its proposed fixes merely because its author favors them.
