@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite HALA when referring to this research design or synthetic prototype. It is not a validated assessment."
+type: software
+title: "HALA — Human–AI Learning Assessment"
+authors:
+  - family-names: Terzi
+    given-names: Fabrizio
+repository-code: "https://github.com/pyragogy/human-ai-learning-assessment"
+url: "https://pyragogy.org"
+abstract: "A prospective educational measurement programme and synthetic-only prototype separating independently demonstrated learning from AI-supported performance. No learner trial or psychometric validity established."
+keywords:
+  - educational measurement
+  - human-AI learning
+  - synthetic assessment
+version: "1.0.0"
+license:
+  - AGPL-3.0-only
+  - CC-BY-SA-4.0
+

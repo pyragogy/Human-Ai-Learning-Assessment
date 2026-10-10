@@ -1,12 +1,5 @@
 <div align="center">
 
-## OECD proposal status — 2026-10-10
-The owner confirms that the proposal was submitted to OECD on **9 October 2026**. We are awaiting OECD response.
-
-**Submitted proposal PDF:** [Human–AI Learning Assessment — OECD PISA proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf).
-
-The owner identified the archived final preview as the submitted document. Its recorded SHA256 is `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`; see [submission archive and provenance](proposal/submission/README.md) for the earlier preview-digest discrepancy. No OECD receipt, selection, endorsement or scientific validation is implied. The repository remains private; public release and a blog post will be considered separately.
-
 <img src="assets/hala-hero.svg" alt="HALA — Human–AI Learning Assessment: Measure learning, not just assisted performance" width="100%" />
 
 <br />
@@ -23,6 +16,21 @@ The owner identified the archived final preview as the submitted document. Its r
 [**The research question**](#the-question-that-matters) · [**Study design**](#research-design) · [**Measurement**](#what-we-measure) · [**Prototype**](#run-the-reproducible-demonstrator) · [**Research resources**](#research-library) · [**Get involved**](#participation--collaboration)
 
 </div>
+
+## v1.0.0 — submission edition
+
+**Incomplete research prototype.** Version 1 anchors the OECD submission and its supporting synthetic research package, not a complete or validated assessment.
+
+Code: **AGPL-3.0-only** · Original text/figures: **CC BY-SA 4.0**. See [license scope](LICENSING.md) and [version notes](CHANGELOG.md).
+
+## OECD proposal status — 2026-10-10
+The owner confirms that the proposal was submitted to OECD on **9 October 2026**. We are awaiting OECD response.
+
+**Submitted proposal PDF:** [Human–AI Learning Assessment — OECD PISA proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf).
+
+The owner identified the archived final preview as the submitted document. Its recorded SHA256 is `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`; see [submission archive and provenance](proposal/submission/README.md) for the earlier preview-digest discrepancy. No OECD receipt, selection, endorsement or scientific validation is implied. The repository remains private; public release and a blog post will be considered separately.
+
+[Pre-publication review](governance/REPOSITORY_REVIEW_2026-10-10.md) · [Provenance and license decision](governance/PROVENANCE_AND_LICENSING.md) · [Citation](CITATION.cff)
 
 ---
 
@@ -153,7 +161,7 @@ The original HALA protocol measures *independent learning* after assistance, wit
 | [Maintenance report — 9 October 2026](research/MAINTENANCE_REPORT_2026-10-09.md) | Open gate map, reviewed merge provenance, no-cost local testing and PI submission handoff |
 | [OECD call intelligence](proposal/CALL_INTELLIGENCE.md) | Opportunity tracking, not an endorsement or affiliation |
 | [Application guide](proposal/APPLICATION_GUIDE.md) | OECD two-page email proposal requirements, LaTeX-to-PDF authoring and open eligibility questions |
-| [PI submission assignment](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) | Prepare approximately two-page English LaTeX proposal as a reviewed PR, not a sent application |
+| [PI submission assignment](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) | Completed authoring assignment; owner confirms the final proposal was sent on 9 October 2026 |
 
 ## Intellectual foundations
 
@@ -240,3 +248,4 @@ This project is currently private. Interested collaborators can start at [Pyrago
 [Research](research/PROTOCOL.md) · [Measurement](assessment/MEASUREMENT.md) · [Integrity](research/ADVERSARIAL_AUDIT.md) · [Pyragogy](https://pyragogy.org)
 
 </div>
+
