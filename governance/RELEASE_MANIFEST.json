@@ -6,6 +6,11 @@
   "exact_file_hashes_only": true,
   "files": [
     {
+      "path": ".github/FUNDING.yml",
+      "sha256": "8912e9e9b34520f8be08ef59a2b00592cff80268b50380ecedd106237cb5ebb6",
+      "bytes": 26
+    },
+    {
       "path": ".gitignore",
       "sha256": "6764f8545298982dcaf8f5552e26db8a1561c0baf9da4a4a368721e78447d88e",
       "bytes": 157
