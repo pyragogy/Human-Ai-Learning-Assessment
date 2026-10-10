@@ -4,9 +4,14 @@
 
 <br />
 
-[![Research status](https://img.shields.io/badge/research-protocol%20%2B%20prototype-1e3a5f?style=for-the-badge)](research/PROTOCOL.md)
-[![Scientific integrity](https://img.shields.io/badge/claims-evidence--first-167d88?style=for-the-badge)](research/ADVERSARIAL_AUDIT.md)
-[![Stage](https://img.shields.io/badge/validation-not%20yet%20established-986b31?style=for-the-badge)](assessment/MEASUREMENT.md)
+[![Version](https://img.shields.io/badge/version-1.0.0%20%C2%B7%20submission%20edition-1e3a5f?style=for-the-badge)](CHANGELOG.md)
+[![Submission](https://img.shields.io/badge/submission-sent%20%C2%B7%2009%20Oct%202026-167d88?style=for-the-badge)](proposal/submission/README.md)
+[![Code license](https://img.shields.io/badge/code-AGPL--3.0--only-1e3a5f?style=for-the-badge)](LICENSE)
+[![Research license](https://img.shields.io/badge/text%20%26%20figures-CC%20BY--SA%204.0-167d88?style=for-the-badge)](LICENSING.md)
+
+[![Research](https://img.shields.io/badge/research-evidence--first-167d88?style=for-the-badge)](research/ADVERSARIAL_AUDIT.md)
+[![Data](https://img.shields.io/badge/data-synthetic%20only-1e3a5f?style=for-the-badge)](prototype/README.md)
+[![Validation](https://img.shields.io/badge/validation-not%20established-986b31?style=for-the-badge)](assessment/MEASUREMENT.md)
 [![Automation](https://img.shields.io/badge/Actions-disabled%20by%20owner-986b31?style=for-the-badge)](prototype/separated_assessment/INTEGRATION.md)
 
 **An open-science-oriented research initiative by [Pyragogy](https://pyragogy.org)**

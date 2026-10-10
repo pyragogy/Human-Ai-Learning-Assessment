@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "purpose": "pre-publication candidate integrity, not a public release",
-  "source_baseline": "5cceae9267153100cc4e49b5b18f640ced8467f1",
-  "license_status": "owner decision pending; no license granted",
+  "purpose": "v1.0.0 submission-edition candidate integrity; excludes this manifest; no publication or validation implied",
+  "source_baseline": "79e1ff1cab1c5cccba4b33fb5c09629657dd1cd0",
+  "license_status": "Owner-approved 2026-10-10: AGPL-3.0-only code; CC-BY-SA-4.0 original text and figures; see LICENSING.md.",
   "exact_file_hashes_only": true,
   "files": [
     {
@@ -14,31 +14,6 @@
       "path": "AGENTS.md",
       "sha256": "c20ae5fd311ad1b27c4f51e482da7d0c693f2f265019e4018c6340c0cc3d690c",
       "bytes": 3053
-    },
-    {
-      "path": "CITATION.cff",
-      "sha256": "98d3e3fdf4a9a5a38bcf0ba8c0231cef825bd4829f1540194cc3dc5bc9e1c32f",
-      "bytes": 679
-    },
-    {
-      "path": "CONTRIBUTING.md",
-      "sha256": "88b01d6a6cb4a5d849c4d22bdaa2256e195c66eeccf7bb276c72f071fca7362b",
-      "bytes": 1372
-    },
-    {
-      "path": "README.md",
-      "sha256": "f9c0d08df838f22f3230f642f12d20e47efeaaa145b474f933a2efe323e54e59",
-      "bytes": 19336
-    },
-    {
-      "path": "ROADMAP.md",
-      "sha256": "4c98f4bfa88d0c264bf1f140f9cc2ed62627cb77f8a1aa180a0bb1457a636bb9",
-      "bytes": 3852
-    },
-    {
-      "path": "SECURITY.md",
-      "sha256": "f9f2a6cd38fa612641664e420f73c40f3ac9e39ed36b9e13bf60175716e331c2",
-      "bytes": 770
     },
     {
       "path": "assessment/ITEM_BLUEPRINT.md",
@@ -66,6 +41,21 @@
       "bytes": 2204
     },
     {
+      "path": "CHANGELOG.md",
+      "sha256": "b4792bd79878edc595744f3616a5fb2e0714ee42c00b26e3b5fc33eaae6b6359",
+      "bytes": 959
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "f6e38c6026382bd34bdc5c24bf7c31774450fe922b918e1d7ff6d16a7f4601fd",
+      "bytes": 740
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "88b01d6a6cb4a5d849c4d22bdaa2256e195c66eeccf7bb276c72f071fca7362b",
+      "bytes": 1372
+    },
+    {
       "path": "governance/ETHICS.md",
       "sha256": "1e68baf59b1e9a4a1fe1913f3b0e97bd533f261d5e3611dc0d91f71511d7f42f",
       "bytes": 1089
@@ -77,8 +67,8 @@
     },
     {
       "path": "governance/PROVENANCE_AND_LICENSING.md",
-      "sha256": "270a103979a30a796c7e615da3af6d96cf0f5f27e9e5fb6550593d9d98f4fca5",
-      "bytes": 3630
+      "sha256": "1be8a427c70caeb8f58a4a25eb8ca893447e1c0ac37b01def6f3a2e858657673",
+      "bytes": 3928
     },
     {
       "path": "governance/PUBLIC_RELEASE_GATE.md",
@@ -87,8 +77,23 @@
     },
     {
       "path": "governance/REPOSITORY_REVIEW_2026-10-10.md",
-      "sha256": "cff6861ad0fdfffe2c12e26506e3c4f78c204e0560b2a67b0c5752f3571a8be3",
-      "bytes": 6833
+      "sha256": "fdcace6a128abf80f32364e91d62bc318915b808a4f93711b8218d76a332e48b",
+      "bytes": 7169
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "41c454984ccb03e15b90fecd4ac64405dddb1b61e8aaba7e6aadb6e54a34456e",
+      "bytes": 34021
+    },
+    {
+      "path": "LICENSES/CC-BY-SA-4.0.txt",
+      "sha256": "f9e1b13d24134f88499362a56b56574929d486e9244e49635d69f2cddc8689a2",
+      "bytes": 18376
+    },
+    {
+      "path": "LICENSING.md",
+      "sha256": "4cc5e79a30dc66ba40cee0c122aa3dc43cec257dffde7ff77a4a9f52ab69744b",
+      "bytes": 1147
     },
     {
       "path": "proposal/APPLICATION_GUIDE.md",
@@ -126,14 +131,19 @@
       "bytes": 3800
     },
     {
-      "path": "proposal/TWO_PAGE_SUBMISSION_DRAFT_2026.md",
-      "sha256": "870929ba4501fe9e137669ebc4bdd6e68695e24099b2c53f01ed94430e18db2a",
-      "bytes": 6798
-    },
-    {
       "path": "proposal/submission/ASSUMPTIONS_AND_GATES.md",
       "sha256": "4962a07cd848b9903c21d67b166465242e4a138d9f637b37dd5023459737b359",
       "bytes": 13385
+    },
+    {
+      "path": "proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf",
+      "sha256": "8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08",
+      "bytes": 116918
+    },
+    {
+      "path": "proposal/submission/hala_pisa_rdi_2026.tex",
+      "sha256": "853132e700b788b627ea686cb232ab820da603e9d96ce59e6f14ed14a80fd833",
+      "bytes": 12219
     },
     {
       "path": "proposal/submission/README.md",
@@ -146,24 +156,9 @@
       "bytes": 9872
     },
     {
-      "path": "proposal/submission/hala_pisa_rdi_2026.tex",
-      "sha256": "853132e700b788b627ea686cb232ab820da603e9d96ce59e6f14ed14a80fd833",
-      "bytes": 12219
-    },
-    {
-      "path": "proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf",
-      "sha256": "8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08",
-      "bytes": 116918
-    },
-    {
-      "path": "prototype/JOURNEY_DEMO.md",
-      "sha256": "740abd226a2578f424933c394d806e13e345a1ac76a23487941ca1fb83cedcaf",
-      "bytes": 1123
-    },
-    {
-      "path": "prototype/README.md",
-      "sha256": "865d143518d0e1dc09c25062d5ae5f62e09f04159b7eb715e369af2b00c2f505",
-      "bytes": 2182
+      "path": "proposal/TWO_PAGE_SUBMISSION_DRAFT_2026.md",
+      "sha256": "870929ba4501fe9e137669ebc4bdd6e68695e24099b2c53f01ed94430e18db2a",
+      "bytes": 6798
     },
     {
       "path": "prototype/analyse.py",
@@ -191,29 +186,29 @@
       "bytes": 332
     },
     {
+      "path": "prototype/JOURNEY_DEMO.md",
+      "sha256": "740abd226a2578f424933c394d806e13e345a1ac76a23487941ca1fb83cedcaf",
+      "bytes": 1123
+    },
+    {
       "path": "prototype/journey.py",
       "sha256": "8724cbbfd72075e5023d1b2e62f513b2b9e2a50223629ec096c1bfc139375a51",
       "bytes": 3345
     },
     {
-      "path": "prototype/separated_assessment/INTEGRATION.md",
-      "sha256": "1d9f84e82533721c3cfb5c2843382646f51fb4feb87b22ccafb9e5142d1df54a",
-      "bytes": 4978
-    },
-    {
-      "path": "prototype/separated_assessment/README.md",
-      "sha256": "18ca360b5a915b8c8154691b83ff3435189efc90421a17b0368df985742c5d02",
-      "bytes": 5128
-    },
-    {
-      "path": "prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md",
-      "sha256": "7f2649aa0d3982444818eab71161fde6e04a276f9de959f55b8a0631d1744ac0",
-      "bytes": 5088
+      "path": "prototype/README.md",
+      "sha256": "865d143518d0e1dc09c25062d5ae5f62e09f04159b7eb715e369af2b00c2f505",
+      "bytes": 2182
     },
     {
       "path": "prototype/separated_assessment/gateway.py",
       "sha256": "49a90a1383c409f26a3e8b13a3fd3a4013798ed66f81f592f17932e2eca2a8ed",
       "bytes": 9454
+    },
+    {
+      "path": "prototype/separated_assessment/INTEGRATION.md",
+      "sha256": "1d9f84e82533721c3cfb5c2843382646f51fb4feb87b22ccafb9e5142d1df54a",
+      "bytes": 4978
     },
     {
       "path": "prototype/separated_assessment/launch_local.py",
@@ -226,9 +221,19 @@
       "bytes": 595
     },
     {
+      "path": "prototype/separated_assessment/README.md",
+      "sha256": "18ca360b5a915b8c8154691b83ff3435189efc90421a17b0368df985742c5d02",
+      "bytes": 5128
+    },
+    {
       "path": "prototype/separated_assessment/service.py",
       "sha256": "969b6285f0f55b3d9cb80dc74e2f136f7d689028bcf1c854884f3210d7a72faa",
       "bytes": 6757
+    },
+    {
+      "path": "prototype/separated_assessment/VPS_ISOLATION_RUNBOOK.md",
+      "sha256": "7f2649aa0d3982444818eab71161fde6e04a276f9de959f55b8a0631d1744ac0",
+      "bytes": 5088
     },
     {
       "path": "prototype/tests/test_analyse.py",
@@ -271,11 +276,6 @@
       "bytes": 3056
     },
     {
-      "path": "prototype/webdemo/README.md",
-      "sha256": "03d819a3e9666a0349d99069ceb99926adf1a7410d2eb4f625ccba7f429a26ac",
-      "bytes": 5333
-    },
-    {
       "path": "prototype/webdemo/adaptive.py",
       "sha256": "521ce78eb1915e4d781e2b2befd431bfbcb3ce1e274798cce6a225e1e4fa6bf8",
       "bytes": 1884
@@ -296,6 +296,11 @@
       "bytes": 5279
     },
     {
+      "path": "prototype/webdemo/README.md",
+      "sha256": "03d819a3e9666a0349d99069ceb99926adf1a7410d2eb4f625ccba7f429a26ac",
+      "bytes": 5333
+    },
+    {
       "path": "prototype/webdemo/server.py",
       "sha256": "121489251edbfc2bd38b68113ad5f4614b534272a6e28cdb60fff42657a33912",
       "bytes": 8206
@@ -311,9 +316,24 @@
       "bytes": 1581
     },
     {
+      "path": "README.md",
+      "sha256": "954917f6ef967d326f12963af1ddd08a56f459dca7484e371bfb2b16e43be8ce",
+      "bytes": 20147
+    },
+    {
       "path": "research/ADVERSARIAL_AUDIT.md",
       "sha256": "59e33153ae849e459c3960cf34f646285973b37bb44883340cb800c8db5648b9",
       "bytes": 1874
+    },
+    {
+      "path": "research/architecture/RFC_003_ADDENDUM_A.md",
+      "sha256": "b418db549cf7ec1a779c7b0233f9560626dfebb822347ba8173cfbea86961013",
+      "bytes": 2797
+    },
+    {
+      "path": "research/architecture/RFC_003_SEALED_ASSESSMENT.md",
+      "sha256": "16cd8d00288395cd3f075f2e96043c3cb269f8d149a0d5908ebea31c1194bcf7",
+      "bytes": 7067
     },
     {
       "path": "research/CLAIM_REGISTER.md",
@@ -366,14 +386,14 @@
       "bytes": 1045
     },
     {
-      "path": "research/PROTOCOL.md",
-      "sha256": "2ee448ab2e5c1fe2c404ff7eba4456ce09ba2828d0e123809b2325ed365d3f03",
-      "bytes": 1104
-    },
-    {
       "path": "research/PROTOCOL_V1.md",
       "sha256": "cbee9ff77a0d9d95b0885e93b13cd91792bb9b69d2530c5aab21c60af6235548",
       "bytes": 7981
+    },
+    {
+      "path": "research/PROTOCOL.md",
+      "sha256": "2ee448ab2e5c1fe2c404ff7eba4456ce09ba2828d0e123809b2325ed365d3f03",
+      "bytes": 1104
     },
     {
       "path": "research/RESEARCH_TEAM.md",
@@ -384,16 +404,6 @@
       "path": "research/REVIEW_GATE.md",
       "sha256": "c66e0e830f823b7246c56e86583abb795761051ee94a7843badaa16cd96683ea",
       "bytes": 2420
-    },
-    {
-      "path": "research/architecture/RFC_003_ADDENDUM_A.md",
-      "sha256": "b418db549cf7ec1a779c7b0233f9560626dfebb822347ba8173cfbea86961013",
-      "bytes": 2797
-    },
-    {
-      "path": "research/architecture/RFC_003_SEALED_ASSESSMENT.md",
-      "sha256": "16cd8d00288395cd3f075f2e96043c3cb269f8d149a0d5908ebea31c1194bcf7",
-      "bytes": 7067
     },
     {
       "path": "research/reviews/OECD_TWO_AI_REVIEW_SYNTHESIS_2026-10-09.md",
@@ -414,6 +424,21 @@
       "path": "research/reviews/PI_VPS_AUDIT_TRIAGE_2026-10-08.md",
       "sha256": "9344e40203f5ab35327a80861dac620d06ad6e1ae7c050157be2c25b92b154fe",
       "bytes": 5351
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "4c98f4bfa88d0c264bf1f140f9cc2ed62627cb77f8a1aa180a0bb1457a636bb9",
+      "bytes": 3852
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "f9f2a6cd38fa612641664e420f73c40f3ac9e39ed36b9e13bf60175716e331c2",
+      "bytes": 770
+    },
+    {
+      "path": "VERSION",
+      "sha256": "902772cf66e85a24a4c33df08372d2e50040c365eff94f8a7cf0e3183fe1140f",
+      "bytes": 7
     }
   ]
 }
