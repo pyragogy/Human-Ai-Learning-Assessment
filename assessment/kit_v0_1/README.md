@@ -8,8 +8,8 @@ A small way to challenge HALA's central distinction: an impressive assisted answ
 ## Start in ten minutes
 
 1. Read the two fictional [tasks](TASKS.md).
-2. Score the final responses in [synthetic cases](SYNTHETIC_CASES.md) using the [rubric](RUBRIC.md), without looking at proposed anchors.
-3. Open each case's provenance and independent response. Ask whether your interpretation changes.
+2. Score the final responses in the [blind packet](BLIND_RESPONSES.md) using the [rubric](RUBRIC.md), without looking at proposed anchors.
+3. Open [the cases](SYNTHETIC_CASES.md) and each case's provenance and independent response. Ask whether your interpretation changes.
 4. Record disagreements using [the review sheet](review_sheet.csv) and [review questions](REVIEW.md).
 
 This is a document-based rehearsal, not an executable learner application. Every scenario, number, transcript and answer is authored as a synthetic fixture. None is observed participant data.

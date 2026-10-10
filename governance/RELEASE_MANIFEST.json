@@ -467,18 +467,18 @@
     },
     {
       "path": "assessment/kit_v0_1/README.md",
-      "sha256": "4f37e53d2f4f11804c18a59f84414c244eddf350ee0e512671ca0dfceab6f84e",
-      "bytes": 3213
+      "sha256": "729717c892dece58d24d98648b6bc26534754e6404b13a830e1c9b8838cefd87",
+      "bytes": 3250
     },
     {
       "path": "assessment/kit_v0_1/REVIEW.md",
-      "sha256": "08401b1c2680bf84a34a14adcb3496fbac7ce53c5d5645032a2dca9da70346a0",
-      "bytes": 3376
+      "sha256": "c9fddaddc8c8888d6be8d143adfc3ceb7a59fb56f01dad191e120453862609da",
+      "bytes": 3431
     },
     {
       "path": "assessment/kit_v0_1/RUBRIC.md",
-      "sha256": "612cd8e234917caa0abfc97faa68237579fece413050fa2a0f0b5ba9e707a1d8",
-      "bytes": 5325
+      "sha256": "fe8bcfd8737a6636e0d821bdabc38199e2984a66f210395a3d1f01558f2954f7",
+      "bytes": 5327
     },
     {
       "path": "assessment/kit_v0_1/SYNTHETIC_CASES.md",
@@ -494,6 +494,11 @@
       "path": "assessment/kit_v0_1/review_sheet.csv",
       "sha256": "47ac18fea459e0474b6caac506c764a9bb32baf4bf48a2537c9dd035d02f6f8e",
       "bytes": 224
+    },
+    {
+      "path": "assessment/kit_v0_1/BLIND_RESPONSES.md",
+      "sha256": "aff4cd274ecf129d4bf3e7270d62d2dc884b0dea2fadfd994a6c94bf3fb2d7ed",
+      "bytes": 2328
     }
   ]
 }

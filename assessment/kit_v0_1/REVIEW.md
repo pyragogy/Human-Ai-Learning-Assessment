@@ -5,7 +5,7 @@ No authoring agent certifies this kit. Its documentation and file checks are not
 
 ## A bounded reviewer assignment
 
-At a pinned commit, read the tasks and rubric. Score the six synthetic responses without seeing anchors or provenance where feasible. Then reveal those materials and explain which inferences survive.
+At a pinned commit, read the tasks and rubric. Score the six responses in [the blind packet](BLIND_RESPONSES.md) before opening the cases. Disclose previous exposure to origins or anchors. Then reveal those materials and explain which inferences survive.
 
 Questions:
 

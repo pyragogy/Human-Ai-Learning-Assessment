@@ -22,7 +22,7 @@ For missing or unavailable responses use **NA**, never zero. A submitted respons
 | **Justified reasoning** | No inferential chain, or incompatible conclusion | Conclusion has a weak or generic reason | Coherent conclusion with a plausible competing explanation | Explicitly connects evidence, a plausible alternative and a proportionate conclusion |
 | **Verification / application** | No relevant check, or proposes an unethical/irrelevant action | Generic “check sources” or “get more data” | Specific relevant comparison, with an incomplete explanation of what it distinguishes | Feasible discriminating comparison plus a result that would strengthen, weaken or revise the conclusion |
 
-The third verification anchor concerns the quality of a proposed check, not proof that checking occurred. Report an enacted check separately only when a record supports it.
+The highest verification anchor concerns the quality of a proposed check, not proof that checking occurred. Report an enacted check separately only when a record supports it.
 
 ## Task-specific anchor guidance
 
