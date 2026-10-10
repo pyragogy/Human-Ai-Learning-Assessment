@@ -109,6 +109,7 @@ GitHub Actions remains disabled. The latest review environment blocked Unix sock
 | [Claim register](research/CLAIM_REGISTER.md) · [Self-audit](research/ADVERSARIAL_AUDIT.md) | What is supported and what remains uncertain |
 | [Ethics](governance/ETHICS.md) · [Security](SECURITY.md) | Requirements before working with real participants |
 | [Prior work](research/PRIOR_WORK.md) | Intellectual foundations and their limits |
+| [Research references](references/README.md) · [Comparative review](references/COMPARATIVE_REVIEW_2026-10-10.md) | Primary sources, evidence limits and proposed next steps |
 | [Repository review](governance/REPOSITORY_REVIEW_2026-10-10.md) | Technical review and publication preparation |
 
 AI-assisted development and agent reviews are documented in the [collaboration record](governance/HUMAN_AI_RESEARCH_COLLABORATION.md). They are software and drafting support, not independent human scientific review.
@@ -123,3 +124,4 @@ To cite this edition, use [CITATION.cff](CITATION.cff). The archived PDF reflect
 
 **HALA · Pyragogy**  
 *A question worth exploring together: what remains when the AI is gone?*
+
