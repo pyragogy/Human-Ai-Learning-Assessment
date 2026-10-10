@@ -12,3 +12,8 @@ keywords:
   - educational measurement
   - human-AI learning
   - synthetic assessment
+version: "1.0.0"
+license:
+  - AGPL-3.0-only
+  - CC-BY-SA-4.0
+

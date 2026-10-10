@@ -1,3 +1,6 @@
+## Follow-up — licensing and version
+Owner approved AGPL-3.0-only original code and CC-BY-SA-4.0 original text/figures on 10 October. Version 1.0.0 is the incomplete submission edition. The pre-license audit below is preserved; license choice is now resolved. Integration, supported-host verification and visibility remain separate.
+
 # HALA pre-publication repository review — 2026-10-10
 
 ## Decision
@@ -52,3 +55,4 @@ The synthetic score fixture must never be used as a real gain analysis: task equ
 
 ## Provenance
 CITATION.cff and governance/PROVENANCE_AND_LICENSING.md provide transparent attribution and license options. A file-hash manifest verifies exact bytes only; edits, excerpts and paraphrases will not retain the hashes. Timestamps, Git history and citation records support provenance but do not alone prove infringement.
+

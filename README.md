@@ -17,6 +17,12 @@
 
 </div>
 
+## v1.0.0 — submission edition
+
+**Incomplete research prototype.** Version 1 anchors the OECD submission and its supporting synthetic research package, not a complete or validated assessment.
+
+Code: **AGPL-3.0-only** · Original text/figures: **CC BY-SA 4.0**. See [license scope](LICENSING.md) and [version notes](CHANGELOG.md).
+
 ## OECD proposal status — 2026-10-10
 The owner confirms that the proposal was submitted to OECD on **9 October 2026**. We are awaiting OECD response.
 
@@ -242,3 +248,4 @@ This project is currently private. Interested collaborators can start at [Pyrago
 [Research](research/PROTOCOL.md) · [Measurement](assessment/MEASUREMENT.md) · [Integrity](research/ADVERSARIAL_AUDIT.md) · [Pyragogy](https://pyragogy.org)
 
 </div>
+

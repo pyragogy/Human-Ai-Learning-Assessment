@@ -10,7 +10,8 @@ Start with README.md, AGENTS.md and governance/HUMAN_AI_RESEARCH_COLLABORATION.m
 - Keep scientific disagreements and report negative findings.
 - Use local/VPS tests. GitHub Actions remain disabled.
 - Respect contributors; critique claims and evidence, not people. No harassment.
-- Licensing is currently unresolved. Do not assume a contributor has granted new rights or submit code/text whose rights you cannot establish. A contribution-licensing policy will be finalized with the owner's license choice.
+- Original code/tests/fixtures contributions must be offered under AGPL-3.0-only; original text/figures under CC-BY-SA-4.0. See LICENSING.md. Retain attribution; contribute only material whose rights you can grant. No copyright assignment is required.
 
 Useful bounded tasks: critique one candidate code with synthetic false-positive/negative examples; reproduce the Unix-socket suite on a supported host; challenge the proposed assisted-versus-unaided interpretation with a documented counterexample.
 No classroom recruitment, publication of participant data or partner endorsement is authorized.
+
