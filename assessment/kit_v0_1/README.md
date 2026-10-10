@@ -43,3 +43,5 @@ Independent challenge and owner adjudication remain pending. The immediate usefu
 
 
 See the [author's design critique and revision log](AUTHOR_CRITIQUE_2026-10-10.md) for unresolved limitations and the exact rationale for v0.1.1. The directory name remains kit_v0_1; document versions identify the revision.
+
+**Rubric revision:** R0.1.2 adds four clarifications following PI's review; tasks and synthetic fixtures retain their existing versions. See the [review response](PI_REVIEW_RESPONSE_2026-10-10.md). No empirical validation or participant readiness is implied.

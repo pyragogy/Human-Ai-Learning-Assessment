@@ -1,6 +1,6 @@
 # Task-specific analytic rubric
 
-**Version:** HALA-KIT-R0.1.1 · Proposed ordinal anchors  
+**Version:** HALA-KIT-R0.1.2 · Proposed ordinal anchors  
 Use the four dimensions independently. There is no validated total, pass mark, 0–100 conversion or EQI in this kit.
 
 ## Rating process
@@ -65,3 +65,35 @@ A justified replication, generalization check or precision-improving study can m
 ## Missingness rehearsal
 
 S10 has no submitted response: all four dimensions are NA, with reason “no response submitted”. This is different from an actual submitted answer such as “I do not know”, which can be rated for the evidence it displays. Never infer lack of competence from missingness.
+
+## Clarifications following PI review — v0.1.2
+
+### Illustrations are not checklists
+
+Task-specific guidance describes possible reasoning, not a required list of every limitation. Apply the dimension definition. For accuracy 3, identify the observed pattern, relevant design/uncertainty reason and proportionate conclusion. Do not demand extra limitations merely because a longer example names them.
+
+S01 and S03 can both meet accuracy/evidence/reasoning 3 while differing on verification (3 versus 2). Equal treatment of concise reasoning does not require identical full profiles.
+
+### Partial responses and unavailable material
+
+Rate each dimension using the entire available response, regardless of which numbered question contains the evidence. A skipped question is not an automatic zero: the relevant reasoning or check may appear elsewhere.
+
+Use zero when a submitted, assessable response displays none of the relevant evidence for a dimension or meets that dimension's zero anchor. Use NA when the material needed to rate is unavailable or genuinely unassessable; record the reason. Partial technical loss can make a dimension unassessable even when some text survives. A blank submission is NA; an assessable “I do not know” with no demonstrated reasoning receives zero, not NA.
+
+Example: “The programme group improved more but they volunteered. The forms might not be comparable.” This contains evidence and a partial inferential link. Do not assign reasoning zero merely because an alternative explanation was not separately listed. Apply anchors and document whether the implicit link supports 1 or 2; this example is not a locked reference rating. With no check anywhere, verification is zero.
+
+Do not interpret any zero as proof that the person lacks the capacity generally.
+
+### A specific check must address the question
+
+Verification 2 requires a comparison or check that addresses a relevant alternative or uncertainty, even if its discriminatory explanation is incomplete. Specificity alone is insufficient. Verification 3 additionally requires a defensible account of what the result would change. A check need not settle every uncertainty, but conclusions must respect what remains uncontrolled.
+
+For L, “compare programme scores before and after” repeats evidence already provided and does not distinguish quiet seating from selection or extra practice. It cannot receive 2 merely for naming a comparison; distinguish a generic relevant wish for further checking (1) from an irrelevant or ineffective proposed check (0), explaining the task-specific judgment.
+
+Matching practice sheets and hours can address those co-interventions but does not automatically eliminate motivation or selection differences. A response claiming otherwise cannot receive verification 3 on that basis. Randomization, defensible adjustment or other designs require their own justification; no method name automatically earns a score.
+
+### Provenance is stipulated, not detected
+
+Origins in synthetic fixtures are author-supplied scenario facts. Revealing them is an interpretive exercise, not a text-based detection test. No kit response demonstrates that a blinded reviewer can identify AI assistance. Actual assistance conditions need procedural records and uncertainty reporting. Group-level classification accuracy, even if later measured, would not certify any individual response's origin.
+
+S10 remains the no-response case. The earlier missingness rehearsal's contrast with submitted answers applies to assessable available material; the partial-loss exception above takes precedence.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "v1.0.0 submission-edition candidate integrity; excludes this manifest; no publication or validation implied",
-  "source_baseline": "5fec2e8dedf984e112ec8eb3c41b78d7e187711c",
+  "source_baseline": "68ed8f3f7a0aca7fd98a5145efe45b7353806d3e",
   "license_status": "Owner-approved 2026-10-10: AGPL-3.0-only code; CC-BY-SA-4.0 original text and figures; see LICENSING.md.",
   "exact_file_hashes_only": true,
   "files": [
@@ -467,8 +467,8 @@
     },
     {
       "path": "assessment/kit_v0_1/README.md",
-      "sha256": "f61a6a99881b9829fc9ca69011c4df83f6691511f763bd3dca21b7f8ef72efba",
-      "bytes": 3587
+      "sha256": "34e4098c82499f62b858a036230aa07dd27c1455da603a35ce699cf998e035d4",
+      "bytes": 3847
     },
     {
       "path": "assessment/kit_v0_1/REVIEW.md",
@@ -477,8 +477,8 @@
     },
     {
       "path": "assessment/kit_v0_1/RUBRIC.md",
-      "sha256": "c625c49d02c4d4368268d151a366c3c457901b38b1fe7c44082938a4e20ba6cd",
-      "bytes": 6985
+      "sha256": "dc6efbfc36a432d861f39dd03d9fafc66efd4ee0cfd809ee70f51b28b61b621a",
+      "bytes": 10591
     },
     {
       "path": "assessment/kit_v0_1/SYNTHETIC_CASES.md",
@@ -504,6 +504,11 @@
       "path": "assessment/kit_v0_1/AUTHOR_CRITIQUE_2026-10-10.md",
       "sha256": "bef72958fe2ab0b61864e133cd6176d48ac51019847a8a5822522a15c48497c9",
       "bytes": 3130
+    },
+    {
+      "path": "assessment/kit_v0_1/PI_REVIEW_RESPONSE_2026-10-10.md",
+      "sha256": "b1fb06670c0f5c98e2d78030df98b193754a723a9e01e850992a514b00b9384a",
+      "bytes": 2935
     }
   ]
 }
