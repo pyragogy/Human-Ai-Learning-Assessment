@@ -1,0 +1,1 @@
+review_id,reviewer_id,commit_sha,task_id,response_id,case_id,task_version,rubric_version,pass_type,response_condition,conceptual_accuracy,evidence_use,justified_reasoning,verification_application,evidence_note,uncertainty_note,missing_reason,provenance_interpretation,owner_decision
