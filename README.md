@@ -48,7 +48,7 @@ A separate [OECD/PISA research extension](research/PISA_RDI_CONVERSATIONAL_ASSES
 
 The original PDF is archived unchanged. Its file history, checksum and the earlier preview-digest discrepancy are documented in the [submission archive](proposal/submission/README.md). No OECD receipt, acceptance or endorsement is recorded.
 
-The repository is currently private. Making it public and writing a blog post are separate next steps. Version 1 describes this research snapshot; a GitHub release has not yet been published.
+The repository is currently private. Making it public and writing a blog post are separate next steps. [Version 1.0.0 — Submission edition](https://github.com/pyragogy/Human-Ai-Learning-Assessment/releases/tag/v1.0.0) is available as a research pre-release. The tag preserves the original snapshot; current documentation on main includes subsequent clarifications.
 
 ## What is here today
 
