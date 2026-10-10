@@ -67,8 +67,8 @@
     },
     {
       "path": "governance/PROVENANCE_AND_LICENSING.md",
-      "sha256": "1be8a427c70caeb8f58a4a25eb8ca893447e1c0ac37b01def6f3a2e858657673",
-      "bytes": 3928
+      "sha256": "73749ee652b3b52027f6cb30775fd1ae9e325bdd621526d78031b3ec5a0ec08f",
+      "bytes": 3990
     },
     {
       "path": "governance/PUBLIC_RELEASE_GATE.md",
@@ -147,8 +147,8 @@
     },
     {
       "path": "proposal/submission/README.md",
-      "sha256": "984f5b4cea257acf817f2213663f59d23a303f28fdc834fd1865d9504dc97b23",
-      "bytes": 7820
+      "sha256": "326a5f20aa4a5d4a32ecec2956a0db0aa8debf680a23883943ee0a9e4d607902",
+      "bytes": 8533
     },
     {
       "path": "proposal/submission/REVIEW_RESPONSE_2026-10-09.md",
