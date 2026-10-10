@@ -9,7 +9,10 @@ The recovered final-named PDF is archived at [hala_pisa_rdi_2026_final_gaps.pdf]
 SHA256: `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`.
 This differs from the authoring preview digest recorded below (`571cfc54…`). The recovered file is not regenerated or altered; byte identity with the actual email attachment has not been independently established. Preserve this distinction until the sent attachment or its digest is checked.
 
-Pre-dispatch statements below describe the 9 October authoring checkpoint and are historical. Sending does not close scientific review, OECD eligibility/call clarification, contractual IP, or pre-pilot safeguards. The repository stays private; public release and a blog post remain undecided. No fresh email, merge, licence grant, paid service or Actions change is authorised by this status update.
+Pre-dispatch statements below describe the 9 October authoring checkpoint and are historical. Sending does not close scientific review, OECD eligibility/call clarification, contractual IP, or pre-pilot safeguards. The repository stays private; public release and a blog post remain undecided. Licensing was approved on 10 October and the submission stack was integrated into main through PRs #19–#21. The restricted OECD source PDF is excluded.
+
+## Technical clarification — 2026-10-10
+The archived PDF describes “HMAC-authenticated IPC”. The implementation actually sends a shared secret over a Unix socket and compares it using `hmac.compare_digest`; it does not implement per-message HMAC signatures. This terminology correction does not alter the submitted PDF. Process separation also does not establish OS-user isolation.
 
 ## Files
 - `hala_pisa_rdi_2026.tex`: current two-page English proposal.
@@ -40,7 +43,7 @@ The call asks for approximately two pages; LaTeX and PDF are internal authoring/
 |---|---|---|
 | 1. Solution, task/scoring scope, specific models | p1 solution; p2 IP/model section | Worked synthetic cards/dialogue and manual rubric; Mistral Large 4 / GPT-4o IDs; final selection and pilot validation pending |
 | 2. OECD collaboration and inputs | p2 OECD collaboration | Three bounded work packages; no secured cohort, expert team, FTE or financing |
-| 3. Background/foreground IP and third-party rights | p2 IP/model section | No repository licence or OECD rights granted; written terms/inventory required |
+| 3. Background/foreground IP and third-party rights | p2 IP/model section | Historical submission IP position; repository licenses approved 10 October (see ../../LICENSING.md); bespoke OECD terms remain unresolved |
 | 4. Privacy, AI security, no student-data training | p2 privacy/model/cost sections | DPIA, youth protections, roles, minimisation, provider controls and deletion are pre-pilot gates |
 | 70%: technical quality and PISA relevance | p1 solution; p2 collaboration | Distinct constructs, prior art, factorial skeleton, unaided anchors, rater/variance/language analysis and preregistered rejection rules |
 | 70%: digital/data security | p2 privacy/model/cost sections | Synthetic-only readiness honestly stated; no security certification or deployable isolation claimed |
@@ -63,11 +66,13 @@ Main baseline read: `e1bf115b86dbee290cc610e743f9affdac52d3e9` (three pages). Th
 - [x] Final PDF archived unchanged with its actual SHA256.
 - [x] Authoring issue #14 closed.
 - [ ] OECD receipt/eligibility/call-year clarification documented.
-- [ ] Separate scientific review and owner adjudication of repository integration.
-- [ ] License decision and final public-release review.
-- [ ] Submission stack integrated into main.
+- [x] Owner-authorized submission stack integrated into main (PRs #19–#21).
+- [x] License decision: AGPL-3.0-only code; CC-BY-SA-4.0 original text/figures.
+- [ ] Independent human scientific review.
+- [ ] Final visibility change and GitHub release publication.
 
 ## Historical authoring checklist — 2026-10-09
+These entries preserve the pre-dispatch checkpoint; they do not override the current status above.
 - [x] Four required sections and both weighted criterion groups mapped above.
 - [x] Concrete synthetic task/manual rubric; no proficiency/authorship claim.
 - [x] Candidate models and dated published tariffs checked against primary sources; no service selected.
@@ -78,4 +83,4 @@ Main baseline read: `e1bf115b86dbee290cc610e743f9affdac52d3e9` (three pages). Th
 - [ ] Owner confirms final identity/contact, realistic capacity, IP/legal posture and outgoing PDF.
 - [ ] Owner authorises any email or filing; none is sent by this work.
 
-The public OECD listing was rechecked on 2026-10-09: **26 October 2026, 23:59 Europe/Paris**. No written OECD clarification of the contradictory PDF has been obtained. Do not send, merge, publish the private repo or re-enable Actions.
+The public OECD listing was rechecked on 2026-10-09: **26 October 2026, 23:59 Europe/Paris**. No written OECD clarification of the contradictory PDF has been obtained. This is a historical call-check record, not a fresh verification of the deadline. Actions remain disabled.
