@@ -1,5 +1,12 @@
 <div align="center">
 
+## OECD proposal status — 2026-10-10
+The owner confirms that the proposal was submitted to OECD on **9 October 2026**. We are awaiting OECD response.
+
+**Submitted proposal PDF:** [Human–AI Learning Assessment — OECD PISA proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf).
+
+The owner identified the archived final preview as the submitted document. Its recorded SHA256 is `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`; see [submission archive and provenance](proposal/submission/README.md) for the earlier preview-digest discrepancy. No OECD receipt, selection, endorsement or scientific validation is implied. The repository remains private; public release and a blog post will be considered separately.
+
 <img src="assets/hala-hero.svg" alt="HALA — Human–AI Learning Assessment: Measure learning, not just assisted performance" width="100%" />
 
 <br />

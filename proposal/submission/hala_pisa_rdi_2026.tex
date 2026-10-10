@@ -3,8 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
+\usepackage{courier}
 \usepackage{microtype}
-\usepackage{needspace}
 \usepackage[svgnames]{xcolor}
 \usepackage[breaklinks=true,colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=deepblue]{hyperref}
 \usepackage{geometry}
@@ -29,20 +29,17 @@
 \displaywidowpenalty=10000
 \raggedbottom
 
-% ── Add color to rules (if booktabs used elsewhere) ──
-% (no tables in this proposal that require colored rules)
-
 \begin{document}
 
 % ── Header ──
 \noindent{\Huge\bfseries\textcolor{deepblue}{Human--AI Learning Assessment}\par}
 \medskip
-\noindent{\large\mdseries Testing When Evidence from Student--AI Dialogue Can Be\\[-0.2em]
-Attributed to Proficiency Rather Than to Interaction Policy\par}
+\noindent{\large\mdseries Testing When Evidence from Student--AI Dialogue Can Support\\[-0.2em]
+Defensible Proficiency Inferences\par}
 \medskip
 \noindent
-\textbf{Proposer:} Fabrizio Terzi, Pyragogy Research\quad
-\textbf{Contact:} fabrizio.terzi@pyragogy.org\\
+\textbf{Proposer:} Fabrizio Terzi, independent researcher, Pyragogy\quad
+\textbf{Contact:} info@pyragogy.org\\
 \textbf{Repository:} \url{https://github.com/pyragogy/human-ai-learning-assessment}\quad
 \textbf{Date:} October 2026
 
@@ -51,212 +48,159 @@ Attributed to Proficiency Rather Than to Interaction Policy\par}
 
 \section{Proposed solution and PISA relevance}
 
-\noindent\textbf{The assessment challenge.} Interactive assessment already recognises
-that a final answer need not tell the whole story. Process data, use of
-feedback, strategic choices and revisions can provide additional evidence
-of how learners approach complex tasks. OECD's PISA 2025
-\emph{Learning in the Digital World} assessment, for instance,
-combines response and process evidence in interactive environments.
+\noindent HALA proposes a bounded OECD co-design programme to establish when
+evidence from student--AI dialogue can validly support PISA proficiency
+inferences.  Existing assessment frameworks---PISA 2015 Collaborative Problem
+Solving (controlled computer agents), dynamic assessment (scaffolded performance
+as evidence), PISA 2025 Learning in the Digital World (process and response
+evidence)---show that interaction data can support proficiency claims under
+specific design conditions.\footnote{OECD (2017), \emph{PISA 2015 Assessment and Analytical Framework}, \href{https://doi.org/10.1787/9789264281820-en}{doi:10.1787/9789264281820-en}; Poehner \& Lantolf (2005), \emph{Dynamic assessment in the language classroom}, \href{https://doi.org/10.1191/1362168805lr166oa}{doi:10.1191/1362168805lr166oa}; OECD (2026), \emph{PISA 2025 Assessment and Analytical Framework}, \href{https://doi.org/10.1787/86c36975-en}{doi:10.1787/86c36975-en}.} Building on Evidence-Centred Design and argument-based validation, HALA tests a narrower question: can \emph{generated, adaptive AI dialogue}---where the assistant
+proposes explanations, counterexamples and requests---yield evidence that
+supports valid inference about \emph{learner proficiency}, and under what
+design conditions?
 
-Conversational AI introduces an additional interpretive challenge.
-Unlike a static resource, an AI assistant may propose an explanation,
-suggest a counterexample or ask a question that changes the direction
-of the student's next response. A student who identifies a competing
-cause after the AI asks whether a third factor could explain a correlation
-has produced an observable action; it is not yet evidence that the student
-could have generated that reasoning independently. Conversely, a
-learner may understand an issue but not express it in a form that an
-interaction code recognises. An apparent increase in reasoning
-behaviours might therefore reflect the assistant's prompting policy,
-the learner's competence, or their combination.
+\smallskip\noindent\textbf{Two candidate constructs.} The programme evaluates
+both \textbf{unaided proficiency} (performance on independent probes without
+AI assistance) and \textbf{AI-supported problem-solving proficiency}
+(evidence evaluation and problem solving under specified AI support).  Which observations warrant which inference is the object
+of study, jointly specified with the OECD before any data collection.  Agent
+variance is not assumed to be a contaminant: scaffold responsiveness may itself
+be construct-relevant. The original T2 learning study remains separate.
 
-\noindent\textbf{Existing foundations and HALA's specific question.}
-Evidence-Centred Design, argument-based validation and analysis of
-assessment process data provide substantial theoretical and operational
-foundations. HALA does not claim these frameworks are absent or
-ineffective. Instead, it investigates a narrower empirical question:
-\emph{under what conditions can process evidence from AI-mediated
-dialogue support defensible claims about learner proficiency?}
-This requires distinguishing what the learner visibly does, what the
-AI has supplied, and what can legitimately be inferred from their
-interaction. We do not presume that independent authorship can be
-recovered from a dialogue transcript, nor that every observation
-should become a proficiency score.
+\smallskip\noindent\textbf{Experimental skeleton.} A proposed design crosses three task families
+(science source appraisal, correlational reasoning, controlled comparison) with
+agent policy (explanatory assistant, critical collaborator, generic management)
+and assistance level; language versions (English and an agreed partner language)
+require adaptation. Analyse turns clustered within students and student/task/rater/agent variance;
+log actual agent outputs and model/prompt versions. Counterbalanced unaided probes
+provide validity anchors with order/reactivity checks. Calibrate raters; mask condition metadata where
+feasible while preserving support context. Preregister reliability, agent-task effects,
+anchor relations and differential language functioning, with construct-specific
+retain/revise/reject rules, uncertainty criteria and sample/precision rationale
+agreed before pilot collection; no numerical thresholds or sample sizes are invented.
 
-\noindent\textbf{Core research programme.} HALA proposes to test \emph{when}
-evidence from student--AI dialogue can be attributed to student proficiency
-rather than to the interaction policy or the AI's scaffolding. Three questions guide the investigation:
+\smallskip\noindent\textbf{Observation and provenance.} The proposed manual annotates each student turn with a behaviour code, the preceding AI intervention, and the
+flag \texttt{learner\_origin\ =\ indeterminate}---the system does not identify
+cognitive authorship.  A separate field \texttt{code\_status} distinguishes
+\texttt{sufficient\_evidence} (code fires with adequate behavioural basis)
+from \texttt{insufficient\_evidence} (short assent, off-task, or response
+too minimal to evaluate).  Draft codes include \textbf{EVIDENCE\_REQUEST}
+(student requests grounds),
+\textbf{COMPETING\_CAUSE} (proposes rival explanation),
+\textbf{DISCRIMINATING\_TEST} (designs a comparison),
+\textbf{SOURCE\_APPRAISAL} (evaluates credibility),
+\textbf{JUSTIFIED\_REVISION} (revises with evidence), and
+\textbf{CALIBRATED\_UNCERTAINTY} (proportional confidence).
+These are candidate codes, not validated scores; the existing heuristic fixture
+is a falsification instrument.
 
-\begin{enumerate}[leftmargin=1.5em, nosep]
-  \item Which student reasoning behaviours are observable and codifiable with
-    sufficient reliability across raters and tasks?
-  \item How much do these behavioural indicators change when the AI agent,
-    its prompting style, and the task structure vary?
-  \item Which indicators survive comparison with independent unaided probes
-    and tests of cross-linguistic comparability?
-\end{enumerate}
+\smallskip\noindent\emph{Worked synthetic task and rubric.} Fictional cards report a screen-use/sleep
+correlation and no clear sleep difference after randomly assigned screen restriction.
+The student evaluates the causal claim. AI:~``Could a third factor, such as evening use,
+explain the correlation?'' Student:~``Maybe kids using screens at night also have routines
+that leave less time for sleep.'' Tag \texttt{COMPETING\_CAUSE} for a plausible rival
+explanation addressing the same pattern without unsupported certainty; record AI-suggested
+support and \texttt{learner\_origin=indeterminate}. The evening/night echo suggests possible uptake,
+not copying or cognitive authorship. ``Yeah, maybe'' receives
+\texttt{code\_status=insufficient\_evidence}, not a zero ability score.
 
-\noindent\textbf{Interpretation and falsification.} Human raters may
-agree on an observable behaviour without that behaviour establishing
-independent competence. HALA will retain candidate indicators only
-when evidence supports reliability, adequate independence from agent
-prompting, and appropriate convergence with unaided probes and
-cross-linguistic checks. Inconclusive or negative results will be
-reported explicitly rather than repackaged as validated scores.
-
-\medskip
-\noindent\textbf{Illustrative scenario} (hypothetical synthetic stimuli, for
-illustration only---no real empirical studies are cited). A student evaluates
-two \emph{synthetic} source cards about screen use and sleep: a
-correlational claim and an apparently conflicting experimental result. The AI agent proposes an interpretation
-(\textquoteleft Screen time may not affect sleep directly; the correlation could
-reflect other factors like evening use\textquoteright). The student can accept,
-challenge, request additional evidence, or formulate an alternative explanation.
-Two AI roles---explanatory assistant (bounded Socratic prompts) and critical
-collaborator (counterexample and verification requests)---enable systematic
-comparison across interaction conditions.
-
-\smallskip
-\needspace{12\baselineskip}
-\noindent\emph{Worked observable (for the rater manual):} AI turn:\enspace
-\textquoteleft Could the correlation reflect a third factor?\textquoteright\enspace Student turn:\enspace
-\textquoteleft Maybe kids who use screens at night also sleep less for other reasons\textquoteright.
-Rater tags \texttt{COMPETING\_CAUSE}: the student proposes a rival explanation
-without asserting it as fact. Failure case: student replies \textquoteleft Yeah,
-maybe\textquoteright after a similar AI prompt; the rater records
-\texttt{undetermined}---no code fires. Because the AI has already suggested the third-factor direction,
-this tag is not an ability score or an authorship finding:
-\texttt{learner\_origin\ =\ indeterminate}. Short unaided probes would serve as
-external validity anchors, with order and reactivity effects explicitly tested.\par
-
-\medskip
-\needspace{6\baselineskip}
-\noindent\textbf{Measurement development sequence.} Observational codes will
-not be presented as a validated instrument at the start of the collaboration.
-They will be developed through a predeclared sequence:
-
-\begin{enumerate}[leftmargin=1.5em, nosep]
-  \item Define the observation opportunities each task must provide (minimum
-    evidence for each code to be scorable);
-  \item Annotate the student action and the preceding AI intervention
-    separately, preserving turn-level provenance;
-  \item Evaluate inter-rater agreement and test whether code distributions
-    shift when the AI agent, prompt version, or task changes;
-  \item Compare conversational indicators against independent unaided probes
-    and examine language comparability;
-  \item Retain only indicators that survive these tests; discard those that
-    primarily track prompting.
-\end{enumerate}
-
-\noindent Candidate codes (draft) include: \textbf{EVIDENCE\_REQUEST}
-(student requests grounds for a claim), \textbf{COMPETING\_CAUSE} (proposes
-rival explanation), \textbf{DISCRIMINATING\_TEST} (designs comparison to
-distinguish hypotheses), \textbf{SOURCE\_APPRAISAL} (evaluates credibility),
-\textbf{JUSTIFIED\_REVISION} (revises with evidence link), and
-\textbf{CALIBRATED\_UNCERTAINTY} (proportional confidence). Each is
-recorded per turn with \texttt{learner\_origin\ =\ indeterminate}---the
-system does not identify the cognitive author. A heuristic annotation
-pipeline exists (adversarial testing against naive surface scoring) but
-produces no proficiency estimate; it is a falsification instrument, not
-a scoring system.
+\smallskip\noindent\textbf{Measurement development.} Codes are developed through
+a predeclared five-step sequence: (1) define minimum observation opportunities
+per code; (2) annotate student action and preceding AI intervention separately;
+(3) estimate inter-rater agreement and code-distribution shifts under different
+agents and prompt versions; (4) compare conversational indicators against
+independent unaided probes and examine language comparability; (5) retain only
+indicators supporting the intended construct. Unsupported unaided interpretations
+are rejected; replicable responsiveness may support the assisted construct.
+No universal agent-variance cutoff is assumed. Negative results are reported explicitly.
 
 \section{Collaboration with OECD}
 
-\noindent\textbf{Proposer delivers:}
-\begin{itemize}[leftmargin=1.5em, nosep]
-  \item Three task specifications with version-controlled prompt registries
-    and a process-coding manual, developed through iterative co-design;
-  \item A reproducible synthetic interaction trace pipeline and adversarial
-    test suite for detecting prompt-contamination;
-  \item A deployment and data-protection design (DPIA-ready framework)
-    and a written report on the conditions under which a pilot would
-    become feasible.
-\end{itemize}
+\noindent Three bounded work packages are proposed:
 
-\noindent\textbf{OECD guidance required:}
-\begin{itemize}[leftmargin=1.5em, nosep]
-  \item Target competency constructs and PISA delivery requirements;
-  \item Multilingual adaptation and equivalence standards;
-  \item Student safeguarding and data-processing expectations;
-  \item Access to authorised pilot partners and psychometric specialists.
-\end{itemize}
+\medskip\noindent\textbf{Package 1 --- Construct and estimand agreement.}
+OECD specifies target competency constructs, delivery requirements, multilingual
+equivalence standards, and safeguarding expectations.  HALA produces a
+measurement-design document distinguishing unaided and AI-supported constructs
+and defining the candidate \texttt{learner\_origin} and fallback rules.
 
-\noindent\textbf{None of these external inputs or partnerships is secured
-today.} We propose a bounded, jointly scoped co-design phase;
-subsequent pilot deployment depends on agreed resources, ethics approvals,
-and partners. The call provides no partner remuneration.
+\medskip\noindent\textbf{Package 2 --- Tasks, prompts, and observation
+instrument.} HALA delivers three task specifications with version-controlled
+prompt registries, a behavioural coding manual with worked examples, a
+reproducible synthetic trace pipeline, and an adversarial test suite for
+testing AI-supplied evidence---all developed through iterative co-design
+with OECD experts.  OECD reviews task constructs, prompt policies for
+cross-language consistency, and data-security requirements.
 
-\section{Intellectual property}
+\medskip\noindent\textbf{Package 3 --- Instrument review and pilot-readiness
+gate.} HALA supplies a rater-calibration and reliability-analysis plan; an empirical report
+requires approved data and specialist capacity. It also supplies a data-protection design (DPIA-ready framework, pseudonymisation,
+lawful-basis analysis, controller/processor allocation, contractual training
+exclusion, retention/deletion schedules and transfer controls), and a written
+assessment of conditions under which a student-facing pilot becomes feasible.
+Authorised OECD/educational partners would need to provide pilot access,
+psychometric expertise and ethics processes; none is secured.  \textbf{No pilot deployment can proceed without agreed
+resources, partners, ethics approvals, and financing. Timing and workload for
+Packages~1--2 depend on agreed capacity; no staffed team or service is promised.
+Cooperation is unpaid.}
 
-\noindent\textbf{Background:} task concepts, source code, and documentation
-developed independently before this collaboration. The repository is private
-with no explicit licence; any change to its licensing (for example a
-permissive open-source licence) is the owner's decision and remains
-conditional on agreement on scope and terms before joint work begins.
-\textbf{Foreground:} co-developed specifications and designs. A bounded
-research licence to the OECD would be negotiated in writing before work begins.
-Third-party rights will be assessed before a collaboration agreement.
+\section{Intellectual property and model choice}
 
-\needspace{40\baselineskip}
+\noindent\textbf{IP:} Source code and documentation developed before
+collaboration (background) remain private without an open-source licence;
+ownership and a bounded, non-exclusive OECD research licence for co-developed
+designs (foreground) require written agreement before joint work; no rights are granted here.  Third-party model rights and provider terms are
+not licensed by the proposer.
+
+\smallskip\noindent\textbf{Models:} No model or provider is selected.  HALA
+prioritises EU-hosted and independently deployable candidates in a
+provider-independent strategy.  Mistral Large~4 (released 6 October 2026,
+public preview, API alias \texttt{mistral-large-4}; weights and self-deployment rights
+must be rechecked) is a candidate, not a selection.  Other candidates include OpenAI
+GPT-4o snapshot \texttt{gpt-4o-2024-08-06} and at least one independently
+deployable open-weight model; none is preselected.  Model versions and
+interaction policies are fixed within each evaluative phase; updates require a
+documented new phase.  EU data residency and training exclusion must be verified, not assumed from provider nationality.
+
+\smallskip\noindent\textbf{Full-scale cost dimensions:} model inference tokens
+(including dialogue history, retries and auxiliary calls), human coding and
+rater moderation, translation and adaptation, psychometric analysis, platform
+operations and monitoring, and security review.  No per-session price or
+zero-cost self-hosting is presumed.  A detailed cost formula for reproducible
+inference budgets is maintained in the project assumptions document; published
+tariffs, concurrency, latency and synthetic workloads inform a full budget before deployment.
+Provider withdrawal or forced updates pause assessment; substitutes require renewed comparability tests.
+
 \section{Privacy, security, and feasibility}
 
-\noindent\textbf{Current state:} the HALA prototype is synthetic only---it
-runs on a private VPS, generates no real participant data, and stores no
-personal information. Architecture: two-process separation (gateway and
-worker) with HMAC-authenticated IPC, audited but uncertified. OS-level
-user isolation is not deployed.
+\noindent\textbf{Current state:} synthetic prototype only---private VPS, no
+real participant data, no personal information stored.  Architecture:
+two-process separation with HMAC-authenticated IPC and internal security review;
+no independent certification is claimed.  OS-level user isolation is not
+deployed.
 
-\noindent\textbf{Required for any student-facing pilot:} data protection
-impact assessment, pseudonymisation, appropriate legal basis under
-GDPR/DPA (not automatic parental consent under Art.~8 alone---roles of
-controller and processor must be established with the partner institution),
-and contractual prohibition on model-provider training from assessment data.
-
-\noindent\textbf{Model choice and scale.} No model or provider is selected.
-\textbf{European-first model strategy.} HALA will prioritise EU-hosted and
-independently deployable AI models, including Mistral Large 4 (announced 6
-October 2026; available in public preview via Mistral Studio) as a candidate
-for post-selection evaluation, without committing to a self-hosted trial at
-this stage. Final model selection will be conducted jointly with the OECD
-against predefined criteria for measurement quality, data protection,
-multilingual comparability, reproducibility and deployment costs. Other
-candidates remain under consideration (e.g.\ OpenAI GPT-4o snapshot
-\texttt{gpt-4o-2024-08-06}, an Anthropic Claude API model subject to
-availability, and self-hosted open-weight alternatives); none is preselected
-or excluded. Model versions and interaction policies will be fixed before
-each evaluative phase; updates require a documented new phase, not an
-unrecorded substitution. EU data residency and exclusion of student data
-from model training will be verified contractually and technically, not
-assumed from provider nationality. Student data must not be used for model
-training.
-
-\smallskip
-\noindent\emph{Cost and provider-dependence gate.} For each candidate, the
-reproducible inference budget is
-\[C={\textstyle\frac{N_{\rm in}P_{\rm in}+N_{\rm out}P_{\rm out}}{10^6}}+C_{\rm compute}+C_{\rm other}\],
-where token volumes include full dialogue history, retries and auxiliary
-calls. Published token tariffs, actual workloads, latency, hosting and
-privacy guarantees will be tested before choosing a deployment. No
-unsupported per-session price or zero-cost self-hosting is assumed.
-
-\medskip
-\noindent{\small\textbf{Relevant methodological foundations.}
-OECD (2026), \emph{PISA 2025 Assessment and Analytical Framework}
-(\url{https://doi.org/10.1787/86c36975-en});
-OECD, \emph{Innovating Assessments to Measure and Support Complex Skills},
-chapter on Evidence-Centred Design and PISA Learning in the Digital World.
-These are precedents for the approach, not validation of HALA's proposed
-indicators.}
+\smallskip\noindent\textbf{Preconditions for any student-facing pilot:}
+completed DPIA, pseudonymisation, lawful basis under GDPR/DPA with
+controller/processor allocation (not automatic parental-consent assumption),
+contractual and technical exclusion of student-data training (including feedback/sharing),
+retention/deletion schedules, subprocessor and international-transfer
+controls, incident-response procedures, child-safeguarding mechanisms (prompt
+monitoring, escalation, access logging, human-review boundaries), and
+appropriate ethics approvals and institutional partnerships. Pseudonymised dialogue
+remains potentially personal data. Providers receive only approved minimal context,
+never identity keys or withheld unaided items. These safeguards are pre-pilot gates.  The prototype is a research instrument for a
+prospective programme, not an operational assessment platform.
 
 \medskip
 {\color{ruleblue}\rule{\textwidth}{0.7pt}}
 \medskip
 
-\noindent\textbf{Readiness statement.} This proposal describes a planned
-research programme, not an existing operational system. No validated scores,
-student data, ethics approval, institutional partnership, or deployed AI
-tutor exist. The programme's core question---whether evidence from
-AI-mediated dialogue can be validly attributed to student proficiency---is
-the object of study, not a capability claim.
+\noindent\textbf{Readiness.}  This proposal describes a planned research
+programme, not an operational system.  No validated scores, student data,
+ethics approval, institutional partnership, or deployed AI tutor exist.  The
+research question---whether evidence from AI-mediated dialogue can validly
+support proficiency inferences---is the object of study, not a capability
+claim.  Controlled repository access can be offered to OECD evaluators on
+request.
 
 \end{document}
