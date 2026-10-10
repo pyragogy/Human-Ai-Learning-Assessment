@@ -10,5 +10,5 @@ Code/tests/fixtures: AGPL-3.0-only. Original text/figures: CC-BY-SA-4.0. Third-p
 Archived PDF SHA256: `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`.
 Full socket tests and launcher smoke remain to be verified on a supported host; audit environment denies Unix sockets.
 
-Intended Git tag: `v1.0.0`. Remote tag/GitHub Release creation is not available through the current connector; this metadata does not claim they exist.
+Git tag `v1.0.0` and the research pre-release are published, pinned to `a55842984d0c62a9960f539d317837315d0df3e1`. Publication preparation on main adds later documentation clarifications without moving this tag or altering the submitted PDF. Repository visibility remains private pending the visibility-change step.
 
