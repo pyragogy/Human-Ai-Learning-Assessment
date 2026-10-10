@@ -1,6 +1,6 @@
 # HALA — two-page OECD PISA proposal
 Working package and submission archive. **Owner reports submitted on 2026-10-09; awaiting OECD response.**
-Issue [#14](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) remains open.
+Authoring issue [#14](https://github.com/pyragogy/human-ai-learning-assessment/issues/14) was closed on 10 October 2026. OECD clarification remains separate.
 
 ## Current status — 2026-10-10
 The owner confirmed that the OECD PISA proposal was submitted on **2026-10-09**. Awaiting OECD response; no receipt, eligibility confirmation, selection or endorsement is documented here.
@@ -58,7 +58,16 @@ Read before interpreting this package:
 
 Main baseline read: `e1bf115b86dbee290cc610e743f9affdac52d3e9` (three pages). The owner then supplied a newer two-page PDF, matched by the source on [PR #19](https://github.com/pyragogy/human-ai-learning-assessment/pull/19), pinned to `25b7f74b968e87456f4ac32a8a160badf2c8cd4a`. This patch builds on PR #19 rather than replacing its completed revision. Older research/planning files are not silently rewritten.
 
-## Checklist
+## Current checklist — 2026-10-10
+- [x] Owner confirms submission on 9 October 2026 and identifies the final preview as the sent proposal.
+- [x] Final PDF archived unchanged with its actual SHA256.
+- [x] Authoring issue #14 closed.
+- [ ] OECD receipt/eligibility/call-year clarification documented.
+- [ ] Separate scientific review and owner adjudication of repository integration.
+- [ ] License decision and final public-release review.
+- [ ] Submission stack integrated into main.
+
+## Historical authoring checklist — 2026-10-09
 - [x] Four required sections and both weighted criterion groups mapped above.
 - [x] Concrete synthetic task/manual rubric; no proficiency/authorship claim.
 - [x] Candidate models and dated published tariffs checked against primary sources; no service selected.
