@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
+\usepackage{courier}
 \usepackage{microtype}
 \usepackage[svgnames]{xcolor}
 \usepackage[breaklinks=true,colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=deepblue]{hyperref}
@@ -33,11 +34,11 @@
 % ── Header ──
 \noindent{\Huge\bfseries\textcolor{deepblue}{Human--AI Learning Assessment}\par}
 \medskip
-\noindent{\large\mdseries Testing When Evidence from Student--AI Dialogue Can Be\\[-0.2em]
-Attributed to Proficiency Rather Than to Interaction Policy\par}
+\noindent{\large\mdseries Testing When Evidence from Student--AI Dialogue Can Support\\[-0.2em]
+Defensible Proficiency Inferences\par}
 \medskip
 \noindent
-\textbf{Proposer:} Fabrizio Terzi, Pyragogy Research\quad
+\textbf{Proposer:} Fabrizio Terzi, independent researcher, Pyragogy\quad
 \textbf{Contact:} info@pyragogy.org\\
 \textbf{Repository:} \url{https://github.com/pyragogy/human-ai-learning-assessment}\quad
 \textbf{Date:} October 2026
@@ -53,38 +54,32 @@ inferences.  Existing assessment frameworks---PISA 2015 Collaborative Problem
 Solving (controlled computer agents), dynamic assessment (scaffolded performance
 as evidence), PISA 2025 Learning in the Digital World (process and response
 evidence)---show that interaction data can support proficiency claims under
-specific design conditions.\footnote{OECD (2026), \emph{PISA 2025 Assessment and
-Analytical Framework}, \url{https://doi.org/10.1787/86c36975-en}; OECD,
-\emph{Innovating Assessments to Measure and Support Complex Skills}, ch.\ on
-Evidence-Centred Design.} HALA tests a narrower question that these frameworks
-leave open: can \emph{generated, adaptive AI dialogue}---where the assistant
+specific design conditions.\footnote{OECD (2017), \emph{PISA 2015 Assessment and Analytical Framework}, \href{https://doi.org/10.1787/9789264281820-en}{doi:10.1787/9789264281820-en}; Poehner \& Lantolf (2005), \emph{Dynamic assessment in the language classroom}, \href{https://doi.org/10.1191/1362168805lr166oa}{doi:10.1191/1362168805lr166oa}; OECD (2026), \emph{PISA 2025 Assessment and Analytical Framework}, \href{https://doi.org/10.1787/86c36975-en}{doi:10.1787/86c36975-en}.} Building on Evidence-Centred Design and argument-based validation, HALA tests a narrower question: can \emph{generated, adaptive AI dialogue}---where the assistant
 proposes explanations, counterexamples and requests---yield evidence that
 supports valid inference about \emph{learner proficiency}, and under what
 design conditions?
 
 \smallskip\noindent\textbf{Two candidate constructs.} The programme evaluates
-both \textbf{unaided proficiency} (what a learner can do when the AI provides
-only generic interaction management) and \textbf{AI-supported problem-solving
-proficiency} (how effectively a learner uses AI-generated information without
-being passively led).  Which observations warrant which inference is the object
+both \textbf{unaided proficiency} (performance on independent probes without
+AI assistance) and \textbf{AI-supported problem-solving proficiency}
+(evidence evaluation and problem solving under specified AI support).  Which observations warrant which inference is the object
 of study, jointly specified with the OECD before any data collection.  Agent
 variance is not assumed to be a contaminant: scaffold responsiveness may itself
-be construct-relevant.
+be construct-relevant. The original T2 learning study remains separate.
 
-\smallskip\noindent\textbf{Experimental skeleton.} Three synthetic tasks
-(science source appraisal, correlational reasoning, controlled comparison) are
-crossed with three AI agent policies (explanatory assistant, critical
-collaborator, generic management) and two task languages (English, one European
-partner language).  Student turns are nested within tasks and sessions; agent
-turns are separately versioned and logged.  Independent unaided probes provide
-external validity anchors.  Rater calibration and blinding are used where
-feasible.  Decision classes (reliability thresholds, agent-task effect sizes,
-convergence with probes, differential code functioning across languages) are
-preregistered before pilot data are analysed; final thresholds, sample sizes
-and rater counts are co-designed with the OECD, not fabricated here.
+\smallskip\noindent\textbf{Experimental skeleton.} A proposed design crosses three task families
+(science source appraisal, correlational reasoning, controlled comparison) with
+agent policy (explanatory assistant, critical collaborator, generic management)
+and assistance level; language versions (English and an agreed partner language)
+require adaptation. Analyse turns clustered within students and student/task/rater/agent variance;
+log actual agent outputs and model/prompt versions. Counterbalanced unaided probes
+provide validity anchors with order/reactivity checks. Calibrate raters; mask condition metadata where
+feasible while preserving support context. Preregister reliability, agent-task effects,
+anchor relations and differential language functioning, with construct-specific
+retain/revise/reject rules, uncertainty criteria and sample/precision rationale
+agreed before pilot collection; no numerical thresholds or sample sizes are invented.
 
-\smallskip\noindent\textbf{Observation and provenance.} Each student turn is
-annotated with a behaviour code, the preceding AI intervention, and the
+\smallskip\noindent\textbf{Observation and provenance.} The proposed manual annotates each student turn with a behaviour code, the preceding AI intervention, and the
 flag \texttt{learner\_origin\ =\ indeterminate}---the system does not identify
 cognitive authorship.  A separate field \texttt{code\_status} distinguishes
 \texttt{sufficient\_evidence} (code fires with adequate behavioural basis)
@@ -96,17 +91,18 @@ too minimal to evaluate).  Draft codes include \textbf{EVIDENCE\_REQUEST}
 \textbf{SOURCE\_APPRAISAL} (evaluates credibility),
 \textbf{JUSTIFIED\_REVISION} (revises with evidence), and
 \textbf{CALIBRATED\_UNCERTAINTY} (proportional confidence).
-These are falsification instruments, not a scoring system.
+These are candidate codes, not validated scores; the existing heuristic fixture
+is a falsification instrument.
 
-\smallskip\noindent\emph{Worked example.}  AI:~``Could the correlation reflect
-a third factor?''  Student:~``Maybe kids who use screens at night also sleep
-less for other reasons.''  Rater tags \texttt{COMPETING\_CAUSE};
-\texttt{learner\_origin\ =\ indeterminate}.  The student's phrase \emph{at
-night} follows the AI's \emph{evening use}---a lexical uptake signal, not
-evidence of copying or independent authorship.  The code fires because the
-student proposes a rival explanation rather than merely assenting; a response
-``Yeah, maybe'' receives \texttt{code\_status\ =\ insufficient\_evidence} even
-if raters agree on the surface behaviour.
+\smallskip\noindent\emph{Worked synthetic task and rubric.} Fictional cards report a screen-use/sleep
+correlation and no clear sleep difference after randomly assigned screen restriction.
+The student evaluates the causal claim. AI:~``Could a third factor, such as evening use,
+explain the correlation?'' Student:~``Maybe kids using screens at night also have routines
+that leave less time for sleep.'' Tag \texttt{COMPETING\_CAUSE} for a plausible rival
+explanation addressing the same pattern without unsupported certainty; record AI-suggested
+support and \texttt{learner\_origin=indeterminate}. The evening/night echo suggests possible uptake,
+not copying or cognitive authorship. ``Yeah, maybe'' receives
+\texttt{code\_status=insufficient\_evidence}, not a zero ability score.
 
 \smallskip\noindent\textbf{Measurement development.} Codes are developed through
 a predeclared five-step sequence: (1) define minimum observation opportunities
@@ -114,8 +110,9 @@ per code; (2) annotate student action and preceding AI intervention separately;
 (3) estimate inter-rater agreement and code-distribution shifts under different
 agents and prompt versions; (4) compare conversational indicators against
 independent unaided probes and examine language comparability; (5) retain only
-indicators that survive these tests---those that track prompting are discarded.
-Negative results are reported explicitly.
+indicators supporting the intended construct. Unsupported unaided interpretations
+are rejected; replicable responsiveness may support the assisted construct.
+No universal agent-variance cutoff is assumed. Negative results are reported explicitly.
 
 \section{Collaboration with OECD}
 
@@ -131,40 +128,39 @@ and defining the candidate \texttt{learner\_origin} and fallback rules.
 instrument.} HALA delivers three task specifications with version-controlled
 prompt registries, a behavioural coding manual with worked examples, a
 reproducible synthetic trace pipeline, and an adversarial test suite for
-prompt-contamination detection---all developed through iterative co-design
+testing AI-supplied evidence---all developed through iterative co-design
 with OECD experts.  OECD reviews task constructs, prompt policies for
 cross-language consistency, and data-security requirements.
 
 \medskip\noindent\textbf{Package 3 --- Instrument review and pilot-readiness
-gate.} HALA produces a coding-manual reliability report based on calibration
-data, a data-protection design (DPIA-ready framework, pseudonymisation,
+gate.} HALA supplies a rater-calibration and reliability-analysis plan; an empirical report
+requires approved data and specialist capacity. It also supplies a data-protection design (DPIA-ready framework, pseudonymisation,
 lawful-basis analysis, controller/processor allocation, contractual training
 exclusion, retention/deletion schedules and transfer controls), and a written
 assessment of conditions under which a student-facing pilot becomes feasible.
-OECD provides authorised pilot access, psychometric expertise, and ethics
-approval processes.  \textbf{No pilot deployment can proceed without agreed
-resources, partners, ethics approvals, and financing.  The initial co-design
-phase (Packages~1--2) can proceed without institutional funding.}
+Authorised OECD/educational partners would need to provide pilot access,
+psychometric expertise and ethics processes; none is secured.  \textbf{No pilot deployment can proceed without agreed
+resources, partners, ethics approvals, and financing. Timing and workload for
+Packages~1--2 depend on agreed capacity; no staffed team or service is promised.
+Cooperation is unpaid.}
 
 \section{Intellectual property and model choice}
 
 \noindent\textbf{IP:} Source code and documentation developed before
 collaboration (background) remain private without an open-source licence;
-co-developed designs and specifications (foreground) are offered to the OECD
-under a bounded, non-exclusive research licence to be negotiated in writing
-before joint work begins.  Third-party model rights and provider terms are
+ownership and a bounded, non-exclusive OECD research licence for co-developed
+designs (foreground) require written agreement before joint work; no rights are granted here.  Third-party model rights and provider terms are
 not licensed by the proposer.
 
 \smallskip\noindent\textbf{Models:} No model or provider is selected.  HALA
 prioritises EU-hosted and independently deployable candidates in a
 provider-independent strategy.  Mistral Large~4 (released 6 October 2026,
-public preview via Mistral Studio at time of writing; self-deployment terms to
-be confirmed) is a candidate, not a selection.  Other candidates include OpenAI
+public preview, API alias \texttt{mistral-large-4}; weights and self-deployment rights
+must be rechecked) is a candidate, not a selection.  Other candidates include OpenAI
 GPT-4o snapshot \texttt{gpt-4o-2024-08-06} and at least one independently
 deployable open-weight model; none is preselected.  Model versions and
 interaction policies are fixed within each evaluative phase; updates require a
-documented new phase.  EU data residency and contractual prohibition of
-training on student data are verified, not assumed from provider nationality.
+documented new phase.  EU data residency and training exclusion must be verified, not assumed from provider nationality.
 
 \smallskip\noindent\textbf{Full-scale cost dimensions:} model inference tokens
 (including dialogue history, retries and auxiliary calls), human coding and
@@ -172,7 +168,8 @@ rater moderation, translation and adaptation, psychometric analysis, platform
 operations and monitoring, and security review.  No per-session price or
 zero-cost self-hosting is presumed.  A detailed cost formula for reproducible
 inference budgets is maintained in the project assumptions document; published
-tariffs and actual workloads are tested before deployment choice is made.
+tariffs, concurrency, latency and synthetic workloads inform a full budget before deployment.
+Provider withdrawal or forced updates pause assessment; substitutes require renewed comparability tests.
 
 \section{Privacy, security, and feasibility}
 
@@ -185,12 +182,13 @@ deployed.
 \smallskip\noindent\textbf{Preconditions for any student-facing pilot:}
 completed DPIA, pseudonymisation, lawful basis under GDPR/DPA with
 controller/processor allocation (not automatic parental-consent assumption),
-contractual and technical prohibition of model-provider training on student
-data, retention/deletion schedules, subprocessor and international-transfer
+contractual and technical exclusion of student-data training (including feedback/sharing),
+retention/deletion schedules, subprocessor and international-transfer
 controls, incident-response procedures, child-safeguarding mechanisms (prompt
 monitoring, escalation, access logging, human-review boundaries), and
-appropriate ethics approvals and institutional partnerships---none of which
-exist or are claimed today.  The prototype is a research instrument for a
+appropriate ethics approvals and institutional partnerships. Pseudonymised dialogue
+remains potentially personal data. Providers receive only approved minimal context,
+never identity keys or withheld unaided items. These safeguards are pre-pilot gates.  The prototype is a research instrument for a
 prospective programme, not an operational assessment platform.
 
 \medskip

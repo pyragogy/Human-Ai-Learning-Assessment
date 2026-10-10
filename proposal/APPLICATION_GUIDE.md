@@ -1,5 +1,15 @@
 # Application guide — verified status at 2026-10-08
 
+## Current status — 2026-10-10
+The owner confirmed that the OECD PISA proposal was submitted on **2026-10-09**. Awaiting OECD response; no receipt, eligibility confirmation, selection or endorsement is documented here.
+
+The recovered final-named PDF is archived at [hala_pisa_rdi_2026_final_gaps.pdf](submission/hala_pisa_rdi_2026_final_gaps.pdf).
+SHA256: `8a027cba8e6abc83356df8205a8063009a4591749bc88302f6138032efa77c08`.
+This differs from the authoring preview digest recorded below (`571cfc54…`). The recovered file is not regenerated or altered; byte identity with the actual email attachment has not been independently established. Preserve this distinction until the sent attachment or its digest is checked.
+
+Pre-dispatch statements below describe the 9 October authoring checkpoint and are historical. Sending does not close scientific review, OECD eligibility/call clarification, contractual IP, or pre-pilot safeguards. The repository stays private; public release and a blog post remain undecided. No fresh email, merge, licence grant, paid service or Actions change is authorised by this status update.
+
+
 ## Verified official listing
 OECD procurement opportunities page: https://www.oecd.org/en/about/calls-for-tenders.html
 Call name: **Partner for AI-Mediated Assessment Solutions for PISA**
