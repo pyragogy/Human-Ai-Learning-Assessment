@@ -8,7 +8,7 @@
 [![Code license](https://img.shields.io/badge/code-AGPL_3.0-31566B?style=flat-square&labelColor=253746)](LICENSE)
 [![Text and figures license](https://img.shields.io/badge/text_%26_figures-CC_BY--SA_4.0-31566B?style=flat-square&labelColor=253746)](LICENSING.md)
 
-[Read the proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf) · [Explore the idea](#the-idea) · [Try the prototype](#try-the-prototype) · [Help it-grow](#help-hala-grow)
+[Read the proposal](proposal/submission/hala_pisa_rdi_2026_final_gaps.pdf) · [Explore the idea](#the-idea) · [Try the prototype](#try-the-prototype) · [Help HALA grow](#help-hala-grow)
 
 </div>
 
