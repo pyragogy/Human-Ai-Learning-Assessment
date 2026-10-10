@@ -1,7 +1,7 @@
 ## Licensing decision — 2026-10-10
 Owner approved AGPL-3.0-only original code and CC-BY-SA-4.0 original text/figures. See [effective scope and exclusions](../LICENSING.md). The proposal/comparison below is a historical decision brief; licensing is no longer pending. PDF bytes remain unchanged.
 
-# Provenance and licensing — owner decision pending
+# Provenance and licensing — historical decision brief
 
 HALA / Human–AI Learning Assessment, developed by Fabrizio Terzi through Pyragogy with disclosed AI assistance.
 Canonical repository: https://github.com/pyragogy/human-ai-learning-assessment
@@ -38,5 +38,5 @@ With an open license, compliant copying is authorized reuse, not theft. Tracking
 - SynthID-Text research and limitations: https://www.nature.com/articles/s41586-024-08025-4
 
 ## Public release
-Owner has requested preparation for opening the repository after review. Visibility remains private while license and final publication decisions are pending. This document does not authorize a licence grant, outreach or public deployment.
+Owner has requested preparation for opening the repository after review. Licensing is approved under LICENSING.md. Repository visibility remains private pending the actual publication step. This historical brief does not imply OECD acceptance, a deployed service or completed scientific validation.
 
