@@ -42,8 +42,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "b4792bd79878edc595744f3616a5fb2e0714ee42c00b26e3b5fc33eaae6b6359",
-      "bytes": 959
+      "sha256": "1d6ac95ad8095d9f6ccefb083796a7b74ea0eb2942da9d95d66e3e9ff58def3a",
+      "bytes": 1123
     },
     {
       "path": "CITATION.cff",
@@ -317,8 +317,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "85370e553fc4f4139fdea31bd40752393f446e5ab3b9d0cfe440208f2f7493a8",
-      "bytes": 8258
+      "sha256": "dc43250e8da6cabb1f4447bd5d11a08244f4bc0b2bedbb674ca6b7e560c9cb6a",
+      "bytes": 8433
     },
     {
       "path": "research/ADVERSARIAL_AUDIT.md",
