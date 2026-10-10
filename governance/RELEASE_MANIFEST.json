@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "v1.0.0 submission-edition candidate integrity; excludes this manifest; no publication or validation implied",
-  "source_baseline": "79e1ff1cab1c5cccba4b33fb5c09629657dd1cd0",
+  "source_baseline": "0b4652db3831060eaa4b992a0520c4c79cf5b5b1",
   "license_status": "Owner-approved 2026-10-10: AGPL-3.0-only code; CC-BY-SA-4.0 original text and figures; see LICENSING.md.",
   "exact_file_hashes_only": true,
   "files": [
@@ -317,8 +317,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "954917f6ef967d326f12963af1ddd08a56f459dca7484e371bfb2b16e43be8ce",
-      "bytes": 20147
+      "sha256": "85370e553fc4f4139fdea31bd40752393f446e5ab3b9d0cfe440208f2f7493a8",
+      "bytes": 8258
     },
     {
       "path": "research/ADVERSARIAL_AUDIT.md",
