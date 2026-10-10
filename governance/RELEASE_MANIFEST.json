@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "v1.0.0 submission-edition candidate integrity; excludes this manifest; no publication or validation implied",
-  "source_baseline": "11553d1e3ea2930bbff67c7db33148d825d768d3",
+  "source_baseline": "f9d4479772ea8c227a365935f5473cefe4d86967",
   "license_status": "Owner-approved 2026-10-10: AGPL-3.0-only code; CC-BY-SA-4.0 original text and figures; see LICENSING.md.",
   "exact_file_hashes_only": true,
   "files": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "e4d380b7777fe23f76f3cf9b7a78f45b4d01daaa84913c49062c7f1ebd22f74f",
-      "bytes": 8600
+      "sha256": "2d2ecae485dcd66fdfdae1a1f37492c148c72b4d1bb1f2d3ac9834e6be6603d0",
+      "bytes": 8723
     },
     {
       "path": "ROADMAP.md",
@@ -464,6 +464,36 @@
       "path": "research/reviews/PI_VPS_AUDIT_TRIAGE_2026-10-08.md",
       "sha256": "9344e40203f5ab35327a80861dac620d06ad6e1ae7c050157be2c25b92b154fe",
       "bytes": 5351
+    },
+    {
+      "path": "assessment/kit_v0_1/README.md",
+      "sha256": "4f37e53d2f4f11804c18a59f84414c244eddf350ee0e512671ca0dfceab6f84e",
+      "bytes": 3213
+    },
+    {
+      "path": "assessment/kit_v0_1/REVIEW.md",
+      "sha256": "08401b1c2680bf84a34a14adcb3496fbac7ce53c5d5645032a2dca9da70346a0",
+      "bytes": 3376
+    },
+    {
+      "path": "assessment/kit_v0_1/RUBRIC.md",
+      "sha256": "612cd8e234917caa0abfc97faa68237579fece413050fa2a0f0b5ba9e707a1d8",
+      "bytes": 5325
+    },
+    {
+      "path": "assessment/kit_v0_1/SYNTHETIC_CASES.md",
+      "sha256": "e64b6ffcf2c3c1d64072d32bd43c5605db7a586d2151967c83fe28cfdbdbc59e",
+      "bytes": 9266
+    },
+    {
+      "path": "assessment/kit_v0_1/TASKS.md",
+      "sha256": "9772922fa4167ebff8cf56e31add63a54e336d401123809d9f8a8dc9fb28e171",
+      "bytes": 4128
+    },
+    {
+      "path": "assessment/kit_v0_1/review_sheet.csv",
+      "sha256": "47ac18fea459e0474b6caac506c764a9bb32baf4bf48a2537c9dd035d02f6f8e",
+      "bytes": 224
     }
   ]
 }
