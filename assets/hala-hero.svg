@@ -1,20 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
-<title id="title">HALA — Human–AI Learning Assessment</title><desc id="desc">Research identity banner with human and AI nodes linked by a learning process and independent assessment.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">HALA — Open Science, Human–AI Learning Assessment</title>
+<desc id="desc">Warm paper-toned editorial graphic with open pages and a teal learning thread. What stays when the AI is gone?</desc>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081326"/><stop offset=".54" stop-color="#101e3a"/><stop offset="1" stop-color="#102c39"/></linearGradient>
-<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#70e4db"/><stop offset="1" stop-color="#a7afff"/></linearGradient>
-<radialGradient id="halo"><stop stop-color="#36d6c2" stop-opacity=".26"/><stop offset="1" stop-color="#36d6c2" stop-opacity="0"/></radialGradient>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#a1c7df" opacity=".07"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FCFAF5"/><stop offset="1" stop-color="#F1EDE5"/></linearGradient>
+<linearGradient id="paper1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8F3EB"/><stop offset=".65" stop-color="#E9DFD1"/><stop offset="1" stop-color="#D6C8B8"/></linearGradient>
+<linearGradient id="paper2" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#FFFDF8"/><stop offset=".58" stop-color="#E8DFD4"/><stop offset="1" stop-color="#D1C4B5"/></linearGradient>
+<linearGradient id="thread" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#067F86"/><stop offset=".55" stop-color="#055966"/><stop offset="1" stop-color="#087983"/></linearGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="18"/></filter>
+<pattern id="grain" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M2 4l3 -1 M11 13l2 1" stroke="#705F52" stroke-opacity=".055" stroke-width=".7"/></pattern>
 </defs>
-<rect width="1200" height="420" rx="26" fill="url(#bg)"/><rect width="1200" height="420" fill="url(#grid)"/>
-<circle cx="984" cy="203" r="230" fill="url(#halo)"/>
-<g fill="none" stroke="#86d8dc" stroke-width="2" opacity=".55"><path d="M815 214L905 135L1005 210L1090 137M815 214L915 294L1005 210L1102 286M905 135L1005 210L915 294"/></g>
-<g fill="#102e42" stroke="url(#edge)" stroke-width="3"><circle cx="815" cy="214" r="24"/><circle cx="905" cy="135" r="32"/><circle cx="1005" cy="210" r="41"/><circle cx="1090" cy="137" r="24"/><circle cx="915" cy="294" r="32"/><circle cx="1102" cy="286" r="24"/></g>
-<g fill="#baf8f1"><circle cx="905" cy="135" r="8"/><circle cx="1005" cy="210" r="11"/><circle cx="915" cy="294" r="8"/></g>
-<rect x="54" y="42" width="238" height="40" rx="20" fill="#173c50" stroke="#4aa8b1" stroke-width="1.6"/><text x="173" y="67" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.8" fill="#b9f7f0">PYRAGOGY · RESEARCH</text>
-<text x="54" y="173" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="85" letter-spacing="-3" fill="#f7fcff">HALA</text>
-<text x="58" y="222" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="600" fill="#b7d9e6">Human–AI Learning Assessment</text>
-<rect x="57" y="246" width="486" height="3" rx="1" fill="url(#edge)"/>
-<text x="58" y="283" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#f0f6fb">Measure learning. Not just assisted performance.</text>
-<text x="58" y="357" font-family="Arial,Helvetica,sans-serif" font-size="16" letter-spacing=".7" fill="#9fb5ce">UNDERSTANDING  /  TRANSFER  /  RETENTION  /  AUTONOMY</text>
+<rect width="1600" height="760" fill="url(#bg)"/>
+<rect width="1600" height="760" fill="url(#grain)" opacity=".55"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#112426">
+<text x="110" y="128" font-size="22" letter-spacing="11">OPEN SCIENCE</text>
+<text x="98" y="318" font-weight="800" font-size="182" letter-spacing="-7">HALA</text>
+<text x="110" y="376" font-size="46">Human–AI</text>
+<text x="110" y="427" font-size="46">Learning Assessment</text>
+<text x="110" y="596" font-size="47">What stays when</text>
+<text x="110" y="646" font-size="47">the AI is gone?</text>
+<text x="110" y="713" font-size="17" letter-spacing="8">PYRAGOGY</text>
+</g>
+<path d="M0 480 C238 506 365 541 540 492 C660 459 735 371 881 362 C1095 352 1170 476 1345 423 C1450 392 1508 350 1600 334" fill="none" stroke="#0D4D53" stroke-opacity=".18" stroke-width="8"/>
+<path d="M0 477 C238 503 365 538 540 489 C660 456 735 368 881 359 C1095 349 1170 473 1345 420 C1450 389 1508 347 1600 331" fill="none" stroke="url(#thread)" stroke-width="4"/>
+<g>
+<path d="M770 155 C906 163 1037 174 1134 296 L1135 549 C1033 625 902 605 770 584 C811 474 809 264 770 155Z" fill="#40382F" opacity=".15" filter="url(#shadow)" transform="translate(22 23)"/>
+<path d="M1149 294 C1202 204 1400 170 1490 125 L1470 579 C1347 589 1221 603 1149 545Z" fill="#40382F" opacity=".17" filter="url(#shadow)" transform="translate(15 25)"/>
+<path d="M778 138 C927 163 1062 175 1134 285 L1134 550 C1044 596 914 607 767 586 C809 465 813 253 778 138Z" fill="url(#paper1)" stroke="#BDB3A5" stroke-width="1.2"/>
+<path d="M1147 284 C1196 201 1370 169 1491 115 L1475 572 C1359 607 1225 593 1147 550Z" fill="url(#paper2)" stroke="#BDB3A5" stroke-width="1.2"/>
+<path d="M1134 285 L1134 550" stroke="#857566" stroke-width="4" opacity=".45"/>
+<path d="M778 138 C927 163 1062 175 1134 285 L1134 550 C1044 596 914 607 767 586 C809 465 813 253 778 138Z" fill="url(#grain)" opacity=".85"/>
+<path d="M1147 284 C1196 201 1370 169 1491 115 L1475 572 C1359 607 1225 593 1147 550Z" fill="url(#grain)" opacity=".85"/>
+</g>
 </svg>
