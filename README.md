@@ -105,10 +105,12 @@ GitHub Actions remains disabled. The latest review environment blocked Unix sock
 | [Study protocol](research/PROTOCOL_V1.md) | Study design, comparison groups and outcomes |
 | [Hypotheses](research/HYPOTHESES.md) · [Analysis plan](research/ESTIMANDS_AND_ANALYSIS.md) | Predictions and how they could be tested |
 | [Measurement](assessment/MEASUREMENT.md) · [Example task blueprint](assessment/ITEM_BLUEPRINT.md) | What independent assessment would need to measure |
+| [Assessment kit v0.1](assessment/kit_v0_1/README.md) | Fictional tasks, scoring anchors and cases for critical review |
 | [Roadmap](ROADMAP.md) | Future work and evidence needed |
 | [Claim register](research/CLAIM_REGISTER.md) · [Self-audit](research/ADVERSARIAL_AUDIT.md) | What is supported and what remains uncertain |
 | [Ethics](governance/ETHICS.md) · [Security](SECURITY.md) | Requirements before working with real participants |
 | [Prior work](research/PRIOR_WORK.md) | Intellectual foundations and their limits |
+| [Research references](references/README.md) · [Comparative review](references/COMPARATIVE_REVIEW_2026-10-10.md) | Primary sources, evidence limits and proposed next steps |
 | [Repository review](governance/REPOSITORY_REVIEW_2026-10-10.md) | Technical review and publication preparation |
 
 AI-assisted development and agent reviews are documented in the [collaboration record](governance/HUMAN_AI_RESEARCH_COLLABORATION.md). They are software and drafting support, not independent human scientific review.
@@ -123,3 +125,5 @@ To cite this edition, use [CITATION.cff](CITATION.cff). The archived PDF reflect
 
 **HALA · Pyragogy**  
 *A question worth exploring together: what remains when the AI is gone?*
+
+
